@@ -470,6 +470,7 @@ function CatalogContent({
                     <img
                       src={v.imageUrl}
                       alt={`${v.brand} ${v.model}`}
+                      referrerPolicy="no-referrer"
                       onError={() => handleImageError(v.id)}
                       className="w-full h-full object-contain p-2 transition-transform duration-300 group-hover:scale-105"
                     />

@@ -267,6 +267,7 @@ export default function EvLeaderboardsClient({ vehicles }: EvLeaderboardsClientP
                               <img
                                 src={v.imageUrl || ''}
                                 alt={`${v.brand} ${v.model}`}
+                                referrerPolicy="no-referrer"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                 onError={() => handleImageError(v.id)}
                               />

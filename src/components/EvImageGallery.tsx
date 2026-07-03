@@ -47,6 +47,7 @@ export default function EvImageGallery({ imageUrls, brand, model }: EvImageGalle
           <img
             src={imageUrls[activeIndex]}
             alt={`${brand} ${model} - Görsel ${activeIndex + 1}`}
+            referrerPolicy="no-referrer"
             onError={() => handleImageError(activeIndex)}
             className="w-full h-full object-contain p-4 transition-all duration-300"
           />
@@ -106,6 +107,7 @@ export default function EvImageGallery({ imageUrls, brand, model }: EvImageGalle
                   <img
                     src={url}
                     alt={`${brand} ${model} thumbnail ${idx + 1}`}
+                    referrerPolicy="no-referrer"
                     onError={() => handleImageError(idx)}
                     className="w-full h-full object-contain p-1"
                   />
