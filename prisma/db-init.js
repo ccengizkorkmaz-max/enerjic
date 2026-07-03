@@ -9,7 +9,17 @@ async function main() {
     if (articleCount === 0) {
       console.log("Database is empty. Automatically seeding 16 real articles...");
       execSync('node prisma/seed-real-articles.js', { stdio: 'inherit' });
-      console.log("Database seeded successfully!");
+      console.log("Database articles seeded successfully!");
+
+      console.log("Automatically seeding 1375 real vehicles (EV Catalog)...");
+      execSync('node prisma/load-real-evs.js', { stdio: 'inherit' });
+      console.log("EV Catalog seeded successfully!");
+
+      console.log("Automatically seeding charging stations...");
+      execSync('node prisma/seed-stations.js', { stdio: 'inherit' });
+      console.log("Charging stations seeded successfully!");
+      
+      console.log("Database fully initialized with all seed data!");
     } else {
       console.log(`Database already has ${articleCount} articles. Seeding skipped to protect production data.`);
     }
