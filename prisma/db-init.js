@@ -3,28 +3,23 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log("=== Checking Database State for Automatic Seeding ===");
+  console.log("=== Running Database Force Initialization ===");
   try {
-    const articleCount = await prisma.article.count();
-    if (articleCount === 0) {
-      console.log("Database is empty. Automatically seeding 16 real articles...");
-      execSync('node prisma/seed-real-articles.js', { stdio: 'inherit' });
-      console.log("Database articles seeded successfully!");
+    console.log("Force seeding 16 real articles (with Pexels images)...");
+    execSync('node prisma/seed-real-articles.js', { stdio: 'inherit' });
+    console.log("Articles seeded successfully!");
 
-      console.log("Automatically seeding 1375 real vehicles (EV Catalog)...");
-      execSync('node prisma/load-real-evs.js', { stdio: 'inherit' });
-      console.log("EV Catalog seeded successfully!");
+    console.log("Force seeding 1375 real vehicles (EV Catalog)...");
+    execSync('node prisma/load-real-evs.js', { stdio: 'inherit' });
+    console.log("EV Catalog seeded successfully!");
 
-      console.log("Automatically seeding charging stations...");
-      execSync('node prisma/seed-stations.js', { stdio: 'inherit' });
-      console.log("Charging stations seeded successfully!");
-      
-      console.log("Database fully initialized with all seed data!");
-    } else {
-      console.log(`Database already has ${articleCount} articles. Seeding skipped to protect production data.`);
-    }
+    console.log("Force seeding charging stations...");
+    execSync('node prisma/seed-stations.js', { stdio: 'inherit' });
+    console.log("Charging stations seeded successfully!");
+    
+    console.log("Database fully initialized with all seed data!");
   } catch (e) {
-    console.error("Database connection error or schema not pushed yet:", e.message);
+    console.error("Database connection error during initialization:", e.message);
   } finally {
     await prisma.$disconnect();
   }
