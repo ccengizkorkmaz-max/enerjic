@@ -2,25 +2,128 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1f2937; /* Anthracite */
+  --primary: #047857;    /* Deep leaf green */
+  --primary-hover: #065f46;
+  --accent: #10b981;     /* Bright green */
+  --accent-light: #ecfdf5;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --card: #ffffff;
 }
 
-@theme inline {
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f9fafb;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s infinite;
+}
+
+/* ===== Social Media Embed Wrappers (CLS-safe) ===== */
+.embed-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio for YouTube */
+  height: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #f3f4f6;
+  margin: 1.5rem 0;
+}
+.embed-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.embed-wrapper--vertical {
+  padding-bottom: 177.78%; /* 9:16 aspect ratio for TikTok/Reels */
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.embed-wrapper--square {
+  padding-bottom: 100%; /* 1:1 for Instagram posts */
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== Article Content Typography ===== */
+.article-content {
+  color: #374151; /* gray-700 */
+}
+.article-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.125rem; /* 18px */
+}
+.article-content h2 {
+  font-size: 1.75rem; /* 28px */
+  font-weight: 800;
+  color: #111827; /* gray-900 */
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+  line-height: 1.35;
+}
+.article-content h3 {
+  font-size: 1.375rem; /* 22px */
+  font-weight: 700;
+  color: #1f2937; /* gray-800 */
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+.article-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.article-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+.article-content strong {
+  font-weight: 700;
+  color: #111827; /* gray-900 */
+}
+
+

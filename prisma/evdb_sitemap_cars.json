@@ -1,0 +1,5502 @@
+[
+  {
+    "id": "1004",
+    "slug": "BMW-i3-60-Ah"
+  },
+  {
+    "id": "1010",
+    "slug": "Ford-Focus-Electric"
+  },
+  {
+    "id": "1011",
+    "slug": "Nissan-LEAF-24-kWh"
+  },
+  {
+    "id": "1012",
+    "slug": "Kia-Soul-EV"
+  },
+  {
+    "id": "1013",
+    "slug": "Mercedes-Benz-B-250e"
+  },
+  {
+    "id": "1019",
+    "slug": "Nissan-LEAF-24-kWh"
+  },
+  {
+    "id": "1020",
+    "slug": "Nissan-LEAF-30-kWh"
+  },
+  {
+    "id": "1021",
+    "slug": "Nissan-e-NV200-Evalia"
+  },
+  {
+    "id": "1026",
+    "slug": "Renault-Zoe-Q210"
+  },
+  {
+    "id": "1027",
+    "slug": "Citroen-C-Zero"
+  },
+  {
+    "id": "1028",
+    "slug": "Peugeot-iOn"
+  },
+  {
+    "id": "1029",
+    "slug": "Mitsubishi-i-MiEV"
+  },
+  {
+    "id": "1030",
+    "slug": "Tesla-Model-S-70"
+  },
+  {
+    "id": "1031",
+    "slug": "Tesla-Model-S-85"
+  },
+  {
+    "id": "1033",
+    "slug": "Tesla-Model-S-70D"
+  },
+  {
+    "id": "1034",
+    "slug": "Tesla-Model-S-85D"
+  },
+  {
+    "id": "1035",
+    "slug": "Tesla-Model-S-90D"
+  },
+  {
+    "id": "1036",
+    "slug": "Tesla-Model-S-P85D"
+  },
+  {
+    "id": "1037",
+    "slug": "Tesla-Model-S-P90D"
+  },
+  {
+    "id": "1038",
+    "slug": "Tesla-Model-S-P90DL"
+  },
+  {
+    "id": "1040",
+    "slug": "Volkswagen-e-Golf"
+  },
+  {
+    "id": "1041",
+    "slug": "Volkswagen-e-Up"
+  },
+  {
+    "id": "1050",
+    "slug": "Renault-Zoe-R240"
+  },
+  {
+    "id": "1051",
+    "slug": "Opel-Ampera-e"
+  },
+  {
+    "id": "1052",
+    "slug": "Tesla-Model-X-75D"
+  },
+  {
+    "id": "1053",
+    "slug": "Tesla-Model-X-90D"
+  },
+  {
+    "id": "1054",
+    "slug": "Tesla-Model-X-P90D"
+  },
+  {
+    "id": "1055",
+    "slug": "Tesla-Model-X-P90DL"
+  },
+  {
+    "id": "1057",
+    "slug": "Hyundai-IONIQ-Electric"
+  },
+  {
+    "id": "1061",
+    "slug": "Tesla-Model-S-70"
+  },
+  {
+    "id": "1062",
+    "slug": "Tesla-Model-S-70D"
+  },
+  {
+    "id": "1063",
+    "slug": "Tesla-Model-S-90D"
+  },
+  {
+    "id": "1064",
+    "slug": "Tesla-Model-S-P90D"
+  },
+  {
+    "id": "1065",
+    "slug": "Tesla-Model-S-P90DL"
+  },
+  {
+    "id": "1068",
+    "slug": "BMW-i3-94-Ah"
+  },
+  {
+    "id": "1070",
+    "slug": "Tesla-Model-S-75D"
+  },
+  {
+    "id": "1071",
+    "slug": "Tesla-Model-S-75"
+  },
+  {
+    "id": "1072",
+    "slug": "Tesla-Model-S-60"
+  },
+  {
+    "id": "1073",
+    "slug": "Tesla-Model-S-60D"
+  },
+  {
+    "id": "1074",
+    "slug": "Tesla-Model-X-60D"
+  },
+  {
+    "id": "1075",
+    "slug": "Tesla-Model-S-P100D"
+  },
+  {
+    "id": "1076",
+    "slug": "Tesla-Model-X-P100D"
+  },
+  {
+    "id": "1077",
+    "slug": "Renault-Zoe-R90"
+  },
+  {
+    "id": "1078",
+    "slug": "Renault-Zoe-Q90"
+  },
+  {
+    "id": "1079",
+    "slug": "Renault-Zoe-R90-Entry"
+  },
+  {
+    "id": "1081",
+    "slug": "Volkswagen-e-Up"
+  },
+  {
+    "id": "1087",
+    "slug": "Volkswagen-e-Golf"
+  },
+  {
+    "id": "1088",
+    "slug": "Tesla-Model-S-100D"
+  },
+  {
+    "id": "1089",
+    "slug": "Tesla-Model-X-100D"
+  },
+  {
+    "id": "1090",
+    "slug": "Smart-ForTwo-Electric-Drive"
+  },
+  {
+    "id": "1091",
+    "slug": "Smart-ForFour-Electric-Drive"
+  },
+  {
+    "id": "1092",
+    "slug": "Audi-e-tron-55-quattro"
+  },
+  {
+    "id": "1094",
+    "slug": "Citroen-C-Zero"
+  },
+  {
+    "id": "1095",
+    "slug": "Peugeot-iOn"
+  },
+  {
+    "id": "1096",
+    "slug": "Mitsubishi-i-MiEV"
+  },
+  {
+    "id": "1097",
+    "slug": "Jaguar-I-Pace-EV400"
+  },
+  {
+    "id": "1098",
+    "slug": "Lucid-Air-Dream-Edition-P"
+  },
+  {
+    "id": "1099",
+    "slug": "Smart-ForTwo-Cabrio-Electric-Drive"
+  },
+  {
+    "id": "1100",
+    "slug": "Tesla-Model-3-Long-Range-RWD"
+  },
+  {
+    "id": "1101",
+    "slug": "Renault-Kangoo-Maxi-ZE-33"
+  },
+  {
+    "id": "1102",
+    "slug": "Citroen-e-Berlingo-Multispace"
+  },
+  {
+    "id": "1103",
+    "slug": "Peugeot-Partner-Tepee-Electric"
+  },
+  {
+    "id": "1104",
+    "slug": "BMW-i3-94-Ah"
+  },
+  {
+    "id": "1105",
+    "slug": "BMW-i3s-94-Ah"
+  },
+  {
+    "id": "1106",
+    "slug": "Nissan-LEAF-40-kWh"
+  },
+  {
+    "id": "1107",
+    "slug": "Audi-e-tron-Sportback-55-quattro"
+  },
+  {
+    "id": "1116",
+    "slug": "Porsche-Taycan-Turbo-S"
+  },
+  {
+    "id": "1117",
+    "slug": "Nissan-e-NV200-Evalia"
+  },
+  {
+    "id": "1122",
+    "slug": "Kia-Soul-EV"
+  },
+  {
+    "id": "1125",
+    "slug": "Kia-e-Niro-64-kWh"
+  },
+  {
+    "id": "1126",
+    "slug": "Hyundai-Kona-Electric-64-kWh"
+  },
+  {
+    "id": "1127",
+    "slug": "Volkswagen-ID3-Pure-Performance"
+  },
+  {
+    "id": "1128",
+    "slug": "Renault-Zoe-R110"
+  },
+  {
+    "id": "1129",
+    "slug": "Hyundai-Kona-Electric-39-kWh"
+  },
+  {
+    "id": "1131",
+    "slug": "Renault-Zoe-Q90"
+  },
+  {
+    "id": "1132",
+    "slug": "Smart-EQ-fortwo-coupe"
+  },
+  {
+    "id": "1133",
+    "slug": "Smart-EQ-fortwo-cabrio"
+  },
+  {
+    "id": "1134",
+    "slug": "Smart-EQ-forfour"
+  },
+  {
+    "id": "1135",
+    "slug": "Mercedes-Benz-EQC-400-4MATIC"
+  },
+  {
+    "id": "1136",
+    "slug": "BMW-iX3"
+  },
+  {
+    "id": "1137",
+    "slug": "Kia-e-Niro-39-kWh"
+  },
+  {
+    "id": "1138",
+    "slug": "Tesla-Model-3-Long-Range-AWD"
+  },
+  {
+    "id": "1139",
+    "slug": "Tesla-Model-3-Performance"
+  },
+  {
+    "id": "1144",
+    "slug": "Nissan-LEAF-eplus-62-kWh"
+  },
+  {
+    "id": "1145",
+    "slug": "BMW-i3-120-Ah"
+  },
+  {
+    "id": "1147",
+    "slug": "Mercedes-Benz-EQA-250"
+  },
+  {
+    "id": "1148",
+    "slug": "DS-Automobiles-DS-3-Crossback-E-Tense"
+  },
+  {
+    "id": "1149",
+    "slug": "BMW-i3s-120-Ah"
+  },
+  {
+    "id": "1150",
+    "slug": "Renault-Zoe-R90"
+  },
+  {
+    "id": "1152",
+    "slug": "Sono-Sion"
+  },
+  {
+    "id": "1153",
+    "slug": "Audi-RS-e-tron-GT"
+  },
+  {
+    "id": "1154",
+    "slug": "Kia-e-Soul-64-kWh"
+  },
+  {
+    "id": "1163",
+    "slug": "Mini-Cooper-SE"
+  },
+  {
+    "id": "1164",
+    "slug": "Renault-Zoe-ZE50-R110"
+  },
+  {
+    "id": "1165",
+    "slug": "Hyundai-IONIQ-Electric"
+  },
+  {
+    "id": "1166",
+    "slug": "Lightyear-0"
+  },
+  {
+    "id": "1168",
+    "slug": "Peugeot-e-208"
+  },
+  {
+    "id": "1169",
+    "slug": "Kia-e-Soul-39-kWh"
+  },
+  {
+    "id": "1170",
+    "slug": "Polestar-2"
+  },
+  {
+    "id": "1171",
+    "slug": "Honda-e"
+  },
+  {
+    "id": "1175",
+    "slug": "Tesla-Model-X-Long-Range"
+  },
+  {
+    "id": "1176",
+    "slug": "Tesla-Model-X-Ludicrous-Performance"
+  },
+  {
+    "id": "1177",
+    "slug": "Tesla-Model-3-Standard-Range-Plus"
+  },
+  {
+    "id": "1179",
+    "slug": "Audi-Q4-e-tron-35"
+  },
+  {
+    "id": "1182",
+    "slug": "Tesla-Model-Y-Long-Range-AWD"
+  },
+  {
+    "id": "1183",
+    "slug": "Tesla-Model-Y-Performance"
+  },
+  {
+    "id": "1185",
+    "slug": "Tesla-Model-X-Performance"
+  },
+  {
+    "id": "1186",
+    "slug": "Porsche-Taycan-4-Cross-Turismo"
+  },
+  {
+    "id": "1187",
+    "slug": "Skoda-Enyaq-iV-50"
+  },
+  {
+    "id": "1188",
+    "slug": "Volvo-XC40-P8-AWD-Recharge"
+  },
+  {
+    "id": "1189",
+    "slug": "Volkswagen-e-Up"
+  },
+  {
+    "id": "1190",
+    "slug": "Skoda-CITIGOe-iV"
+  },
+  {
+    "id": "1191",
+    "slug": "SEAT-Mii-Electric"
+  },
+  {
+    "id": "1192",
+    "slug": "Opel-Corsa-e"
+  },
+  {
+    "id": "1193",
+    "slug": "Tesla-Model-S-Standard-Range"
+  },
+  {
+    "id": "1194",
+    "slug": "Tesla-Model-S-Long-Range"
+  },
+  {
+    "id": "1197",
+    "slug": "Tesla-Model-X-Standard-Range"
+  },
+  {
+    "id": "1198",
+    "slug": "Tesla-Model-X-Long-Range"
+  },
+  {
+    "id": "1199",
+    "slug": "Tesla-Model-X-Performance"
+  },
+  {
+    "id": "1200",
+    "slug": "Tesla-Model-X-Ludicrous-Performance"
+  },
+  {
+    "id": "1201",
+    "slug": "MG-ZS-EV"
+  },
+  {
+    "id": "1202",
+    "slug": "Volkswagen-ID3-Pro"
+  },
+  {
+    "id": "1203",
+    "slug": "Volkswagen-ID3-Pro-S"
+  },
+  {
+    "id": "1204",
+    "slug": "Hyundai-Kona-Electric-64-kWh"
+  },
+  {
+    "id": "1205",
+    "slug": "Renault-Zoe-ZE50-R135"
+  },
+  {
+    "id": "1206",
+    "slug": "Peugeot-e-2008"
+  },
+  {
+    "id": "1207",
+    "slug": "Tesla-Model-S-Performance"
+  },
+  {
+    "id": "1208",
+    "slug": "Tesla-Model-X-Performance"
+  },
+  {
+    "id": "1209",
+    "slug": "Audi-e-tron-50-quattro"
+  },
+  {
+    "id": "1229",
+    "slug": "Porsche-Taycan-Turbo"
+  },
+  {
+    "id": "1230",
+    "slug": "Smart-EQ-fortwo-coupe"
+  },
+  {
+    "id": "1231",
+    "slug": "Smart-EQ-fortwo-cabrio"
+  },
+  {
+    "id": "1232",
+    "slug": "Smart-EQ-forfour"
+  },
+  {
+    "id": "1233",
+    "slug": "Honda-e-Advance"
+  },
+  {
+    "id": "1236",
+    "slug": "Renault-Zoe-ZE40-R110"
+  },
+  {
+    "id": "1237",
+    "slug": "Porsche-Taycan-4S"
+  },
+  {
+    "id": "1238",
+    "slug": "Porsche-Taycan-4S-Plus"
+  },
+  {
+    "id": "1239",
+    "slug": "Hyundai-Kona-Electric-39-kWh"
+  },
+  {
+    "id": "1240",
+    "slug": "Mercedes-Benz-EQV-300-Long"
+  },
+  {
+    "id": "1241",
+    "slug": "Mazda-MX-30"
+  },
+  {
+    "id": "1242",
+    "slug": "Ford-Mustang-Mach-E-SR-RWD"
+  },
+  {
+    "id": "1243",
+    "slug": "Ford-Mustang-Mach-E-ER-RWD"
+  },
+  {
+    "id": "1244",
+    "slug": "Ford-Mustang-Mach-E-SR-AWD"
+  },
+  {
+    "id": "1245",
+    "slug": "Ford-Mustang-Mach-E-ER-AWD"
+  },
+  {
+    "id": "1246",
+    "slug": "Ford-Mustang-Mach-E-GT"
+  },
+  {
+    "id": "1247",
+    "slug": "Audi-e-tron-Sportback-50-quattro"
+  },
+  {
+    "id": "1251",
+    "slug": "Lexus-UX-300e"
+  },
+  {
+    "id": "1252",
+    "slug": "BMW-i4-eDrive40"
+  },
+  {
+    "id": "1253",
+    "slug": "Audi-e-tron-55-quattro"
+  },
+  {
+    "id": "1260",
+    "slug": "Kia-e-Niro-64-kWh"
+  },
+  {
+    "id": "1261",
+    "slug": "Aiways-U5"
+  },
+  {
+    "id": "1262",
+    "slug": "Kia-e-Niro-39-kWh"
+  },
+  {
+    "id": "1270",
+    "slug": "Renault-Twingo-Electric"
+  },
+  {
+    "id": "1271",
+    "slug": "Audi-e-tron-S"
+  },
+  {
+    "id": "1272",
+    "slug": "Audi-e-tron-S-Sportback"
+  },
+  {
+    "id": "1273",
+    "slug": "Volkswagen-ID4-1st"
+  },
+  {
+    "id": "1275",
+    "slug": "Fiat-500e-Cabrio-42-kWh"
+  },
+  {
+    "id": "1278",
+    "slug": "Opel-Mokka-e"
+  },
+  {
+    "id": "1279",
+    "slug": "Skoda-Enyaq-iV-60"
+  },
+  {
+    "id": "1280",
+    "slug": "Skoda-Enyaq-iV-80"
+  },
+  {
+    "id": "1281",
+    "slug": "Skoda-Enyaq-iV-80x"
+  },
+  {
+    "id": "1282",
+    "slug": "Skoda-Enyaq-iV-RS"
+  },
+  {
+    "id": "1285",
+    "slug": "Fiat-500e-Hatchback-42-kWh"
+  },
+  {
+    "id": "1286",
+    "slug": "Citroen-e-C4"
+  },
+  {
+    "id": "1287",
+    "slug": "Jaguar-I-Pace-EV400"
+  },
+  {
+    "id": "1288",
+    "slug": "Kia-e-Soul-64-kWh"
+  },
+  {
+    "id": "1289",
+    "slug": "Kia-e-Soul-39-kWh"
+  },
+  {
+    "id": "1290",
+    "slug": "Audi-Q4-Sportback-e-tron-35"
+  },
+  {
+    "id": "1300",
+    "slug": "Volkswagen-ID3-1st"
+  },
+  {
+    "id": "1301",
+    "slug": "Nissan-Ariya-63kWh"
+  },
+  {
+    "id": "1302",
+    "slug": "Nissan-Ariya-87kWh"
+  },
+  {
+    "id": "1304",
+    "slug": "Nissan-Ariya-e-4ORCE-87kWh---225-kW"
+  },
+  {
+    "id": "1305",
+    "slug": "Nissan-Ariya-e-4ORCE-87kWh---290-kW"
+  },
+  {
+    "id": "1306",
+    "slug": "Volkswagen-ID3-Pro-Performance"
+  },
+  {
+    "id": "1307",
+    "slug": "Jaguar-I-Pace-EV320"
+  },
+  {
+    "id": "1314",
+    "slug": "Volkswagen-ID4-Pro-Performance"
+  },
+  {
+    "id": "1315",
+    "slug": "Mercedes-Benz-EQV-300-Extra-Long"
+  },
+  {
+    "id": "1316",
+    "slug": "Lucid-Air-Grand-Touring"
+  },
+  {
+    "id": "1317",
+    "slug": "Lucid-Air-Touring"
+  },
+  {
+    "id": "1318",
+    "slug": "Lucid-Air-Pure-AWD"
+  },
+  {
+    "id": "1319",
+    "slug": "Dacia-Spring-Electric"
+  },
+  {
+    "id": "1320",
+    "slug": "Tesla-Model-3-Standard-Range-Plus"
+  },
+  {
+    "id": "1321",
+    "slug": "Tesla-Model-3-Long-Range-AWD"
+  },
+  {
+    "id": "1322",
+    "slug": "Tesla-Model-3-Performance"
+  },
+  {
+    "id": "1323",
+    "slug": "Tesla-Model-S-Long-Range-Plus"
+  },
+  {
+    "id": "1324",
+    "slug": "Tesla-Model-S-Performance"
+  },
+  {
+    "id": "1325",
+    "slug": "Tesla-Model-X-Long-Range-Plus"
+  },
+  {
+    "id": "1326",
+    "slug": "Tesla-Model-X-Performance"
+  },
+  {
+    "id": "1327",
+    "slug": "Fiat-500e-Hatchback-24-kWh"
+  },
+  {
+    "id": "1328",
+    "slug": "Fiat-500e-3plus1-42-kWh"
+  },
+  {
+    "id": "1337",
+    "slug": "Mercedes-Benz-EQC-400-4MATIC"
+  },
+  {
+    "id": "1338",
+    "slug": "Kia-e-Niro-64-kWh"
+  },
+  {
+    "id": "1339",
+    "slug": "Kia-e-Niro-39-kWh"
+  },
+  {
+    "id": "1340",
+    "slug": "Citroen-e-SpaceTourer-XS-50-kWh"
+  },
+  {
+    "id": "1341",
+    "slug": "Citroen-e-SpaceTourer-M-50-kWh"
+  },
+  {
+    "id": "1342",
+    "slug": "Citroen-e-SpaceTourer-XL-50-kWh"
+  },
+  {
+    "id": "1343",
+    "slug": "Citroen-e-SpaceTourer-M-75-kWh"
+  },
+  {
+    "id": "1344",
+    "slug": "Citroen-e-SpaceTourer-XL-75-kWh"
+  },
+  {
+    "id": "1345",
+    "slug": "Opel-Zafira-e-Life-S-50-kWh"
+  },
+  {
+    "id": "1346",
+    "slug": "Opel-Zafira-e-Life-M-50-kWh"
+  },
+  {
+    "id": "1347",
+    "slug": "Opel-Zafira-e-Life-L-50-kWh"
+  },
+  {
+    "id": "1348",
+    "slug": "Opel-Zafira-e-Life-M-75-kWh"
+  },
+  {
+    "id": "1349",
+    "slug": "Opel-Zafira-e-Life-L-75-kWh"
+  },
+  {
+    "id": "1350",
+    "slug": "Peugeot-e-Traveller-Compact-50-kWh"
+  },
+  {
+    "id": "1351",
+    "slug": "Peugeot-e-Traveller-Standard-50-kWh"
+  },
+  {
+    "id": "1352",
+    "slug": "Peugeot-e-Traveller-Long-50-kWh"
+  },
+  {
+    "id": "1353",
+    "slug": "Peugeot-e-Traveller-Standard-75-kWh"
+  },
+  {
+    "id": "1354",
+    "slug": "Peugeot-e-Traveller-Long-75-kWh"
+  },
+  {
+    "id": "1355",
+    "slug": "Audi-e-tron-55-quattro"
+  },
+  {
+    "id": "1356",
+    "slug": "Audi-e-tron-Sportback-55-quattro"
+  },
+  {
+    "id": "1357",
+    "slug": "Seres-3"
+  },
+  {
+    "id": "1381",
+    "slug": "Hyundai-IONIQ-5-Project-45"
+  },
+  {
+    "id": "1393",
+    "slug": "Porsche-Taycan"
+  },
+  {
+    "id": "1394",
+    "slug": "Porsche-Taycan-Plus"
+  },
+  {
+    "id": "1404",
+    "slug": "Tesla-Model-S-Dual-Motor"
+  },
+  {
+    "id": "1405",
+    "slug": "Tesla-Model-S-Plaid"
+  },
+  {
+    "id": "1407",
+    "slug": "Tesla-Model-X-Dual-Motor"
+  },
+  {
+    "id": "1408",
+    "slug": "Tesla-Model-X-Plaid"
+  },
+  {
+    "id": "1409",
+    "slug": "Mini-Cooper-SE"
+  },
+  {
+    "id": "1410",
+    "slug": "JAC-iEV7s"
+  },
+  {
+    "id": "1411",
+    "slug": "Volkswagen-ID4-Pure-Performance"
+  },
+  {
+    "id": "1420",
+    "slug": "Audi-e-tron-GT-quattro"
+  },
+  {
+    "id": "1421",
+    "slug": "Volvo-C40-Recharge-Twin-Pure-Electric"
+  },
+  {
+    "id": "1422",
+    "slug": "Hyundai-Kona-Electric-39-kWh"
+  },
+  {
+    "id": "1423",
+    "slug": "Hyundai-Kona-Electric-64-kWh"
+  },
+  {
+    "id": "1437",
+    "slug": "Porsche-Taycan-4S-Cross-Turismo"
+  },
+  {
+    "id": "1438",
+    "slug": "Porsche-Taycan-Turbo-Cross-Turismo"
+  },
+  {
+    "id": "1439",
+    "slug": "Porsche-Taycan-Turbo-S-Cross-Turismo"
+  },
+  {
+    "id": "1471",
+    "slug": "Kia-EV6-GT"
+  },
+  {
+    "id": "1472",
+    "slug": "BMW-iX-xDrive40"
+  },
+  {
+    "id": "1473",
+    "slug": "BMW-iX-xDrive50"
+  },
+  {
+    "id": "1474",
+    "slug": "MG-MG5-Electric-Long-Range"
+  },
+  {
+    "id": "1475",
+    "slug": "MG-Marvel-R-Performance"
+  },
+  {
+    "id": "1476",
+    "slug": "Hyundai-IONIQ-5-Standard-Range-2WD"
+  },
+  {
+    "id": "1477",
+    "slug": "Hyundai-IONIQ-5-Standard-Range-AWD"
+  },
+  {
+    "id": "1478",
+    "slug": "Hyundai-IONIQ-5-Long-Range-2WD"
+  },
+  {
+    "id": "1479",
+    "slug": "Hyundai-IONIQ-5-Long-Range-AWD"
+  },
+  {
+    "id": "1480",
+    "slug": "Kia-EV6-Standard-Range-2WD"
+  },
+  {
+    "id": "1481",
+    "slug": "Kia-EV6-Long-Range-2WD"
+  },
+  {
+    "id": "1482",
+    "slug": "Kia-EV6-Long-Range-AWD"
+  },
+  {
+    "id": "1483",
+    "slug": "Mercedes-Benz-EQS-450plus"
+  },
+  {
+    "id": "1484",
+    "slug": "Mercedes-Benz-EQS-580-4MATIC"
+  },
+  {
+    "id": "1485",
+    "slug": "Tesla-Model-3-Standard-Range-Plus"
+  },
+  {
+    "id": "1486",
+    "slug": "Polestar-2-Standard-Range-Single-Motor"
+  },
+  {
+    "id": "1487",
+    "slug": "Polestar-2-Long-Range-Single-Motor"
+  },
+  {
+    "id": "1488",
+    "slug": "Polestar-2-Long-Range-Dual-Motor"
+  },
+  {
+    "id": "1489",
+    "slug": "Volkswagen-ID4-Pure"
+  },
+  {
+    "id": "1490",
+    "slug": "Audi-Q4-e-tron-40"
+  },
+  {
+    "id": "1491",
+    "slug": "Audi-Q4-e-tron-50-quattro"
+  },
+  {
+    "id": "1492",
+    "slug": "Audi-Q4-Sportback-e-tron-50-quattro"
+  },
+  {
+    "id": "1493",
+    "slug": "Mercedes-Benz-EQB-350-4MATIC"
+  },
+  {
+    "id": "1494",
+    "slug": "Volkswagen-ID4-GTX"
+  },
+  {
+    "id": "1495",
+    "slug": "Mercedes-Benz-EQA-300-4MATIC"
+  },
+  {
+    "id": "1496",
+    "slug": "Mercedes-Benz-EQA-350-4MATIC"
+  },
+  {
+    "id": "1512",
+    "slug": "Toyota-Proace-Verso-M-50-kWh"
+  },
+  {
+    "id": "1513",
+    "slug": "Toyota-Proace-Verso-L-50-kWh"
+  },
+  {
+    "id": "1514",
+    "slug": "Toyota-Proace-Verso-M-75-kWh"
+  },
+  {
+    "id": "1515",
+    "slug": "Toyota-Proace-Verso-L-75-kWh"
+  },
+  {
+    "id": "1516",
+    "slug": "CUPRA-Born-150-kW---58-kWh"
+  },
+  {
+    "id": "1517",
+    "slug": "CUPRA-Born-170-kW---58-kWh"
+  },
+  {
+    "id": "1518",
+    "slug": "CUPRA-Born-170-kW---77-kWh"
+  },
+  {
+    "id": "1519",
+    "slug": "BMW-i4-M50"
+  },
+  {
+    "id": "1520",
+    "slug": "Volvo-XC40-Recharge-Twin-Pure-Electric"
+  },
+  {
+    "id": "1521",
+    "slug": "Renault-Megane-E-Tech-EV60-220hp"
+  },
+  {
+    "id": "1522",
+    "slug": "Peugeot-e-Rifter-Standard-50-kWh"
+  },
+  {
+    "id": "1523",
+    "slug": "Peugeot-e-Rifter-Long-50-kWh"
+  },
+  {
+    "id": "1524",
+    "slug": "MG-Marvel-R"
+  },
+  {
+    "id": "1525",
+    "slug": "Tesla-Model-3-Long-Range-AWD"
+  },
+  {
+    "id": "1526",
+    "slug": "MG-MG5-EV-Long-Range"
+  },
+  {
+    "id": "1527",
+    "slug": "Audi-Q4-e-tron-45-quattro"
+  },
+  {
+    "id": "1528",
+    "slug": "Audi-Q4-Sportback-e-tron-40"
+  },
+  {
+    "id": "1530",
+    "slug": "Volkswagen-ID3-Pure-Performance"
+  },
+  {
+    "id": "1531",
+    "slug": "Volkswagen-ID3-Pro"
+  },
+  {
+    "id": "1532",
+    "slug": "Volkswagen-ID3-Pro-Performance"
+  },
+  {
+    "id": "1533",
+    "slug": "Volkswagen-ID3-Pro-S---4-Seats"
+  },
+  {
+    "id": "1534",
+    "slug": "Volkswagen-ID3-Pro-S---5-Seats"
+  },
+  {
+    "id": "1535",
+    "slug": "BMW-iX3"
+  },
+  {
+    "id": "1536",
+    "slug": "Renault-Megane-E-Tech-EV40-130hp"
+  },
+  {
+    "id": "1537",
+    "slug": "Mercedes-Benz-EQS-AMG-53-4MATICplus"
+  },
+  {
+    "id": "1538",
+    "slug": "Mercedes-Benz-EQE-350plus"
+  },
+  {
+    "id": "1539",
+    "slug": "Volvo-XC40-Recharge-Pure-Electric"
+  },
+  {
+    "id": "1540",
+    "slug": "MG-ZS-EV-Standard-Range"
+  },
+  {
+    "id": "1541",
+    "slug": "MG-ZS-EV-Long-Range"
+  },
+  {
+    "id": "1542",
+    "slug": "Mercedes-Benz-EQV-250-Long"
+  },
+  {
+    "id": "1543",
+    "slug": "Mercedes-Benz-EQV-250-Extra-Long"
+  },
+  {
+    "id": "1544",
+    "slug": "Opel-Combo-e-Life-50-kWh"
+  },
+  {
+    "id": "1545",
+    "slug": "Opel-Combo-e-Life-XL-50-kWh"
+  },
+  {
+    "id": "1546",
+    "slug": "Citroen-e-Berlingo-M-50-kWh"
+  },
+  {
+    "id": "1547",
+    "slug": "Citroen-e-Berlingo-XL-50-kWh"
+  },
+  {
+    "id": "1555",
+    "slug": "Tesla-Model-3-RWD"
+  },
+  {
+    "id": "1556",
+    "slug": "Volkswagen-ID5-Pro"
+  },
+  {
+    "id": "1557",
+    "slug": "Volkswagen-ID5-Pro-Performance"
+  },
+  {
+    "id": "1558",
+    "slug": "Volkswagen-ID5-GTX"
+  },
+  {
+    "id": "1559",
+    "slug": "Mercedes-Benz-EQB-300-4MATIC"
+  },
+  {
+    "id": "1560",
+    "slug": "Porsche-Taycan-GTS"
+  },
+  {
+    "id": "1561",
+    "slug": "Porsche-Taycan-GTS-Sport-Turismo"
+  },
+  {
+    "id": "1562",
+    "slug": "Mercedes-Benz-EQS-350"
+  },
+  {
+    "id": "1564",
+    "slug": "Toyota-bZ4X-FWD"
+  },
+  {
+    "id": "1565",
+    "slug": "Toyota-bZ4X-AWD"
+  },
+  {
+    "id": "1567",
+    "slug": "Subaru-Solterra-AWD"
+  },
+  {
+    "id": "1582",
+    "slug": "DS-Automobiles-DS-3-Crossback-E-Tense"
+  },
+  {
+    "id": "1583",
+    "slug": "Peugeot-e-208"
+  },
+  {
+    "id": "1584",
+    "slug": "Peugeot-e-2008"
+  },
+  {
+    "id": "1585",
+    "slug": "Opel-Corsa-e"
+  },
+  {
+    "id": "1586",
+    "slug": "Opel-Mokka-e-50-kWh"
+  },
+  {
+    "id": "1587",
+    "slug": "Citroen-e-C4"
+  },
+  {
+    "id": "1588",
+    "slug": "Renault-Megane-E-Tech-EV60-130hp"
+  },
+  {
+    "id": "1589",
+    "slug": "SsangYong-Korando-e-Motion"
+  },
+  {
+    "id": "1590",
+    "slug": "BMW-iX-M60"
+  },
+  {
+    "id": "1591",
+    "slug": "Tesla-Model-3-Long-Range-AWD"
+  },
+  {
+    "id": "1592",
+    "slug": "Volvo-XC40-Recharge-Pure-Electric"
+  },
+  {
+    "id": "1593",
+    "slug": "Volvo-XC40-Recharge-Twin-Pure-Electric"
+  },
+  {
+    "id": "1594",
+    "slug": "Citroen-e-Jumpy-Combi-XS-50-kWh"
+  },
+  {
+    "id": "1595",
+    "slug": "Citroen-e-Jumpy-Combi-M-50-kWh"
+  },
+  {
+    "id": "1596",
+    "slug": "Citroen-e-Jumpy-Combi-XL-50-kWh"
+  },
+  {
+    "id": "1597",
+    "slug": "Citroen-e-Jumpy-Combi-M-75-kWh"
+  },
+  {
+    "id": "1598",
+    "slug": "Citroen-e-Jumpy-Combi-XL-75-kWh"
+  },
+  {
+    "id": "1599",
+    "slug": "Opel-Vivaro-e-Combi-S-50-kWh"
+  },
+  {
+    "id": "1600",
+    "slug": "Opel-Vivaro-e-Combi-M-50-kWh"
+  },
+  {
+    "id": "1601",
+    "slug": "Opel-Vivaro-e-Combi-L-50-kWh"
+  },
+  {
+    "id": "1602",
+    "slug": "Opel-Vivaro-e-Combi-M-75-kWh"
+  },
+  {
+    "id": "1603",
+    "slug": "Opel-Vivaro-e-Combi-L-75-kWh"
+  },
+  {
+    "id": "1604",
+    "slug": "Peugeot-e-Expert-Combi-Compact-50-kWh"
+  },
+  {
+    "id": "1605",
+    "slug": "Peugeot-e-Expert-Combi-Standard-50-kWh"
+  },
+  {
+    "id": "1606",
+    "slug": "Peugeot-e-Expert-Combi-Long-50-kWh"
+  },
+  {
+    "id": "1607",
+    "slug": "Peugeot-e-Expert-Combi-Standard-75-kWh"
+  },
+  {
+    "id": "1608",
+    "slug": "Peugeot-e-Expert-Combi-Long-75-kWh"
+  },
+  {
+    "id": "1609",
+    "slug": "Toyota-Proace-Shuttle-M-50-kWh"
+  },
+  {
+    "id": "1610",
+    "slug": "Toyota-Proace-Shuttle-L-50-kWh"
+  },
+  {
+    "id": "1611",
+    "slug": "Toyota-Proace-Shuttle-M-75-kWh"
+  },
+  {
+    "id": "1612",
+    "slug": "Toyota-Proace-Shuttle-L-75-kWh"
+  },
+  {
+    "id": "1613",
+    "slug": "Mercedes-Benz-eVito-Tourer-Long-41-kWh"
+  },
+  {
+    "id": "1614",
+    "slug": "Mercedes-Benz-eVito-Tourer-Extra-Long-41-kWh"
+  },
+  {
+    "id": "1615",
+    "slug": "Mercedes-Benz-eVito-Tourer-Long-90-kWh"
+  },
+  {
+    "id": "1616",
+    "slug": "Mercedes-Benz-eVito-Tourer-Extra-Long-90-kWh"
+  },
+  {
+    "id": "1617",
+    "slug": "Mercedes-Benz-eVito-Tourer-Long-60-kWh"
+  },
+  {
+    "id": "1618",
+    "slug": "Mercedes-Benz-eVito-Tourer-Extra-Long-60-kWh"
+  },
+  {
+    "id": "1619",
+    "slug": "Tesla-Model-Y-Long-Range-AWD"
+  },
+  {
+    "id": "1620",
+    "slug": "Tesla-Model-3-Performance"
+  },
+  {
+    "id": "1621",
+    "slug": "Porsche-Taycan-Sport-Turismo"
+  },
+  {
+    "id": "1622",
+    "slug": "Porsche-Taycan-Plus-Sport-Turismo"
+  },
+  {
+    "id": "1623",
+    "slug": "Porsche-Taycan-4S-Sport-Turismo"
+  },
+  {
+    "id": "1624",
+    "slug": "Porsche-Taycan-4S-Plus-Sport-Turismo"
+  },
+  {
+    "id": "1625",
+    "slug": "Porsche-Taycan-Turbo-Sport-Turismo"
+  },
+  {
+    "id": "1626",
+    "slug": "Porsche-Taycan-Turbo-S-Sport-Turismo"
+  },
+  {
+    "id": "1627",
+    "slug": "Volkswagen-ID4-Pro"
+  },
+  {
+    "id": "1628",
+    "slug": "Skoda-Enyaq-Coupe-iV-60"
+  },
+  {
+    "id": "1629",
+    "slug": "Skoda-Enyaq-Coupe-iV-80"
+  },
+  {
+    "id": "1630",
+    "slug": "Skoda-Enyaq-Coupe-iV-80x"
+  },
+  {
+    "id": "1631",
+    "slug": "Skoda-Enyaq-Coupe-iV-RS"
+  },
+  {
+    "id": "1646",
+    "slug": "MG-MG5-Electric-Standard-Range"
+  },
+  {
+    "id": "1647",
+    "slug": "Genesis-GV60-Premium"
+  },
+  {
+    "id": "1648",
+    "slug": "Genesis-GV60-Sport"
+  },
+  {
+    "id": "1649",
+    "slug": "Genesis-GV60-Sport-Plus"
+  },
+  {
+    "id": "1650",
+    "slug": "Volkswagen-e-Up"
+  },
+  {
+    "id": "1651",
+    "slug": "Volkswagen-ID-Buzz-Pro"
+  },
+  {
+    "id": "1652",
+    "slug": "Mercedes-Benz-EQE-AMG-43-4MATIC"
+  },
+  {
+    "id": "1653",
+    "slug": "Mercedes-Benz-EQE-AMG-53-4MATICplus"
+  },
+  {
+    "id": "1654",
+    "slug": "Polestar-2-Standard-Range-Single-Motor"
+  },
+  {
+    "id": "1655",
+    "slug": "Volvo-C40-Recharge-Pure-Electric"
+  },
+  {
+    "id": "1656",
+    "slug": "Nissan-LEAF-40-kWh"
+  },
+  {
+    "id": "1657",
+    "slug": "Nissan-LEAF-eplus-62-kWh"
+  },
+  {
+    "id": "1658",
+    "slug": "Audi-e-tron-S"
+  },
+  {
+    "id": "1659",
+    "slug": "Audi-e-tron-S-Sportback"
+  },
+  {
+    "id": "1660",
+    "slug": "Audi-e-tron-50-quattro"
+  },
+  {
+    "id": "1661",
+    "slug": "Audi-e-tron-Sportback-50-quattro"
+  },
+  {
+    "id": "1662",
+    "slug": "Hyundai-IONIQ-5-Long-Range-2WD"
+  },
+  {
+    "id": "1663",
+    "slug": "Hyundai-IONIQ-5-Long-Range-AWD"
+  },
+  {
+    "id": "1664",
+    "slug": "Mercedes-Benz-EQB-250"
+  },
+  {
+    "id": "1665",
+    "slug": "Mercedes-Benz-EQA-250plus"
+  },
+  {
+    "id": "1666",
+    "slug": "Kia-Niro-EV"
+  },
+  {
+    "id": "1667",
+    "slug": "Smart-1-Proplus"
+  },
+  {
+    "id": "1668",
+    "slug": "Ford-Mustang-Mach-E-SR-RWD"
+  },
+  {
+    "id": "1669",
+    "slug": "Ford-Mustang-Mach-E-ER-RWD"
+  },
+  {
+    "id": "1670",
+    "slug": "Ford-Mustang-Mach-E-SR-AWD"
+  },
+  {
+    "id": "1671",
+    "slug": "Ford-Mustang-Mach-E-ER-AWD"
+  },
+  {
+    "id": "1672",
+    "slug": "Ford-Mustang-Mach-E-GT"
+  },
+  {
+    "id": "1673",
+    "slug": "Mercedes-Benz-EQS-SUV-450plus"
+  },
+  {
+    "id": "1674",
+    "slug": "Mercedes-Benz-EQS-SUV-450-4MATIC"
+  },
+  {
+    "id": "1675",
+    "slug": "Mercedes-Benz-EQS-SUV-580-4MATIC"
+  },
+  {
+    "id": "1676",
+    "slug": "BMW-i7-xDrive60"
+  },
+  {
+    "id": "1677",
+    "slug": "Lexus-RZ-450e"
+  },
+  {
+    "id": "1678",
+    "slug": "Aiways-U5"
+  },
+  {
+    "id": "1680",
+    "slug": "Mazda-MX-30"
+  },
+  {
+    "id": "1696",
+    "slug": "Lucid-Air-Dream-Edition-R"
+  },
+  {
+    "id": "1697",
+    "slug": "Mercedes-Benz-EQA-250"
+  },
+  {
+    "id": "1698",
+    "slug": "Mercedes-Benz-EQA-250plus"
+  },
+  {
+    "id": "1699",
+    "slug": "Mercedes-Benz-EQS-450-4MATIC"
+  },
+  {
+    "id": "1700",
+    "slug": "Mercedes-Benz-EQS-500-4MATIC"
+  },
+  {
+    "id": "1701",
+    "slug": "BMW-iX1-xDrive30"
+  },
+  {
+    "id": "1702",
+    "slug": "Volkswagen-ID4-Pro-4MOTION"
+  },
+  {
+    "id": "1703",
+    "slug": "Genesis-G80-Electrified-Luxury"
+  },
+  {
+    "id": "1704",
+    "slug": "Dacia-Spring-Electric"
+  },
+  {
+    "id": "1705",
+    "slug": "Dacia-Spring-Electric-45"
+  },
+  {
+    "id": "1706",
+    "slug": "Citroen-e-C4-X"
+  },
+  {
+    "id": "1707",
+    "slug": "MG-MG4-Electric-51-kWh"
+  },
+  {
+    "id": "1708",
+    "slug": "MG-MG4-Electric-64-kWh"
+  },
+  {
+    "id": "1709",
+    "slug": "Fisker-Ocean-Sport"
+  },
+  {
+    "id": "1710",
+    "slug": "Fisker-Ocean-Ultra"
+  },
+  {
+    "id": "1711",
+    "slug": "Fisker-Ocean-Extreme"
+  },
+  {
+    "id": "1712",
+    "slug": "Fisker-Ocean-One"
+  },
+  {
+    "id": "1713",
+    "slug": "Mercedes-Benz-EQE-300"
+  },
+  {
+    "id": "1714",
+    "slug": "Mercedes-Benz-EQE-350"
+  },
+  {
+    "id": "1715",
+    "slug": "Mercedes-Benz-EQE-350-4MATIC"
+  },
+  {
+    "id": "1716",
+    "slug": "Mercedes-Benz-EQE-500-4MATIC"
+  },
+  {
+    "id": "1717",
+    "slug": "Hyundai-IONIQ-6-Standard-Range-2WD"
+  },
+  {
+    "id": "1718",
+    "slug": "Hyundai-IONIQ-6-Long-Range-2WD"
+  },
+  {
+    "id": "1719",
+    "slug": "Hyundai-IONIQ-6-Long-Range-AWD"
+  },
+  {
+    "id": "1720",
+    "slug": "Audi-Q4-Sportback-e-tron-45-quattro"
+  },
+  {
+    "id": "1721",
+    "slug": "Fiat-E-Ulysse-L2-50-kWh"
+  },
+  {
+    "id": "1722",
+    "slug": "Fiat-E-Ulysse-L2-75-kWh"
+  },
+  {
+    "id": "1723",
+    "slug": "Fiat-E-Ulysse-L3-50-kWh"
+  },
+  {
+    "id": "1724",
+    "slug": "Fiat-E-Ulysse-L3-75-kWh"
+  },
+  {
+    "id": "1725",
+    "slug": "Genesis-GV70-Electrified-Sport"
+  },
+  {
+    "id": "1726",
+    "slug": "Fiat-500e-3plus1-24-kWh"
+  },
+  {
+    "id": "1727",
+    "slug": "Fiat-500e-Cabrio-24-kWh"
+  },
+  {
+    "id": "1743",
+    "slug": "Tesla-Model-Y-RWD"
+  },
+  {
+    "id": "1744",
+    "slug": "Peugeot-e-308"
+  },
+  {
+    "id": "1745",
+    "slug": "Peugeot-e-308-SW"
+  },
+  {
+    "id": "1746",
+    "slug": "Hongqi-E-HS9-84-kWh"
+  },
+  {
+    "id": "1747",
+    "slug": "Hongqi-E-HS9-99-kWh"
+  },
+  {
+    "id": "1748",
+    "slug": "Smart-1-Brabus"
+  },
+  {
+    "id": "1749",
+    "slug": "Kia-e-Soul-64-kWh"
+  },
+  {
+    "id": "1750",
+    "slug": "Kia-e-Soul-392-kWh"
+  },
+  {
+    "id": "1751",
+    "slug": "NIO-ET7-Standard-Range"
+  },
+  {
+    "id": "1752",
+    "slug": "NIO-ET7-Long-Range"
+  },
+  {
+    "id": "1753",
+    "slug": "Ford-Mustang-Mach-E-SR-RWD"
+  },
+  {
+    "id": "1754",
+    "slug": "Ford-Mustang-Mach-E-ER-RWD"
+  },
+  {
+    "id": "1755",
+    "slug": "Ford-Mustang-Mach-E-SR-AWD"
+  },
+  {
+    "id": "1756",
+    "slug": "Ford-Mustang-Mach-E-ER-AWD"
+  },
+  {
+    "id": "1757",
+    "slug": "Ford-Mustang-Mach-E-GT"
+  },
+  {
+    "id": "1758",
+    "slug": "Polestar-3-Long-Range-Dual-motor"
+  },
+  {
+    "id": "1759",
+    "slug": "Polestar-3-Long-Range-Performance"
+  },
+  {
+    "id": "1760",
+    "slug": "Mercedes-Benz-EQE-SUV-350plus"
+  },
+  {
+    "id": "1761",
+    "slug": "Mercedes-Benz-EQE-SUV-350-4MATIC"
+  },
+  {
+    "id": "1762",
+    "slug": "Mercedes-Benz-EQE-SUV-500-4MATIC"
+  },
+  {
+    "id": "1763",
+    "slug": "Mercedes-Benz-EQE-SUV-AMG-43-4MATIC"
+  },
+  {
+    "id": "1764",
+    "slug": "Mercedes-Benz-EQE-SUV-AMG-53-4MATICplus"
+  },
+  {
+    "id": "1765",
+    "slug": "Rolls-Royce-Spectre"
+  },
+  {
+    "id": "1766",
+    "slug": "Aiways-U6"
+  },
+  {
+    "id": "1767",
+    "slug": "Lotus-Eletre"
+  },
+  {
+    "id": "1768",
+    "slug": "Lotus-Eletre-R"
+  },
+  {
+    "id": "1769",
+    "slug": "Audi-Q8-SUV-e-tron-50-quattro"
+  },
+  {
+    "id": "1770",
+    "slug": "Audi-Q8-SUV-e-tron-55-quattro"
+  },
+  {
+    "id": "1771",
+    "slug": "Audi-Q8-Sportback-e-tron-50-quattro"
+  },
+  {
+    "id": "1772",
+    "slug": "Audi-Q8-Sportback-e-tron-55-quattro"
+  },
+  {
+    "id": "1773",
+    "slug": "Audi-SQ8-SUV-e-tron"
+  },
+  {
+    "id": "1774",
+    "slug": "Audi-SQ8-Sportback-e-tron"
+  },
+  {
+    "id": "1775",
+    "slug": "Volvo-EX90-Twin-Motor"
+  },
+  {
+    "id": "1776",
+    "slug": "Volvo-EX90-Twin-Motor-Performance"
+  },
+  {
+    "id": "1777",
+    "slug": "Polestar-2-Long-Range-Performance"
+  },
+  {
+    "id": "1778",
+    "slug": "Mercedes-Benz-EQB-250plus"
+  },
+  {
+    "id": "1779",
+    "slug": "Toyota-Proace-City-Verso-L1-50-kWh"
+  },
+  {
+    "id": "1780",
+    "slug": "Toyota-Proace-City-Verso-L2-50-kWh"
+  },
+  {
+    "id": "1781",
+    "slug": "ORA-Funky-Cat-48-kWh"
+  },
+  {
+    "id": "1782",
+    "slug": "BYD-ATTO-3"
+  },
+  {
+    "id": "1783",
+    "slug": "BYD-TANG"
+  },
+  {
+    "id": "1784",
+    "slug": "BYD-HAN"
+  },
+  {
+    "id": "1785",
+    "slug": "BMW-i4-eDrive35"
+  },
+  {
+    "id": "1786",
+    "slug": "NIO-ET5-Standard-Range"
+  },
+  {
+    "id": "1787",
+    "slug": "NIO-ET5-Long-Range"
+  },
+  {
+    "id": "1788",
+    "slug": "NIO-EL7-Standard-Range"
+  },
+  {
+    "id": "1789",
+    "slug": "NIO-EL7-Long-Range"
+  },
+  {
+    "id": "1790",
+    "slug": "Abarth-500e-Scorpionissima"
+  },
+  {
+    "id": "1791",
+    "slug": "DS-Automobiles-DS-3-E-Tense"
+  },
+  {
+    "id": "1792",
+    "slug": "Opel-Astra-Electric"
+  },
+  {
+    "id": "1793",
+    "slug": "Opel-Astra-Sports-Tourer-Electric"
+  },
+  {
+    "id": "1794",
+    "slug": "Jeep-Avenger-Electric-1st-Edition"
+  },
+  {
+    "id": "1795",
+    "slug": "Mercedes-Benz-EQS-SUV-500-4MATIC"
+  },
+  {
+    "id": "1796",
+    "slug": "Volvo-XC40-Recharge-Single-Motor"
+  },
+  {
+    "id": "1797",
+    "slug": "Volvo-XC40-Recharge-Single-Motor-ER"
+  },
+  {
+    "id": "1798",
+    "slug": "Volvo-XC40-Recharge-Twin-Motor"
+  },
+  {
+    "id": "1799",
+    "slug": "Volvo-C40-Recharge-Single-Motor"
+  },
+  {
+    "id": "1800",
+    "slug": "Volvo-C40-Recharge-Single-Motor-ER"
+  },
+  {
+    "id": "1801",
+    "slug": "Volvo-C40-Recharge-Twin-Motor"
+  },
+  {
+    "id": "1802",
+    "slug": "Renault-Kangoo-E-Tech-Electric"
+  },
+  {
+    "id": "1803",
+    "slug": "Maserati-GranTurismo-Folgore"
+  },
+  {
+    "id": "1804",
+    "slug": "Seres-3"
+  },
+  {
+    "id": "1807",
+    "slug": "VinFast-VF-8-Eco-Extended-Range"
+  },
+  {
+    "id": "1809",
+    "slug": "VinFast-VF-8-Plus-Extended-Range"
+  },
+  {
+    "id": "1812",
+    "slug": "Jaguar-I-Pace-EV400"
+  },
+  {
+    "id": "1813",
+    "slug": "Dacia-Spring-Electric-65-Extreme"
+  },
+  {
+    "id": "1814",
+    "slug": "ORA-Funky-Cat-63-kWh"
+  },
+  {
+    "id": "1815",
+    "slug": "ORA-Funky-Cat-GT"
+  },
+  {
+    "id": "1816",
+    "slug": "Jeep-Avenger-Electric"
+  },
+  {
+    "id": "1817",
+    "slug": "Polestar-2-Standard-Range-Single-Motor"
+  },
+  {
+    "id": "1818",
+    "slug": "Polestar-2-Long-Range-Single-Motor"
+  },
+  {
+    "id": "1819",
+    "slug": "Polestar-2-Long-Range-Dual-Motor"
+  },
+  {
+    "id": "1820",
+    "slug": "Polestar-2-Long-Range-Performance"
+  },
+  {
+    "id": "1821",
+    "slug": "XPENG-P7-RWD-Long-Range"
+  },
+  {
+    "id": "1822",
+    "slug": "XPENG-P7-AWD-Performance"
+  },
+  {
+    "id": "1823",
+    "slug": "XPENG-P7-Wing-Edition"
+  },
+  {
+    "id": "1824",
+    "slug": "XPENG-G9-RWD-Standard-Range"
+  },
+  {
+    "id": "1825",
+    "slug": "XPENG-G9-RWD-Long-Range"
+  },
+  {
+    "id": "1826",
+    "slug": "XPENG-G9-AWD-Performance"
+  },
+  {
+    "id": "1827",
+    "slug": "Mini-Cooper-SE-Convertible"
+  },
+  {
+    "id": "1828",
+    "slug": "Volkswagen-ID4-GTX"
+  },
+  {
+    "id": "1829",
+    "slug": "Hyundai-Kona-Electric-48-kWh"
+  },
+  {
+    "id": "1830",
+    "slug": "Hyundai-Kona-Electric-65-kWh"
+  },
+  {
+    "id": "1831",
+    "slug": "Volkswagen-ID3-Pro"
+  },
+  {
+    "id": "1832",
+    "slug": "Volkswagen-ID3-Pro-S---4-Seats"
+  },
+  {
+    "id": "1833",
+    "slug": "Kia-EV9-761-kWh-RWD"
+  },
+  {
+    "id": "1834",
+    "slug": "Kia-EV9-998-kWh-RWD"
+  },
+  {
+    "id": "1835",
+    "slug": "Kia-EV9-998-kWh-AWD"
+  },
+  {
+    "id": "1836",
+    "slug": "Peugeot-e-208-51-kWh"
+  },
+  {
+    "id": "1837",
+    "slug": "Maxus-MIFA-9"
+  },
+  {
+    "id": "1838",
+    "slug": "BMW-i7-M70-xDrive"
+  },
+  {
+    "id": "1839",
+    "slug": "Volkswagen-ID7-Pro"
+  },
+  {
+    "id": "1840",
+    "slug": "Volkswagen-ID7-Pro-S"
+  },
+  {
+    "id": "1841",
+    "slug": "Polestar-4-Long-Range-Single-Motor"
+  },
+  {
+    "id": "1842",
+    "slug": "Polestar-4-Long-Range-Dual-Motor"
+  },
+  {
+    "id": "1843",
+    "slug": "Maserati-Grecale-Folgore"
+  },
+  {
+    "id": "1896",
+    "slug": "eGO-ewave-X"
+  },
+  {
+    "id": "1897",
+    "slug": "Mercedes-Benz-EQE-300"
+  },
+  {
+    "id": "1898",
+    "slug": "Mercedes-Benz-EQE-350"
+  },
+  {
+    "id": "1899",
+    "slug": "Mercedes-Benz-EQE-350-4MATIC"
+  },
+  {
+    "id": "1900",
+    "slug": "Mercedes-Benz-EQE-500-4MATIC"
+  },
+  {
+    "id": "1901",
+    "slug": "Mercedes-Benz-EQE-AMG-43-4MATIC"
+  },
+  {
+    "id": "1902",
+    "slug": "Mercedes-Benz-EQE-AMG-53-4MATICplus"
+  },
+  {
+    "id": "1903",
+    "slug": "Abarth-500e-Hatchback"
+  },
+  {
+    "id": "1904",
+    "slug": "Abarth-500e-Convertible"
+  },
+  {
+    "id": "1905",
+    "slug": "BMW-i7-eDrive50"
+  },
+  {
+    "id": "1906",
+    "slug": "BMW-i5-eDrive40-Sedan"
+  },
+  {
+    "id": "1907",
+    "slug": "BMW-i5-M60-xDrive-Sedan"
+  },
+  {
+    "id": "1908",
+    "slug": "Mercedes-Benz-EQT-200-Standard"
+  },
+  {
+    "id": "1909",
+    "slug": "Volvo-EX30-Single-Motor"
+  },
+  {
+    "id": "1910",
+    "slug": "Volvo-EX30-Single-Motor-ER"
+  },
+  {
+    "id": "1911",
+    "slug": "Volvo-EX30-Twin-Motor-Performance"
+  },
+  {
+    "id": "1912",
+    "slug": "Volkswagen-ID5-Pro"
+  },
+  {
+    "id": "1913",
+    "slug": "Volkswagen-ID5-Pro-Performance"
+  },
+  {
+    "id": "1914",
+    "slug": "Volkswagen-ID5-GTX"
+  },
+  {
+    "id": "1915",
+    "slug": "NIO-ET5-Touring-Standard-Range"
+  },
+  {
+    "id": "1916",
+    "slug": "NIO-ET5-Touring-Long-Range"
+  },
+  {
+    "id": "1917",
+    "slug": "BYD-DOLPHIN-449-kWh-Active"
+  },
+  {
+    "id": "1918",
+    "slug": "BYD-DOLPHIN-449-kWh-Boost"
+  },
+  {
+    "id": "1919",
+    "slug": "BYD-DOLPHIN-604-kWh"
+  },
+  {
+    "id": "1920",
+    "slug": "Smart-1-Pulse"
+  },
+  {
+    "id": "1921",
+    "slug": "NIO-EL6-Standard-Range"
+  },
+  {
+    "id": "1922",
+    "slug": "NIO-EL6-Long-Range"
+  },
+  {
+    "id": "1923",
+    "slug": "Porsche-Taycan"
+  },
+  {
+    "id": "1924",
+    "slug": "Porsche-Taycan-Plus"
+  },
+  {
+    "id": "1925",
+    "slug": "Porsche-Taycan-4S"
+  },
+  {
+    "id": "1926",
+    "slug": "Porsche-Taycan-4S-Plus"
+  },
+  {
+    "id": "1927",
+    "slug": "Porsche-Taycan-Turbo"
+  },
+  {
+    "id": "1928",
+    "slug": "Porsche-Taycan-Turbo-S"
+  },
+  {
+    "id": "1929",
+    "slug": "Porsche-Taycan-4-Cross-Turismo"
+  },
+  {
+    "id": "1930",
+    "slug": "Porsche-Taycan-4S-Cross-Turismo"
+  },
+  {
+    "id": "1931",
+    "slug": "Porsche-Taycan-Turbo-Cross-Turismo"
+  },
+  {
+    "id": "1932",
+    "slug": "Porsche-Taycan-Turbo-S-Cross-Turismo"
+  },
+  {
+    "id": "1933",
+    "slug": "Zeekr-001-Long-Range-RWD"
+  },
+  {
+    "id": "1934",
+    "slug": "Zeekr-001-Performance-AWD"
+  },
+  {
+    "id": "1935",
+    "slug": "Zeekr-001-Privilege-AWD"
+  },
+  {
+    "id": "1936",
+    "slug": "Zeekr-X-Long-Range-RWD"
+  },
+  {
+    "id": "1937",
+    "slug": "Zeekr-X-Privilege-AWD"
+  },
+  {
+    "id": "1938",
+    "slug": "Citroen-e-C4-54-kWh"
+  },
+  {
+    "id": "1939",
+    "slug": "Citroen-e-C4-X-54-kWh"
+  },
+  {
+    "id": "1940",
+    "slug": "Honda-eNy1"
+  },
+  {
+    "id": "1941",
+    "slug": "Opel-Corsa-Electric-50-kWh"
+  },
+  {
+    "id": "1942",
+    "slug": "Opel-Corsa-Electric-51-kWh"
+  },
+  {
+    "id": "1943",
+    "slug": "Lexus-UX-300e"
+  },
+  {
+    "id": "1944",
+    "slug": "MG-MG4-Electric-XPOWER"
+  },
+  {
+    "id": "1945",
+    "slug": "Fiat-600e"
+  },
+  {
+    "id": "1946",
+    "slug": "Peugeot-e-2008-50-kWh"
+  },
+  {
+    "id": "1947",
+    "slug": "Peugeot-e-2008-54-kWh"
+  },
+  {
+    "id": "1948",
+    "slug": "Peugeot-e-208-50-kWh"
+  },
+  {
+    "id": "1949",
+    "slug": "Peugeot-e-208-51-kWh"
+  },
+  {
+    "id": "1950",
+    "slug": "Volvo-EX90-Single-Motor"
+  },
+  {
+    "id": "1971",
+    "slug": "CUPRA-Tavascan-Endurance"
+  },
+  {
+    "id": "1972",
+    "slug": "CUPRA-Tavascan-VZ"
+  },
+  {
+    "id": "1973",
+    "slug": "MG-MG4-Electric-77-kWh"
+  },
+  {
+    "id": "1974",
+    "slug": "Tesla-Model-Y-RWD"
+  },
+  {
+    "id": "1975",
+    "slug": "Elaris-BEO-86-kWh"
+  },
+  {
+    "id": "1976",
+    "slug": "Tesla-Model-3-Long-Range-RWD"
+  },
+  {
+    "id": "1984",
+    "slug": "Mercedes-Benz-EQA-250"
+  },
+  {
+    "id": "1985",
+    "slug": "Mercedes-Benz-EQA-250plus"
+  },
+  {
+    "id": "1986",
+    "slug": "Mercedes-Benz-EQA-300-4MATIC"
+  },
+  {
+    "id": "1987",
+    "slug": "Mercedes-Benz-EQA-350-4MATIC"
+  },
+  {
+    "id": "1988",
+    "slug": "Mercedes-Benz-EQB-250plus"
+  },
+  {
+    "id": "1989",
+    "slug": "Mercedes-Benz-EQB-300-4MATIC"
+  },
+  {
+    "id": "1990",
+    "slug": "Mercedes-Benz-EQB-350-4MATIC"
+  },
+  {
+    "id": "1991",
+    "slug": "Tesla-Model-3-RWD"
+  },
+  {
+    "id": "1992",
+    "slug": "Tesla-Model-3-Long-Range-AWD"
+  },
+  {
+    "id": "1993",
+    "slug": "Kia-EV9-998-kWh-AWD-GT-Line"
+  },
+  {
+    "id": "1994",
+    "slug": "Mini-Countryman-E"
+  },
+  {
+    "id": "1995",
+    "slug": "Mini-Countryman-SE-ALL4"
+  },
+  {
+    "id": "1996",
+    "slug": "BMW-iX1-eDrive20"
+  },
+  {
+    "id": "1997",
+    "slug": "Mini-Cooper-E"
+  },
+  {
+    "id": "1998",
+    "slug": "Mini-Cooper-SE"
+  },
+  {
+    "id": "1999",
+    "slug": "Smart-3-Proplus"
+  },
+  {
+    "id": "2000",
+    "slug": "Smart-3-Brabus"
+  },
+  {
+    "id": "2001",
+    "slug": "BYD-SEAL-825-kWh-RWD-Design"
+  },
+  {
+    "id": "2002",
+    "slug": "BYD-SEAL-825-kWh-AWD-Excellence"
+  },
+  {
+    "id": "2003",
+    "slug": "Peugeot-e-3008-73-kWh"
+  },
+  {
+    "id": "2004",
+    "slug": "Peugeot-e-3008-73-kWh-Dual-Motor"
+  },
+  {
+    "id": "2005",
+    "slug": "Peugeot-e-3008-97-kWh-Long-Range"
+  },
+  {
+    "id": "2006",
+    "slug": "Mercedes-Benz-EQE-350plus"
+  },
+  {
+    "id": "2007",
+    "slug": "Mercedes-Benz-EQE-SUV-300"
+  },
+  {
+    "id": "2008",
+    "slug": "Mercedes-Benz-EQS-450plus"
+  },
+  {
+    "id": "2009",
+    "slug": "Mercedes-Benz-EQS-450-4MATIC"
+  },
+  {
+    "id": "2010",
+    "slug": "Mercedes-Benz-EQS-500-4MATIC"
+  },
+  {
+    "id": "2011",
+    "slug": "Mercedes-Benz-EQS-580-4MATIC"
+  },
+  {
+    "id": "2012",
+    "slug": "Mercedes-Benz-EQS-AMG-53-4MATICplus"
+  },
+  {
+    "id": "2013",
+    "slug": "Audi-Q4-e-tron-45"
+  },
+  {
+    "id": "2014",
+    "slug": "Audi-Q4-e-tron-45-quattro"
+  },
+  {
+    "id": "2015",
+    "slug": "Audi-Q4-e-tron-55-quattro"
+  },
+  {
+    "id": "2016",
+    "slug": "Audi-Q4-Sportback-e-tron-45"
+  },
+  {
+    "id": "2017",
+    "slug": "Audi-Q4-Sportback-e-tron-45-quattro"
+  },
+  {
+    "id": "2018",
+    "slug": "Audi-Q4-Sportback-e-tron-55-quattro"
+  },
+  {
+    "id": "2019",
+    "slug": "Skoda-Enyaq-60"
+  },
+  {
+    "id": "2020",
+    "slug": "Skoda-Enyaq-85"
+  },
+  {
+    "id": "2021",
+    "slug": "Skoda-Enyaq-85x"
+  },
+  {
+    "id": "2022",
+    "slug": "Skoda-Enyaq-RS"
+  },
+  {
+    "id": "2023",
+    "slug": "Skoda-Enyaq-Coupe-60"
+  },
+  {
+    "id": "2024",
+    "slug": "Skoda-Enyaq-Coupe-85"
+  },
+  {
+    "id": "2025",
+    "slug": "Skoda-Enyaq-Coupe-85x"
+  },
+  {
+    "id": "2026",
+    "slug": "Skoda-Enyaq-Coupe-RS"
+  },
+  {
+    "id": "2027",
+    "slug": "Volkswagen-ID4-Pure"
+  },
+  {
+    "id": "2028",
+    "slug": "Volkswagen-ID4-Pro"
+  },
+  {
+    "id": "2029",
+    "slug": "Volkswagen-ID4-Pro-4MOTION"
+  },
+  {
+    "id": "2030",
+    "slug": "Volkswagen-ID4-GTX"
+  },
+  {
+    "id": "2031",
+    "slug": "Volkswagen-ID5-Pro"
+  },
+  {
+    "id": "2033",
+    "slug": "Volkswagen-ID5-GTX"
+  },
+  {
+    "id": "2034",
+    "slug": "Ford-Mustang-Mach-E-SR-RWD"
+  },
+  {
+    "id": "2035",
+    "slug": "Ford-Mustang-Mach-E-ER-RWD"
+  },
+  {
+    "id": "2036",
+    "slug": "Ford-Mustang-Mach-E-SR-AWD"
+  },
+  {
+    "id": "2037",
+    "slug": "Ford-Mustang-Mach-E-ER-AWD"
+  },
+  {
+    "id": "2038",
+    "slug": "Ford-Mustang-Mach-E-GT"
+  },
+  {
+    "id": "2039",
+    "slug": "Citroen-e-C3-Standard-Range-44-kWh"
+  },
+  {
+    "id": "2040",
+    "slug": "BMW-iX2-xDrive30"
+  },
+  {
+    "id": "2041",
+    "slug": "Smart-1-Pro"
+  },
+  {
+    "id": "2042",
+    "slug": "Nissan-Townstar-EV-Passenger"
+  },
+  {
+    "id": "2043",
+    "slug": "Renault-Kangoo-Grand-E-Tech-Electric"
+  },
+  {
+    "id": "2044",
+    "slug": "Hyundai-IONIQ-5-N"
+  },
+  {
+    "id": "2045",
+    "slug": "Mercedes-Benz-EQE-SUV-300"
+  },
+  {
+    "id": "2046",
+    "slug": "Mercedes-Benz-EQE-SUV-350plus"
+  },
+  {
+    "id": "2047",
+    "slug": "Mercedes-Benz-EQE-SUV-350-4MATIC"
+  },
+  {
+    "id": "2048",
+    "slug": "Mercedes-Benz-EQE-SUV-500-4MATIC"
+  },
+  {
+    "id": "2049",
+    "slug": "Voyah-Free-106-kWh"
+  },
+  {
+    "id": "2050",
+    "slug": "Hongqi-E-HS9-120-kWh"
+  },
+  {
+    "id": "2051",
+    "slug": "Opel-Mokka-e-54-kWh"
+  },
+  {
+    "id": "2052",
+    "slug": "Smart-3-Pro"
+  },
+  {
+    "id": "2053",
+    "slug": "Smart-1-Premium"
+  },
+  {
+    "id": "2054",
+    "slug": "Smart-3-Premium"
+  },
+  {
+    "id": "2066",
+    "slug": "Lotus-Eletre-S"
+  },
+  {
+    "id": "2067",
+    "slug": "BYD-SEAL-U-87-kWh-Design"
+  },
+  {
+    "id": "2068",
+    "slug": "Renault-Scenic-E-Tech-EV60-170hp"
+  },
+  {
+    "id": "2069",
+    "slug": "Renault-Scenic-E-Tech-EV87-220hp"
+  },
+  {
+    "id": "2083",
+    "slug": "Porsche-Macan-Electric"
+  },
+  {
+    "id": "2084",
+    "slug": "Porsche-Macan-4-Electric"
+  },
+  {
+    "id": "2085",
+    "slug": "Porsche-Macan-Turbo-Electric"
+  },
+  {
+    "id": "2086",
+    "slug": "Mercedes-Benz-EQS-SUV-Maybach-680"
+  },
+  {
+    "id": "2087",
+    "slug": "Mercedes-Benz-EQS-SUV-450plus"
+  },
+  {
+    "id": "2088",
+    "slug": "Mercedes-Benz-EQS-SUV-450-4MATIC"
+  },
+  {
+    "id": "2089",
+    "slug": "Mercedes-Benz-EQS-SUV-500-4MATIC"
+  },
+  {
+    "id": "2090",
+    "slug": "Mercedes-Benz-EQS-SUV-580-4MATIC"
+  },
+  {
+    "id": "2091",
+    "slug": "GWM-ORA-03-48-kWh"
+  },
+  {
+    "id": "2092",
+    "slug": "GWM-ORA-03-63-kWh"
+  },
+  {
+    "id": "2093",
+    "slug": "GWM-ORA-03-GT"
+  },
+  {
+    "id": "2094",
+    "slug": "BYD-SEAL-U-718-kWh-Comfort"
+  },
+  {
+    "id": "2095",
+    "slug": "BYD-TANG-Flagship"
+  },
+  {
+    "id": "2096",
+    "slug": "BMW-i5-xDrive40-Sedan"
+  },
+  {
+    "id": "2097",
+    "slug": "BMW-iX2-eDrive20"
+  },
+  {
+    "id": "2098",
+    "slug": "Porsche-Taycan"
+  },
+  {
+    "id": "2099",
+    "slug": "Porsche-Taycan-Plus"
+  },
+  {
+    "id": "2100",
+    "slug": "Porsche-Taycan-4S"
+  },
+  {
+    "id": "2101",
+    "slug": "Porsche-Taycan-4S-Plus"
+  },
+  {
+    "id": "2102",
+    "slug": "Porsche-Taycan-Turbo"
+  },
+  {
+    "id": "2103",
+    "slug": "Porsche-Taycan-Turbo-S"
+  },
+  {
+    "id": "2104",
+    "slug": "Porsche-Taycan-Sport-Turismo"
+  },
+  {
+    "id": "2105",
+    "slug": "Porsche-Taycan-Plus-Sport-Turismo"
+  },
+  {
+    "id": "2106",
+    "slug": "Porsche-Taycan-4S-Sport-Turismo"
+  },
+  {
+    "id": "2107",
+    "slug": "Porsche-Taycan-4S-Plus-Sport-Turismo"
+  },
+  {
+    "id": "2108",
+    "slug": "Porsche-Taycan-Turbo-Sport-Turismo"
+  },
+  {
+    "id": "2109",
+    "slug": "Porsche-Taycan-Turbo-S-Sport-Turismo"
+  },
+  {
+    "id": "2110",
+    "slug": "Porsche-Taycan-4-Cross-Turismo"
+  },
+  {
+    "id": "2111",
+    "slug": "Porsche-Taycan-4S-Cross-Turismo"
+  },
+  {
+    "id": "2112",
+    "slug": "Porsche-Taycan-Turbo-Cross-Turismo"
+  },
+  {
+    "id": "2113",
+    "slug": "Porsche-Taycan-Turbo-S-Cross-Turismo"
+  },
+  {
+    "id": "2114",
+    "slug": "BMW-i5-eDrive40-Touring"
+  },
+  {
+    "id": "2115",
+    "slug": "BMW-i5-M60-xDrive-Touring"
+  },
+  {
+    "id": "2116",
+    "slug": "Lucid-Air-Pure-RWD"
+  },
+  {
+    "id": "2117",
+    "slug": "Lancia-Ypsilon"
+  },
+  {
+    "id": "2118",
+    "slug": "Volkswagen-ID7-Tourer-Pro"
+  },
+  {
+    "id": "2119",
+    "slug": "Volkswagen-ID7-Tourer-Pro-S"
+  },
+  {
+    "id": "2120",
+    "slug": "Volvo-EX40-Single-Motor"
+  },
+  {
+    "id": "2121",
+    "slug": "Volvo-EX40-Single-Motor-ER"
+  },
+  {
+    "id": "2122",
+    "slug": "Volvo-EX40-Twin-Motor-Performance"
+  },
+  {
+    "id": "2123",
+    "slug": "Volvo-EC40-Single-Motor"
+  },
+  {
+    "id": "2124",
+    "slug": "Volvo-EC40-Single-Motor-ER"
+  },
+  {
+    "id": "2125",
+    "slug": "Volvo-EC40-Twin-Motor-Performance"
+  },
+  {
+    "id": "2126",
+    "slug": "Dacia-Spring-Electric-45"
+  },
+  {
+    "id": "2127",
+    "slug": "Dacia-Spring-Electric-65"
+  },
+  {
+    "id": "2128",
+    "slug": "CUPRA-Born-VZ"
+  },
+  {
+    "id": "2129",
+    "slug": "Mercedes-Benz-EQV-250-Long"
+  },
+  {
+    "id": "2130",
+    "slug": "Mercedes-Benz-EQV-250-Extra-Long"
+  },
+  {
+    "id": "2131",
+    "slug": "Mercedes-Benz-EQV-300-Long"
+  },
+  {
+    "id": "2133",
+    "slug": "Renault-5-E-Tech-40kWh-95hp"
+  },
+  {
+    "id": "2134",
+    "slug": "Renault-5-E-Tech-40kWh-120hp"
+  },
+  {
+    "id": "2135",
+    "slug": "Renault-5-E-Tech-52kWh-150hp"
+  },
+  {
+    "id": "2136",
+    "slug": "Volvo-EX40-Twin-Motor"
+  },
+  {
+    "id": "2137",
+    "slug": "Volvo-EC40-Twin-Motor"
+  },
+  {
+    "id": "2138",
+    "slug": "Mercedes-Benz-eVito-Tourer-Long-60-kWh"
+  },
+  {
+    "id": "2139",
+    "slug": "Mercedes-Benz-eVito-Tourer-Extra-Long-60-kWh"
+  },
+  {
+    "id": "2140",
+    "slug": "Mercedes-Benz-eVito-Tourer-Long-90-kWh"
+  },
+  {
+    "id": "2141",
+    "slug": "Lotus-Emeya"
+  },
+  {
+    "id": "2142",
+    "slug": "Lotus-Emeya-S"
+  },
+  {
+    "id": "2143",
+    "slug": "Lotus-Emeya-R"
+  },
+  {
+    "id": "2144",
+    "slug": "Porsche-Taycan-Turbo-GT"
+  },
+  {
+    "id": "2145",
+    "slug": "Porsche-Taycan-Turbo-GT-Weissach"
+  },
+  {
+    "id": "2146",
+    "slug": "Audi-Q6-SUV-e-tron-quattro"
+  },
+  {
+    "id": "2147",
+    "slug": "Audi-SQ6-SUV-e-tron"
+  },
+  {
+    "id": "2149",
+    "slug": "Peugeot-e-5008-73-kWh"
+  },
+  {
+    "id": "2150",
+    "slug": "Peugeot-e-5008-73-kWh-Dual-Motor"
+  },
+  {
+    "id": "2151",
+    "slug": "Peugeot-e-5008-97-kWh-Long-Range"
+  },
+  {
+    "id": "2152",
+    "slug": "Volkswagen-ID3-GTX"
+  },
+  {
+    "id": "2153",
+    "slug": "Volkswagen-ID3-GTX-Performance"
+  },
+  {
+    "id": "2154",
+    "slug": "Volkswagen-ID-Buzz-LWB-Pro"
+  },
+  {
+    "id": "2155",
+    "slug": "Mercedes-Benz-EQS-350"
+  },
+  {
+    "id": "2156",
+    "slug": "Volkswagen-ID-Buzz-NWB-GTX"
+  },
+  {
+    "id": "2157",
+    "slug": "Volkswagen-ID-Buzz-LWB-GTX-"
+  },
+  {
+    "id": "2158",
+    "slug": "Volkswagen-ID7-Tourer-GTX"
+  },
+  {
+    "id": "2159",
+    "slug": "Citroen-e-Berlingo-M-50-kWh"
+  },
+  {
+    "id": "2160",
+    "slug": "Citroen-e-Berlingo-XL-50-kWh"
+  },
+  {
+    "id": "2161",
+    "slug": "Opel-Combo-Electric-50-kWh"
+  },
+  {
+    "id": "2162",
+    "slug": "Opel-Combo-Electric-XL-50-kWh"
+  },
+  {
+    "id": "2163",
+    "slug": "Peugeot-e-Rifter-M-50-kWh"
+  },
+  {
+    "id": "2164",
+    "slug": "Peugeot-e-Rifter-XL-50-kWh"
+  },
+  {
+    "id": "2165",
+    "slug": "Toyota-Proace-City-Verso-L1-50-kWh"
+  },
+  {
+    "id": "2166",
+    "slug": "Toyota-Proace-City-Verso-L2-50-kWh"
+  },
+  {
+    "id": "2167",
+    "slug": "Ford-Explorer-Standard-Range-RWD"
+  },
+  {
+    "id": "2168",
+    "slug": "Ford-Explorer-Extended-Range-RWD"
+  },
+  {
+    "id": "2169",
+    "slug": "Ford-Explorer-Extended-Range-AWD"
+  },
+  {
+    "id": "2181",
+    "slug": "XPENG-G6-RWD-Standard-Range"
+  },
+  {
+    "id": "2182",
+    "slug": "XPENG-G6-RWD-Long-Range"
+  },
+  {
+    "id": "2183",
+    "slug": "XPENG-G6-AWD-Performance"
+  },
+  {
+    "id": "2184",
+    "slug": "Alfa-Romeo-Junior-Elettrica-54-kWh"
+  },
+  {
+    "id": "2185",
+    "slug": "Alfa-Romeo-Junior-Elettrica-54-kWh-Veloce"
+  },
+  {
+    "id": "2186",
+    "slug": "Tesla-Model-Y-Long-Range-RWD"
+  },
+  {
+    "id": "2187",
+    "slug": "Maserati-GranCabrio-Folgore"
+  },
+  {
+    "id": "2188",
+    "slug": "Tesla-Model-3-Performance"
+  },
+  {
+    "id": "2189",
+    "slug": "KGM-Torres-EVX"
+  },
+  {
+    "id": "2190",
+    "slug": "Mini-Aceman-E"
+  },
+  {
+    "id": "2191",
+    "slug": "Mini-Aceman-SE"
+  },
+  {
+    "id": "2192",
+    "slug": "Mercedes-Benz-G-580"
+  },
+  {
+    "id": "2193",
+    "slug": "Mercedes-Benz-EQS-450plus"
+  },
+  {
+    "id": "2194",
+    "slug": "Mercedes-Benz-EQS-450-4MATIC"
+  },
+  {
+    "id": "2195",
+    "slug": "Mercedes-Benz-EQS-500-4MATIC"
+  },
+  {
+    "id": "2196",
+    "slug": "Mercedes-Benz-EQS-580-4MATIC"
+  },
+  {
+    "id": "2197",
+    "slug": "Mercedes-Benz-EQS-AMG-53-4MATICplus"
+  },
+  {
+    "id": "2198",
+    "slug": "BMW-i4-eDrive35"
+  },
+  {
+    "id": "2199",
+    "slug": "BMW-i4-eDrive40"
+  },
+  {
+    "id": "2200",
+    "slug": "BMW-i4-xDrive40"
+  },
+  {
+    "id": "2201",
+    "slug": "BMW-i4-M50"
+  },
+  {
+    "id": "2202",
+    "slug": "MG-Cyberster-Trophy"
+  },
+  {
+    "id": "2203",
+    "slug": "MG-Cyberster-GT"
+  },
+  {
+    "id": "2204",
+    "slug": "Mercedes-Benz-EQE-300"
+  },
+  {
+    "id": "2205",
+    "slug": "Mercedes-Benz-EQE-350plus"
+  },
+  {
+    "id": "2206",
+    "slug": "Mercedes-Benz-EQE-350-4MATIC"
+  },
+  {
+    "id": "2207",
+    "slug": "Mercedes-Benz-EQE-500-4MATIC"
+  },
+  {
+    "id": "2208",
+    "slug": "Mercedes-Benz-EQE-AMG-43-4MATIC"
+  },
+  {
+    "id": "2209",
+    "slug": "Mercedes-Benz-EQE-AMG-53-4MATICplus"
+  },
+  {
+    "id": "2210",
+    "slug": "Volkswagen-ID3-Pro-S"
+  },
+  {
+    "id": "2211",
+    "slug": "Kia-EV3-Standard-Range"
+  },
+  {
+    "id": "2212",
+    "slug": "Kia-EV3-Long-Range"
+  },
+  {
+    "id": "2213",
+    "slug": "Volkswagen-ID3-Pro"
+  },
+  {
+    "id": "2214",
+    "slug": "Volkswagen-ID3-Pure"
+  },
+  {
+    "id": "2215",
+    "slug": "Audi-Q6-SUV-e-tron-performance"
+  },
+  {
+    "id": "2216",
+    "slug": "Volkswagen-ID7-GTX"
+  },
+  {
+    "id": "2217",
+    "slug": "Smart-1-Pure"
+  },
+  {
+    "id": "2218",
+    "slug": "Smart-1-Pureplus"
+  },
+  {
+    "id": "2219",
+    "slug": "Audi-S-e-tron-GT"
+  },
+  {
+    "id": "2220",
+    "slug": "Audi-RS-e-tron-GT"
+  },
+  {
+    "id": "2221",
+    "slug": "Audi-RS-e-tron-GT-performance"
+  },
+  {
+    "id": "2222",
+    "slug": "NIO-EL8-Standard-Range"
+  },
+  {
+    "id": "2223",
+    "slug": "NIO-EL8-Long-Range"
+  },
+  {
+    "id": "2224",
+    "slug": "Citroen-e-C3-Aircross-Comfort-Range-44-kWh"
+  },
+  {
+    "id": "2225",
+    "slug": "Polestar-2-Standard-Range-Single-Motor"
+  },
+  {
+    "id": "2226",
+    "slug": "Polestar-2-Long-Range-Single-Motor"
+  },
+  {
+    "id": "2227",
+    "slug": "Polestar-2-Long-Range-Dual-Motor"
+  },
+  {
+    "id": "2228",
+    "slug": "Polestar-2-Long-Range-Performance"
+  },
+  {
+    "id": "2229",
+    "slug": "Polestar-3-Long-Range-Single-motor"
+  },
+  {
+    "id": "2230",
+    "slug": "Hyundai-INSTER-Standard-Range"
+  },
+  {
+    "id": "2231",
+    "slug": "Hyundai-INSTER-Long-Range"
+  },
+  {
+    "id": "2232",
+    "slug": "Volkswagen-ID-Buzz-NWB-Pro"
+  },
+  {
+    "id": "2233",
+    "slug": "CUPRA-Born-170-kW---59-kWh"
+  },
+  {
+    "id": "2234",
+    "slug": "CUPRA-Born-170-kW---77-kWh"
+  },
+  {
+    "id": "2235",
+    "slug": "Hyundai-IONIQ-5-63-kWh-RWD"
+  },
+  {
+    "id": "2236",
+    "slug": "Hyundai-IONIQ-5-84-kWh-RWD"
+  },
+  {
+    "id": "2237",
+    "slug": "Hyundai-IONIQ-5-84-kWh-AWD"
+  },
+  {
+    "id": "2238",
+    "slug": "Opel-Frontera-Electric-44-kWh"
+  },
+  {
+    "id": "2239",
+    "slug": "Mercedes-Benz-EQT-200-Long"
+  },
+  {
+    "id": "2240",
+    "slug": "Ford-Capri-Standard-Range-RWD"
+  },
+  {
+    "id": "2241",
+    "slug": "Ford-Capri-Extended-Range-RWD"
+  },
+  {
+    "id": "2242",
+    "slug": "Ford-Capri-Extended-Range-AWD"
+  },
+  {
+    "id": "2243",
+    "slug": "Cadillac-LYRIQ-600-E4"
+  },
+  {
+    "id": "2244",
+    "slug": "Porsche-Macan-4S-Electric"
+  },
+  {
+    "id": "2245",
+    "slug": "GWM-ORA-07-Pure"
+  },
+  {
+    "id": "2246",
+    "slug": "GWM-ORA-07-Pro"
+  },
+  {
+    "id": "2247",
+    "slug": "GWM-ORA-07-GT"
+  },
+  {
+    "id": "2248",
+    "slug": "Audi-Q4-e-tron-35"
+  },
+  {
+    "id": "2249",
+    "slug": "Audi-Q4-Sportback-e-tron-35"
+  },
+  {
+    "id": "2250",
+    "slug": "Skoda-Enyaq-50"
+  },
+  {
+    "id": "2251",
+    "slug": "Fiat-Grande-Panda"
+  },
+  {
+    "id": "2252",
+    "slug": "Citroen-e-SpaceTourer-M-50-kWh"
+  },
+  {
+    "id": "2253",
+    "slug": "Citroen-e-SpaceTourer-XL-50-kWh"
+  },
+  {
+    "id": "2254",
+    "slug": "Citroen-e-SpaceTourer-M-75-kWh"
+  },
+  {
+    "id": "2255",
+    "slug": "Citroen-e-SpaceTourer-XL-75-kWh"
+  },
+  {
+    "id": "2256",
+    "slug": "Peugeot-e-Traveller-L2-50-kWh"
+  },
+  {
+    "id": "2257",
+    "slug": "Peugeot-e-Traveller-L3-50-kWh"
+  },
+  {
+    "id": "2258",
+    "slug": "Peugeot-e-Traveller-L2-75-kWh"
+  },
+  {
+    "id": "2259",
+    "slug": "Peugeot-e-Traveller-L3-75-kWh"
+  },
+  {
+    "id": "2260",
+    "slug": "Opel-Zafira-Electric-50-kWh"
+  },
+  {
+    "id": "2261",
+    "slug": "Opel-Zafira-Electric-XL-50-kWh"
+  },
+  {
+    "id": "2262",
+    "slug": "Opel-Zafira-Electric-75-kWh"
+  },
+  {
+    "id": "2263",
+    "slug": "Opel-Zafira-Electric-XL-75-kWh"
+  },
+  {
+    "id": "2264",
+    "slug": "Toyota-Proace-Verso-M-50-kWh"
+  },
+  {
+    "id": "2266",
+    "slug": "Toyota-Proace-Verso-M-75-kWh"
+  },
+  {
+    "id": "2267",
+    "slug": "Toyota-Proace-Verso-L-75-kWh"
+  },
+  {
+    "id": "2268",
+    "slug": "Alpine-A290-Electric-180-hp"
+  },
+  {
+    "id": "2269",
+    "slug": "Alpine-A290-Electric-220-hp"
+  },
+  {
+    "id": "2270",
+    "slug": "Audi-A6-Sportback-e-tron-performance"
+  },
+  {
+    "id": "2271",
+    "slug": "Audi-S6-Sportback-e-tron"
+  },
+  {
+    "id": "2272",
+    "slug": "Audi-A6-Avant-e-tron-performance"
+  },
+  {
+    "id": "2273",
+    "slug": "Audi-S6-Avant-e-tron"
+  },
+  {
+    "id": "2274",
+    "slug": "Mercedes-Benz-EQV-300-Extra-Long"
+  },
+  {
+    "id": "2275",
+    "slug": "Ford-Mustang-Mach-E-Rally"
+  },
+  {
+    "id": "2276",
+    "slug": "Ford-Mustang-Mach-E-SR-AWD"
+  },
+  {
+    "id": "2277",
+    "slug": "Ford-Mustang-Mach-E-SR-RWD"
+  },
+  {
+    "id": "2278",
+    "slug": "Ford-Mustang-Mach-E-ER-RWD"
+  },
+  {
+    "id": "2279",
+    "slug": "Ford-Mustang-Mach-E-ER-AWD"
+  },
+  {
+    "id": "2280",
+    "slug": "Ford-Mustang-Mach-E-GT"
+  },
+  {
+    "id": "2281",
+    "slug": "Audi-Q6-SUV-e-tron"
+  },
+  {
+    "id": "3027",
+    "slug": "Lexus-RZ-300e"
+  },
+  {
+    "id": "3028",
+    "slug": "Kia-EV6-Long-Range-2WD"
+  },
+  {
+    "id": "3029",
+    "slug": "Kia-EV6-Long-Range-AWD"
+  },
+  {
+    "id": "3030",
+    "slug": "Kia-EV6-Standard-Range-2WD"
+  },
+  {
+    "id": "3031",
+    "slug": "Skoda-Elroq-50"
+  },
+  {
+    "id": "3032",
+    "slug": "Skoda-Elroq-60"
+  },
+  {
+    "id": "3033",
+    "slug": "Skoda-Elroq-85"
+  },
+  {
+    "id": "3034",
+    "slug": "Tesla-Model-3-Long-Range-RWD"
+  },
+  {
+    "id": "3035",
+    "slug": "Dongfeng-Box-314-kWh"
+  },
+  {
+    "id": "3036",
+    "slug": "Dongfeng-Box-423-kWh"
+  },
+  {
+    "id": "3037",
+    "slug": "Opel-Grandland-Electric-73-kWh"
+  },
+  {
+    "id": "3038",
+    "slug": "Opel-Grandland-Electric-82-kWh"
+  },
+  {
+    "id": "3039",
+    "slug": "Leapmotor-T03"
+  },
+  {
+    "id": "3040",
+    "slug": "Leapmotor-C10-RWD-699-kWh"
+  },
+  {
+    "id": "3041",
+    "slug": "Audi-Q6-Sportback-e-tron"
+  },
+  {
+    "id": "3042",
+    "slug": "Audi-Q6-Sportback-e-tron-performance"
+  },
+  {
+    "id": "3043",
+    "slug": "Audi-Q6-Sportback-e-tron-quattro"
+  },
+  {
+    "id": "3044",
+    "slug": "Audi-SQ6-Sportback-e-tron"
+  },
+  {
+    "id": "3045",
+    "slug": "LynkCo-02"
+  },
+  {
+    "id": "3046",
+    "slug": "Omoda-E5"
+  },
+  {
+    "id": "3047",
+    "slug": "Citroen-e-C4"
+  },
+  {
+    "id": "3048",
+    "slug": "Citroen-e-C4-54-kWh"
+  },
+  {
+    "id": "3049",
+    "slug": "Citroen-e-C4-X"
+  },
+  {
+    "id": "3050",
+    "slug": "Citroen-e-C4-X-54-kWh"
+  },
+  {
+    "id": "3051",
+    "slug": "Opel-Mokka-Electric"
+  },
+  {
+    "id": "3052",
+    "slug": "Audi-A6-Sportback-e-tron-quattro"
+  },
+  {
+    "id": "3053",
+    "slug": "Audi-A6-Sportback-e-tron"
+  },
+  {
+    "id": "3054",
+    "slug": "Audi-A6-Avant-e-tron-quattro"
+  },
+  {
+    "id": "3055",
+    "slug": "Audi-A6-Avant-e-tron"
+  },
+  {
+    "id": "3056",
+    "slug": "Abarth-600e-Turismo"
+  },
+  {
+    "id": "3057",
+    "slug": "Abarth-600e-Scorpionissima"
+  },
+  {
+    "id": "3058",
+    "slug": "Mini-Cooper-JCW"
+  },
+  {
+    "id": "3059",
+    "slug": "Mini-Aceman-JCW"
+  },
+  {
+    "id": "3060",
+    "slug": "Porsche-Taycan-4"
+  },
+  {
+    "id": "3061",
+    "slug": "Porsche-Taycan-4-Plus"
+  },
+  {
+    "id": "3062",
+    "slug": "Porsche-Taycan-GTS"
+  },
+  {
+    "id": "3063",
+    "slug": "Porsche-Taycan-GTS-Sport-Turismo"
+  },
+  {
+    "id": "3064",
+    "slug": "Skywell-BE11-Standard-Range"
+  },
+  {
+    "id": "3065",
+    "slug": "Skywell-BE11-Long-Range"
+  },
+  {
+    "id": "3066",
+    "slug": "Peugeot-e-408-58-kWh"
+  },
+  {
+    "id": "3067",
+    "slug": "Hyundai-IONIQ-9-Long-Range-RWD"
+  },
+  {
+    "id": "3068",
+    "slug": "Hyundai-IONIQ-9-Long-Range-AWD"
+  },
+  {
+    "id": "3069",
+    "slug": "Hyundai-IONIQ-9-Performance-AWD"
+  },
+  {
+    "id": "3070",
+    "slug": "BYD-SEALION-7-825-kWh-RWD-Comfort"
+  },
+  {
+    "id": "3071",
+    "slug": "BYD-SEALION-7-825-kWh-AWD-Design"
+  },
+  {
+    "id": "3072",
+    "slug": "BYD-SEALION-7-913-kWh-AWD-Excellence"
+  },
+  {
+    "id": "3073",
+    "slug": "Ford-Puma-Gen-E"
+  },
+  {
+    "id": "3074",
+    "slug": "Nissan-Ariya-e-4ORCE-87kWh---320-kW-Nismo"
+  },
+  {
+    "id": "3075",
+    "slug": "BMW-i5-xDrive40-Touring"
+  },
+  {
+    "id": "3076",
+    "slug": "DS-Automobiles-N8-FWD"
+  },
+  {
+    "id": "3077",
+    "slug": "DS-Automobiles-N8-FWD-Long-Range"
+  },
+  {
+    "id": "3078",
+    "slug": "DS-Automobiles-N8-AWD-Long-Range"
+  },
+  {
+    "id": "3079",
+    "slug": "Kia-EV6-GT"
+  },
+  {
+    "id": "3080",
+    "slug": "Volkswagen-ID5-Pure"
+  },
+  {
+    "id": "3081",
+    "slug": "Zeekr-7X-Core-RWD"
+  },
+  {
+    "id": "3082",
+    "slug": "Zeekr-7X-Long-Range-RWD"
+  },
+  {
+    "id": "3083",
+    "slug": "Zeekr-7X-Privilege-AWD"
+  },
+  {
+    "id": "3084",
+    "slug": "Nissan-Townstar-EV-Passenger-L2"
+  },
+  {
+    "id": "3096",
+    "slug": "Skoda-Enyaq-60"
+  },
+  {
+    "id": "3097",
+    "slug": "Skoda-Enyaq-85"
+  },
+  {
+    "id": "3098",
+    "slug": "Skoda-Enyaq-85x"
+  },
+  {
+    "id": "3099",
+    "slug": "Skoda-Enyaq-Coupe-60"
+  },
+  {
+    "id": "3100",
+    "slug": "Skoda-Enyaq-Coupe-85"
+  },
+  {
+    "id": "3101",
+    "slug": "Skoda-Enyaq-Coupe-85x"
+  },
+  {
+    "id": "3102",
+    "slug": "BYD-SEAL-614-kWh-RWD-Comfort"
+  },
+  {
+    "id": "3103",
+    "slug": "Tesla-Model-Y-RWD"
+  },
+  {
+    "id": "3104",
+    "slug": "Tesla-Model-Y-Long-Range-AWD"
+  },
+  {
+    "id": "3105",
+    "slug": "Ford-Explorer-Extended-Range-RWD"
+  },
+  {
+    "id": "3106",
+    "slug": "Tesla-Model-Y-Long-Range-AWD-Launch-Series"
+  },
+  {
+    "id": "3107",
+    "slug": "Mazda-6e-688-kWh"
+  },
+  {
+    "id": "3108",
+    "slug": "Mazda-6e-Long-Range-80-kWh"
+  },
+  {
+    "id": "3109",
+    "slug": "BMW-iX-xDrive45"
+  },
+  {
+    "id": "3110",
+    "slug": "BMW-iX-xDrive60"
+  },
+  {
+    "id": "3111",
+    "slug": "BMW-iX-M70-xDrive"
+  },
+  {
+    "id": "3112",
+    "slug": "BMW-i5-eDrive40-Sedan"
+  },
+  {
+    "id": "3113",
+    "slug": "BMW-i5-xDrive40-Sedan"
+  },
+  {
+    "id": "3114",
+    "slug": "BMW-i5-M60-xDrive-Sedan"
+  },
+  {
+    "id": "3115",
+    "slug": "BMW-i5-eDrive40-Touring"
+  },
+  {
+    "id": "3116",
+    "slug": "BMW-i5-xDrive40-Touring"
+  },
+  {
+    "id": "3117",
+    "slug": "BMW-i5-M60-xDrive-Touring"
+  },
+  {
+    "id": "3118",
+    "slug": "Volvo-EX30-Cross-Country"
+  },
+  {
+    "id": "3119",
+    "slug": "Volkswagen-ID-Buzz-NWB-Pure"
+  },
+  {
+    "id": "3120",
+    "slug": "Tesla-Model-Y-Long-Range-RWD"
+  },
+  {
+    "id": "3121",
+    "slug": "Kia-EV4-Fastback-583-kWh"
+  },
+  {
+    "id": "3122",
+    "slug": "Kia-EV4-Fastback-814-kWh"
+  },
+  {
+    "id": "3123",
+    "slug": "Kia-EV4-Hatchback-583-kWh"
+  },
+  {
+    "id": "3124",
+    "slug": "Kia-EV4-Hatchback-814-kWh"
+  },
+  {
+    "id": "3125",
+    "slug": "BYD-ATTO-2-4512-kWh"
+  },
+  {
+    "id": "3126",
+    "slug": "Renault-4-E-Tech-40kWh-120hp"
+  },
+  {
+    "id": "3127",
+    "slug": "Renault-4-E-Tech-52kWh-150hp"
+  },
+  {
+    "id": "3128",
+    "slug": "Volvo-ES90-Single-Motor"
+  },
+  {
+    "id": "3129",
+    "slug": "Volvo-ES90-Twin-Motor"
+  },
+  {
+    "id": "3130",
+    "slug": "Volvo-ES90-Twin-Motor-Performance"
+  },
+  {
+    "id": "3131",
+    "slug": "Renault-Megane-E-Tech-EV60-130hp"
+  },
+  {
+    "id": "3132",
+    "slug": "Renault-Megane-E-Tech-EV60-220hp"
+  },
+  {
+    "id": "3133",
+    "slug": "Toyota-bZ4X-FWD-577-kWh"
+  },
+  {
+    "id": "3134",
+    "slug": "Toyota-bZ4X-FWD-731-kWh"
+  },
+  {
+    "id": "3135",
+    "slug": "Toyota-bZ4X-AWD-731-kWh"
+  },
+  {
+    "id": "3136",
+    "slug": "Voyah-Courage-80-kWh-RWD"
+  },
+  {
+    "id": "3137",
+    "slug": "Voyah-Courage-80-kWh-AWD"
+  },
+  {
+    "id": "3138",
+    "slug": "Hongqi-EH7-111-kWh-Long-Range"
+  },
+  {
+    "id": "3139",
+    "slug": "Mercedes-Benz-CLA-250plus"
+  },
+  {
+    "id": "3140",
+    "slug": "Mercedes-Benz-CLA-350-4MATIC"
+  },
+  {
+    "id": "3141",
+    "slug": "Smart-5-Pro"
+  },
+  {
+    "id": "3142",
+    "slug": "Smart-5-Proplus"
+  },
+  {
+    "id": "3143",
+    "slug": "Smart-5-Premium"
+  },
+  {
+    "id": "3144",
+    "slug": "Smart-5-Pulse"
+  },
+  {
+    "id": "3145",
+    "slug": "Smart-5-Summit-Edition"
+  },
+  {
+    "id": "3146",
+    "slug": "MG-MGS5-EV-49-kWh"
+  },
+  {
+    "id": "3147",
+    "slug": "MG-MGS5-EV-64-kWh"
+  },
+  {
+    "id": "3148",
+    "slug": "Audi-Q4-e-tron-40"
+  },
+  {
+    "id": "3149",
+    "slug": "Audi-Q4-Sportback-e-tron-40"
+  },
+  {
+    "id": "3150",
+    "slug": "Polestar-2-Standard-Range-Single-Motor"
+  },
+  {
+    "id": "3151",
+    "slug": "Polestar-2-Long-Range-Single-Motor"
+  },
+  {
+    "id": "3152",
+    "slug": "Polestar-2-Long-Range-Dual-Motor"
+  },
+  {
+    "id": "3153",
+    "slug": "Polestar-2-Long-Range-Performance"
+  },
+  {
+    "id": "3154",
+    "slug": "Volvo-EC40-Single-Motor"
+  },
+  {
+    "id": "3155",
+    "slug": "Volvo-EC40-Single-Motor-ER"
+  },
+  {
+    "id": "3156",
+    "slug": "Volvo-EC40-Twin-Motor"
+  },
+  {
+    "id": "3157",
+    "slug": "Volvo-EC40-Twin-Motor-Performance"
+  },
+  {
+    "id": "3158",
+    "slug": "Volvo-EX40-Single-Motor"
+  },
+  {
+    "id": "3159",
+    "slug": "Volvo-EX40-Single-Motor-ER"
+  },
+  {
+    "id": "3160",
+    "slug": "Volvo-EX40-Twin-Motor"
+  },
+  {
+    "id": "3161",
+    "slug": "Volvo-EX40-Twin-Motor-Performance"
+  },
+  {
+    "id": "3162",
+    "slug": "Ford-e-Tourneo-Custom-L1-160-kW"
+  },
+  {
+    "id": "3163",
+    "slug": "Ford-e-Tourneo-Custom-L1-210-kW"
+  },
+  {
+    "id": "3164",
+    "slug": "Ford-e-Tourneo-Custom-L2-160-kW"
+  },
+  {
+    "id": "3165",
+    "slug": "Ford-e-Tourneo-Custom-L2-210-kW"
+  },
+  {
+    "id": "3166",
+    "slug": "Ford-e-Tourneo-Courier"
+  },
+  {
+    "id": "3178",
+    "slug": "firefly-firefly"
+  },
+  {
+    "id": "3179",
+    "slug": "Smart-5-Brabus"
+  },
+  {
+    "id": "3181",
+    "slug": "Jeep-Compass-Electric-74-kWh"
+  },
+  {
+    "id": "3182",
+    "slug": "Audi-e-tron-GT-quattro"
+  },
+  {
+    "id": "3183",
+    "slug": "Skoda-Elroq-RS"
+  },
+  {
+    "id": "3184",
+    "slug": "Skoda-Enyaq-RS"
+  },
+  {
+    "id": "3185",
+    "slug": "Skoda-Enyaq-Coupe-RS"
+  },
+  {
+    "id": "3186",
+    "slug": "Tesla-Model-3-RWD"
+  },
+  {
+    "id": "3187",
+    "slug": "Ford-Mustang-Mach-E-SR-RWD"
+  },
+  {
+    "id": "3188",
+    "slug": "Ford-Mustang-Mach-E-ER-RWD"
+  },
+  {
+    "id": "3189",
+    "slug": "Ford-Mustang-Mach-E-ER-AWD"
+  },
+  {
+    "id": "3190",
+    "slug": "Ford-Mustang-Mach-E-GT"
+  },
+  {
+    "id": "3191",
+    "slug": "Ford-Mustang-Mach-E-Rally"
+  },
+  {
+    "id": "3192",
+    "slug": "BYD-ATTO-3"
+  },
+  {
+    "id": "3193",
+    "slug": "BYD-DOLPHIN-SURF-30-kWh-Active"
+  },
+  {
+    "id": "3194",
+    "slug": "BYD-DOLPHIN-SURF-432-kWh-Boost"
+  },
+  {
+    "id": "3195",
+    "slug": "BYD-DOLPHIN-SURF-432-kWh-Comfort"
+  },
+  {
+    "id": "3196",
+    "slug": "Kia-EV9-998-kWh-AWD-GT"
+  },
+  {
+    "id": "3197",
+    "slug": "Zeekr-X-Core-RWD"
+  },
+  {
+    "id": "3198",
+    "slug": "Zeekr-X-Long-Range-RWD"
+  },
+  {
+    "id": "3199",
+    "slug": "Zeekr-X-Privilege-AWD"
+  },
+  {
+    "id": "3200",
+    "slug": "DS-Automobiles-N4-E-Tense"
+  },
+  {
+    "id": "3201",
+    "slug": "Opel-Grandland-Electric-73-kWh-AWD"
+  },
+  {
+    "id": "3202",
+    "slug": "Nissan-Micra-Standard-Range-40-kWh"
+  },
+  {
+    "id": "3203",
+    "slug": "Nissan-Micra-Extended-Range-52-kWh"
+  },
+  {
+    "id": "3204",
+    "slug": "BMW-i4-eDrive35"
+  },
+  {
+    "id": "3205",
+    "slug": "BMW-i4-eDrive40"
+  },
+  {
+    "id": "3206",
+    "slug": "BMW-i4-xDrive40"
+  },
+  {
+    "id": "3207",
+    "slug": "BMW-i4-M60-xDrive"
+  },
+  {
+    "id": "3208",
+    "slug": "Toyota-Urban-Cruiser-488-kWh"
+  },
+  {
+    "id": "3209",
+    "slug": "Toyota-Urban-Cruiser-611-kWh"
+  },
+  {
+    "id": "3210",
+    "slug": "Toyota-Urban-Cruiser-611-kWh-AWD"
+  },
+  {
+    "id": "3211",
+    "slug": "Suzuki-e-VITARA-49-kWh-2WD"
+  },
+  {
+    "id": "3212",
+    "slug": "Suzuki-e-VITARA-61-kWh-2WD"
+  },
+  {
+    "id": "3213",
+    "slug": "Suzuki-e-VITARA-61-kWh-4WD-AllGrip"
+  },
+  {
+    "id": "3214",
+    "slug": "Lotus-Emeya-600"
+  },
+  {
+    "id": "3215",
+    "slug": "Lotus-Emeya-900"
+  },
+  {
+    "id": "3216",
+    "slug": "Lotus-Eletre-600"
+  },
+  {
+    "id": "3217",
+    "slug": "Lotus-Eletre-900"
+  },
+  {
+    "id": "3218",
+    "slug": "Renault-Scenic-E-Tech-EV60-170hp"
+  },
+  {
+    "id": "3219",
+    "slug": "Renault-Scenic-E-Tech-EV87-220hp"
+  },
+  {
+    "id": "3220",
+    "slug": "Opel-Corsa-Electric-50-kWh"
+  },
+  {
+    "id": "3221",
+    "slug": "Opel-Corsa-Electric-54-kWh"
+  },
+  {
+    "id": "3222",
+    "slug": "Peugeot-e-208-50-kWh"
+  },
+  {
+    "id": "3223",
+    "slug": "Peugeot-e-208-54-kWh"
+  },
+  {
+    "id": "3224",
+    "slug": "Lancia-Ypsilon-54-kWh"
+  },
+  {
+    "id": "3225",
+    "slug": "Lancia-Ypsilon-54-kWh-HF"
+  },
+  {
+    "id": "3226",
+    "slug": "KGM-Musso-EV-2WD"
+  },
+  {
+    "id": "3227",
+    "slug": "KGM-Musso-EV-4WD"
+  },
+  {
+    "id": "3228",
+    "slug": "Citroen-e-C3-Aircross-Extended-Range-54-kWh"
+  },
+  {
+    "id": "3229",
+    "slug": "Opel-Frontera-Electric-54-kWh"
+  },
+  {
+    "id": "3230",
+    "slug": "Citroen-C5-Aircross-Comfort-Range"
+  },
+  {
+    "id": "3231",
+    "slug": "Citroen-C5-Aircross-Long-Range"
+  },
+  {
+    "id": "3232",
+    "slug": "Leapmotor-B10-562-kWh"
+  },
+  {
+    "id": "3233",
+    "slug": "Leapmotor-B10-671-kWh"
+  },
+  {
+    "id": "3234",
+    "slug": "Genesis-GV60-Pure"
+  },
+  {
+    "id": "3235",
+    "slug": "Genesis-GV60-Sport"
+  },
+  {
+    "id": "3236",
+    "slug": "Genesis-GV60-Performance"
+  },
+  {
+    "id": "3237",
+    "slug": "Genesis-GV70-Electrified"
+  },
+  {
+    "id": "3238",
+    "slug": "Genesis-G80-Electrified"
+  },
+  {
+    "id": "3239",
+    "slug": "Mercedes-Benz-EQE-300"
+  },
+  {
+    "id": "3240",
+    "slug": "Mercedes-Benz-EQE-350plus"
+  },
+  {
+    "id": "3241",
+    "slug": "Mercedes-Benz-EQE-350-4MATIC"
+  },
+  {
+    "id": "3242",
+    "slug": "Mercedes-Benz-EQE-500-4MATIC"
+  },
+  {
+    "id": "3243",
+    "slug": "Mercedes-Benz-EQE-AMG-53-4MATICplus"
+  },
+  {
+    "id": "3244",
+    "slug": "MG-IM5-Standard-Range"
+  },
+  {
+    "id": "3245",
+    "slug": "MG-IM5-Long-Range"
+  },
+  {
+    "id": "3246",
+    "slug": "MG-IM5-Performance"
+  },
+  {
+    "id": "3247",
+    "slug": "MG-IM6-Long-Range"
+  },
+  {
+    "id": "3248",
+    "slug": "MG-IM6-Performance"
+  },
+  {
+    "id": "3249",
+    "slug": "Volkswagen-ID4-Pure"
+  },
+  {
+    "id": "3250",
+    "slug": "Volkswagen-ID4-Pro"
+  },
+  {
+    "id": "3251",
+    "slug": "Volkswagen-ID4-Pro-4MOTION"
+  },
+  {
+    "id": "3252",
+    "slug": "Volkswagen-ID4-GTX"
+  },
+  {
+    "id": "3253",
+    "slug": "Volkswagen-ID5-Pure"
+  },
+  {
+    "id": "3254",
+    "slug": "Volkswagen-ID5-Pro"
+  },
+  {
+    "id": "3255",
+    "slug": "Volkswagen-ID5-GTX"
+  },
+  {
+    "id": "3256",
+    "slug": "Volkswagen-ID7-Pro"
+  },
+  {
+    "id": "3257",
+    "slug": "Volkswagen-ID7-Pro-S"
+  },
+  {
+    "id": "3258",
+    "slug": "Volkswagen-ID7-GTX"
+  },
+  {
+    "id": "3259",
+    "slug": "Volkswagen-ID7-Tourer-Pro"
+  },
+  {
+    "id": "3260",
+    "slug": "Volkswagen-ID7-Tourer-Pro-S"
+  },
+  {
+    "id": "3261",
+    "slug": "Volkswagen-ID7-Tourer-GTX"
+  },
+  {
+    "id": "3262",
+    "slug": "CUPRA-Born-150-kW---59-kWh"
+  },
+  {
+    "id": "3263",
+    "slug": "CUPRA-Born-170-kW---79-kWh"
+  },
+  {
+    "id": "3264",
+    "slug": "Hongqi-E-HS7-111-kWh-Long-Range"
+  },
+  {
+    "id": "3265",
+    "slug": "Hongqi-E-HS7-111-kWh-AWD-Pro"
+  },
+  {
+    "id": "3266",
+    "slug": "Cadillac-LYRIQ-V"
+  },
+  {
+    "id": "3267",
+    "slug": "Cadillac-VISTIQ-900-E4"
+  },
+  {
+    "id": "3268",
+    "slug": "BYD-ATTO-2-648-kWh"
+  },
+  {
+    "id": "3269",
+    "slug": "Tesla-Model-Y-Performance"
+  },
+  {
+    "id": "3270",
+    "slug": "Lucid-Air-Touring"
+  },
+  {
+    "id": "3271",
+    "slug": "Lucid-Air-Pure-RWD"
+  },
+  {
+    "id": "3272",
+    "slug": "Lucid-Air-Touring"
+  },
+  {
+    "id": "3273",
+    "slug": "Lucid-Air-Grand-Touring"
+  },
+  {
+    "id": "3274",
+    "slug": "Lucid-Air-Sapphire"
+  },
+  {
+    "id": "3275",
+    "slug": "XPENG-G6-RWD-Long-Range"
+  },
+  {
+    "id": "3276",
+    "slug": "XPENG-G6-AWD-Performance"
+  },
+  {
+    "id": "3277",
+    "slug": "XPENG-G9-RWD-Standard-Range"
+  },
+  {
+    "id": "3278",
+    "slug": "XPENG-G9-RWD-Long-Range"
+  },
+  {
+    "id": "3279",
+    "slug": "XPENG-G9-AWD-Performance"
+  },
+  {
+    "id": "3280",
+    "slug": "Citroen-e-C3-Urban-Range-30-kWh"
+  },
+  {
+    "id": "3281",
+    "slug": "VinFast-VF-6-Eco"
+  },
+  {
+    "id": "3282",
+    "slug": "VinFast-VF-6-Plus"
+  },
+  {
+    "id": "3283",
+    "slug": "Mercedes-Benz-EQE-SUV-300"
+  },
+  {
+    "id": "3284",
+    "slug": "Mercedes-Benz-EQE-SUV-350plus"
+  },
+  {
+    "id": "3285",
+    "slug": "Mercedes-Benz-EQE-SUV-350-4MATIC"
+  },
+  {
+    "id": "3286",
+    "slug": "Mercedes-Benz-EQE-SUV-500-4MATIC"
+  },
+  {
+    "id": "3287",
+    "slug": "Mercedes-Benz-EQE-SUV-AMG-53-4MATICplus"
+  },
+  {
+    "id": "3288",
+    "slug": "Kia-PV5-Passenger-515-kWh"
+  },
+  {
+    "id": "3289",
+    "slug": "Kia-PV5-Passenger-712-kWh"
+  },
+  {
+    "id": "3290",
+    "slug": "BMW-iX3-50-xDrive"
+  },
+  {
+    "id": "3291",
+    "slug": "Lucid-Gravity-Touring"
+  },
+  {
+    "id": "3292",
+    "slug": "Lucid-Gravity-Grand-Touring"
+  },
+  {
+    "id": "3293",
+    "slug": "Lexus-RZ-350e"
+  },
+  {
+    "id": "3294",
+    "slug": "Lexus-RZ-500e"
+  },
+  {
+    "id": "3295",
+    "slug": "Lexus-RZ-550e-F-SPORT"
+  },
+  {
+    "id": "3296",
+    "slug": "Mercedes-Benz-GLC-400-4MATIC"
+  },
+  {
+    "id": "3297",
+    "slug": "BYD-DOLPHIN-604-kWh"
+  },
+  {
+    "id": "3298",
+    "slug": "Polestar-5-Dual-Motor"
+  },
+  {
+    "id": "3299",
+    "slug": "Polestar-5-Performance"
+  },
+  {
+    "id": "3300",
+    "slug": "Kia-EV5-814-kWh"
+  },
+  {
+    "id": "3301",
+    "slug": "TOGG-T10X-Standard-Range-RWD"
+  },
+  {
+    "id": "3302",
+    "slug": "TOGG-T10X-Long-Range-RWD"
+  },
+  {
+    "id": "3303",
+    "slug": "TOGG-T10X-Long-Range-AWD"
+  },
+  {
+    "id": "3304",
+    "slug": "TOGG-T10F-Standard-Range-RWD"
+  },
+  {
+    "id": "3305",
+    "slug": "TOGG-T10F-Long-Range-RWD"
+  },
+  {
+    "id": "3306",
+    "slug": "TOGG-T10F-Long-Range-AWD"
+  },
+  {
+    "id": "3307",
+    "slug": "Opel-Mokka-Electric-GSE"
+  },
+  {
+    "id": "3308",
+    "slug": "Geely-EX5-Pro"
+  },
+  {
+    "id": "3309",
+    "slug": "Volkswagen-e-Transporter-Kombi-L1-100-kW-64-kWh"
+  },
+  {
+    "id": "3310",
+    "slug": "Volkswagen-e-Transporter-Kombi-L1-160-kW-64-kWh"
+  },
+  {
+    "id": "3311",
+    "slug": "Volkswagen-e-Transporter-Kombi-L1-210-kW-64-kWh"
+  },
+  {
+    "id": "3312",
+    "slug": "Volkswagen-e-Transporter-Kombi-L2-100-kW-64-kWh"
+  },
+  {
+    "id": "3313",
+    "slug": "Volkswagen-e-Transporter-Kombi-L2-160-kW-64-kWh"
+  },
+  {
+    "id": "3314",
+    "slug": "Volkswagen-e-Transporter-Kombi-L2-210-kW-64-kWh"
+  },
+  {
+    "id": "3315",
+    "slug": "Volkswagen-e-Caravelle-L1-100-kW-64-kWh"
+  },
+  {
+    "id": "3316",
+    "slug": "Volkswagen-e-Caravelle-L1-160-kW-64-kWh"
+  },
+  {
+    "id": "3317",
+    "slug": "Volkswagen-e-Caravelle-L1-210-kW-64-kWh"
+  },
+  {
+    "id": "3318",
+    "slug": "Volkswagen-e-Caravelle-L2-100-kW-64-kWh"
+  },
+  {
+    "id": "3319",
+    "slug": "Volkswagen-e-Caravelle-L2-160-kW-64-kWh"
+  },
+  {
+    "id": "3320",
+    "slug": "Volkswagen-e-Caravelle-L2-210-kW-64-kWh"
+  },
+  {
+    "id": "3321",
+    "slug": "Peugeot-e-308-58-kWh"
+  },
+  {
+    "id": "3322",
+    "slug": "Peugeot-e-308-SW-58-kWh"
+  },
+  {
+    "id": "3323",
+    "slug": "Volvo-EX90-Single-Motor"
+  },
+  {
+    "id": "3324",
+    "slug": "Volvo-EX90-Twin-Motor"
+  },
+  {
+    "id": "3325",
+    "slug": "Volvo-EX90-Twin-Motor-Performance"
+  },
+  {
+    "id": "3326",
+    "slug": "Polestar-3-Rear-Motor"
+  },
+  {
+    "id": "3327",
+    "slug": "Polestar-3-Dual-Motor"
+  },
+  {
+    "id": "3328",
+    "slug": "Polestar-3-Performance"
+  },
+  {
+    "id": "3330",
+    "slug": "Tesla-Model-3-Long-Range-RWD"
+  },
+  {
+    "id": "3331",
+    "slug": "Tesla-Model-3-Long-Range-AWD"
+  },
+  {
+    "id": "3332",
+    "slug": "Tesla-Model-3-Performance"
+  },
+  {
+    "id": "3333",
+    "slug": "Tesla-Model-Y-Premium-AWD"
+  },
+  {
+    "id": "3334",
+    "slug": "Volkswagen-ID3-Pro-S"
+  },
+  {
+    "id": "3335",
+    "slug": "Mitsubishi-Eclipse-Cross-87-kWh-"
+  },
+  {
+    "id": "3336",
+    "slug": "Jaecoo-5-EV"
+  },
+  {
+    "id": "3362",
+    "slug": "Tesla-Model-Y-RWD"
+  },
+  {
+    "id": "3363",
+    "slug": "Tesla-Model-Y-Premium-RWD"
+  },
+  {
+    "id": "3364",
+    "slug": "Opel-Grandland-Electric-97-kWh"
+  },
+  {
+    "id": "3365",
+    "slug": "Nissan-LEAF-Standard-Range-52-kWh"
+  },
+  {
+    "id": "3366",
+    "slug": "Nissan-LEAF-Extended-Range-75-kWh"
+  },
+  {
+    "id": "3367",
+    "slug": "Changan-Deepal-S05-RWD"
+  },
+  {
+    "id": "3368",
+    "slug": "Changan-Deepal-S05-4WD-Max"
+  },
+  {
+    "id": "3369",
+    "slug": "Changan-Deepal-S07-Standard"
+  },
+  {
+    "id": "3370",
+    "slug": "Mercedes-Benz-CLA-200"
+  },
+  {
+    "id": "3371",
+    "slug": "Cadillac-OPTIQ-500-E4"
+  },
+  {
+    "id": "3372",
+    "slug": "Skoda-Elroq-85x"
+  },
+  {
+    "id": "3373",
+    "slug": "Skoda-Elroq-RS"
+  },
+  {
+    "id": "3374",
+    "slug": "Skoda-Enyaq-85x"
+  },
+  {
+    "id": "3375",
+    "slug": "Skoda-Enyaq-RS"
+  },
+  {
+    "id": "3376",
+    "slug": "Skoda-Enyaq-Coupe-85x"
+  },
+  {
+    "id": "3377",
+    "slug": "Skoda-Enyaq-Coupe-RS"
+  },
+  {
+    "id": "3378",
+    "slug": "Porsche-Macan-Electric"
+  },
+  {
+    "id": "3379",
+    "slug": "Porsche-Macan-4-Electric"
+  },
+  {
+    "id": "3380",
+    "slug": "Porsche-Macan-4S-Electric"
+  },
+  {
+    "id": "3381",
+    "slug": "Porsche-Macan-GTS-Electric"
+  },
+  {
+    "id": "3382",
+    "slug": "Porsche-Macan-Turbo-Electric"
+  },
+  {
+    "id": "3383",
+    "slug": "Tesla-Model-S-AWD"
+  },
+  {
+    "id": "3384",
+    "slug": "Tesla-Model-S-Plaid"
+  },
+  {
+    "id": "3385",
+    "slug": "Tesla-Model-X-AWD"
+  },
+  {
+    "id": "3386",
+    "slug": "Tesla-Model-X-Plaid"
+  },
+  {
+    "id": "3387",
+    "slug": "Leapmotor-C10-RWD-819-kWh"
+  },
+  {
+    "id": "3388",
+    "slug": "Leapmotor-C10-AWD-819-kWh"
+  },
+  {
+    "id": "3389",
+    "slug": "KGM-Torres-EVX-806-kWh"
+  },
+  {
+    "id": "3390",
+    "slug": "Alpine-A390-GT"
+  },
+  {
+    "id": "3391",
+    "slug": "Alpine-A390-GTS"
+  },
+  {
+    "id": "3392",
+    "slug": "Renault-Twingo-E-Tech-275-kWh"
+  },
+  {
+    "id": "3393",
+    "slug": "Toyota-C-HRplus-577-kWh"
+  },
+  {
+    "id": "3394",
+    "slug": "Toyota-C-HRplus-77-kWh"
+  },
+  {
+    "id": "3395",
+    "slug": "Toyota-C-HRplus-77-kWh-AWD"
+  },
+  {
+    "id": "3396",
+    "slug": "Mercedes-Benz-CLA-Shooting-Brake-250plus"
+  },
+  {
+    "id": "3397",
+    "slug": "Mercedes-Benz-CLA-Shooting-Brake-350-4MATIC"
+  },
+  {
+    "id": "3398",
+    "slug": "Porsche-Cayenne-Electric"
+  },
+  {
+    "id": "3399",
+    "slug": "Porsche-Cayenne-Turbo-Electric"
+  },
+  {
+    "id": "3400",
+    "slug": "Toyota-bZ4X-Touring-FWD-747-kWh"
+  },
+  {
+    "id": "3401",
+    "slug": "Toyota-bZ4X-Touring-AWD-747-kWh"
+  },
+  {
+    "id": "3402",
+    "slug": "XPENG-G6-RWD-Standard-Range"
+  },
+  {
+    "id": "3403",
+    "slug": "Tesla-Model-3-RWD"
+  },
+  {
+    "id": "3404",
+    "slug": "Tesla-Model-3-Premium-RWD"
+  },
+  {
+    "id": "3405",
+    "slug": "Tesla-Model-3-Premium-AWD"
+  },
+  {
+    "id": "3406",
+    "slug": "Mercedes-Benz-GLB-250plus"
+  },
+  {
+    "id": "3407",
+    "slug": "Mercedes-Benz-GLB-350-4MATIC"
+  },
+  {
+    "id": "3408",
+    "slug": "Dacia-Spring-Electric-70"
+  },
+  {
+    "id": "3409",
+    "slug": "Dacia-Spring-Electric-100"
+  },
+  {
+    "id": "3417",
+    "slug": "Tesla-Model-Y-Long-Range-RWD"
+  },
+  {
+    "id": "3418",
+    "slug": "MG-MGS6-EV-RWD-77-kWh"
+  },
+  {
+    "id": "3419",
+    "slug": "MG-MGS6-EV-Dual-Motor-77-kWh"
+  },
+  {
+    "id": "3420",
+    "slug": "Ford-e-Tourneo-Custom-L1-160-kW-RWD"
+  },
+  {
+    "id": "3421",
+    "slug": "Ford-e-Tourneo-Custom-L1-160-kW-AWD"
+  },
+  {
+    "id": "3422",
+    "slug": "Ford-e-Tourneo-Custom-L1-210-kW-RWD"
+  },
+  {
+    "id": "3423",
+    "slug": "Ford-e-Tourneo-Custom-L1-210-kW-AWD"
+  },
+  {
+    "id": "3424",
+    "slug": "Ford-e-Tourneo-Custom-L2-160-kW-RWD"
+  },
+  {
+    "id": "3425",
+    "slug": "Ford-e-Tourneo-Custom-L2-160-kW-AWD"
+  },
+  {
+    "id": "3426",
+    "slug": "Ford-e-Tourneo-Custom-L2-210-kW-RWD"
+  },
+  {
+    "id": "3427",
+    "slug": "Ford-e-Tourneo-Custom-L2-210-kW-AWD"
+  },
+  {
+    "id": "3428",
+    "slug": "Zeekr-7GT-Core-RWD"
+  },
+  {
+    "id": "3429",
+    "slug": "Zeekr-7GT-Long-Range-RWD"
+  },
+  {
+    "id": "3430",
+    "slug": "Zeekr-7GT-Privilege-AWD"
+  },
+  {
+    "id": "3431",
+    "slug": "XPENG-P7plus-RWD-Standard-Range"
+  },
+  {
+    "id": "3432",
+    "slug": "XPENG-P7plus-RWD-Long-Range"
+  },
+  {
+    "id": "3433",
+    "slug": "XPENG-P7plus-AWD-Performance"
+  },
+  {
+    "id": "3434",
+    "slug": "Subaru-Solterra-AWD-731-kWh"
+  },
+  {
+    "id": "3435",
+    "slug": "Subaru-Uncharted-577-kWh"
+  },
+  {
+    "id": "3436",
+    "slug": "Subaru-Uncharted-77-kWh"
+  },
+  {
+    "id": "3437",
+    "slug": "Subaru-Uncharted-77-kWh-AWD"
+  },
+  {
+    "id": "3438",
+    "slug": "Hyundai-IONIQ-6-63-kWh-RWD"
+  },
+  {
+    "id": "3439",
+    "slug": "Hyundai-IONIQ-6-84-kWh-RWD"
+  },
+  {
+    "id": "3440",
+    "slug": "Hyundai-IONIQ-6-84-kWh-AWD"
+  },
+  {
+    "id": "3441",
+    "slug": "Volvo-EX60-P6"
+  },
+  {
+    "id": "3442",
+    "slug": "Volvo-EX60-P10-AWD"
+  },
+  {
+    "id": "3443",
+    "slug": "Volvo-EX60-P12-AWD"
+  },
+  {
+    "id": "3444",
+    "slug": "Volvo-EX60-Cross-Country-P10-AWD"
+  },
+  {
+    "id": "3445",
+    "slug": "Ford-Capri-Standard-Range-RWD"
+  },
+  {
+    "id": "3446",
+    "slug": "Ford-Explorer-Standard-Range-RWD"
+  },
+  {
+    "id": "3447",
+    "slug": "KGM-Musso-EV-2WD"
+  },
+  {
+    "id": "3448",
+    "slug": "KGM-Musso-EV-4WD"
+  },
+  {
+    "id": "3449",
+    "slug": "Hyundai-IONIQ-6-N"
+  },
+  {
+    "id": "3450",
+    "slug": "Opel-Astra-Electric-58-kWh"
+  },
+  {
+    "id": "3451",
+    "slug": "Opel-Astra-Sports-Tourer-Electric-58-kWh"
+  },
+  {
+    "id": "3452",
+    "slug": "Ford-Capri-Extended-Range-RWD"
+  },
+  {
+    "id": "3453",
+    "slug": "Ford-Capri-Extended-Range-AWD"
+  },
+  {
+    "id": "3454",
+    "slug": "Ford-Explorer-Extended-Range-RWD"
+  },
+  {
+    "id": "3455",
+    "slug": "Ford-Explorer-Extended-Range-AWD"
+  },
+  {
+    "id": "3456",
+    "slug": "Mini-Countryman-E"
+  },
+  {
+    "id": "3457",
+    "slug": "Mini-Countryman-SE-ALL4"
+  },
+  {
+    "id": "3458",
+    "slug": "BMW-iX1-eDrive20"
+  },
+  {
+    "id": "3459",
+    "slug": "BMW-iX1-xDrive30"
+  },
+  {
+    "id": "3460",
+    "slug": "BMW-iX2-eDrive20"
+  },
+  {
+    "id": "3461",
+    "slug": "BMW-iX2-xDrive30"
+  },
+  {
+    "id": "3462",
+    "slug": "Hyundai-Kona-Electric-486-kWh"
+  },
+  {
+    "id": "3463",
+    "slug": "Hyundai-Kona-Electric-648-kWh"
+  },
+  {
+    "id": "3464",
+    "slug": "Maserati-Grecale-Folgore"
+  },
+  {
+    "id": "3465",
+    "slug": "Peugeot-e-408-58-kWh"
+  },
+  {
+    "id": "3466",
+    "slug": "Mazda-6e-78-kWh"
+  },
+  {
+    "id": "3467",
+    "slug": "MG-MG4-Premium-Long-Range"
+  },
+  {
+    "id": "3468",
+    "slug": "MG-MG4-Premium-Extended-Range"
+  },
+  {
+    "id": "3469",
+    "slug": "MG-MG4-XPOWER"
+  },
+  {
+    "id": "3470",
+    "slug": "MG-MG4-Urban-Standard-Range"
+  },
+  {
+    "id": "3471",
+    "slug": "MG-MG4-Urban-Comfort-Long-Range"
+  },
+  {
+    "id": "3472",
+    "slug": "MG-MG4-Urban-Premium-Long-Range"
+  },
+  {
+    "id": "3473",
+    "slug": "Mercedes-Benz-CLA-250"
+  },
+  {
+    "id": "3474",
+    "slug": "BYD-ATTO-3-Evo-RWD-Design"
+  },
+  {
+    "id": "3475",
+    "slug": "BYD-ATTO-3-Evo-AWD-Excellence"
+  },
+  {
+    "id": "3476",
+    "slug": "Tesla-Model-Y-Premium-RWD"
+  },
+  {
+    "id": "3477",
+    "slug": "Volvo-EX30-P3"
+  },
+  {
+    "id": "3478",
+    "slug": "Volvo-EX30-P5"
+  },
+  {
+    "id": "3479",
+    "slug": "Volvo-EX30-P3-Long-Range"
+  },
+  {
+    "id": "3480",
+    "slug": "Volvo-EX30-P5-Long-Range"
+  },
+  {
+    "id": "3481",
+    "slug": "Volvo-EX30-P8-AWD"
+  },
+  {
+    "id": "3482",
+    "slug": "Volvo-EX30-Cross-Country-P5-Long-Range"
+  },
+  {
+    "id": "3483",
+    "slug": "Volvo-EX30-Cross-Country-P8-AWD"
+  },
+  {
+    "id": "3486",
+    "slug": "Porsche-Cayenne-S-Electric"
+  },
+  {
+    "id": "3487",
+    "slug": "Audi-Q6-SUV-e-tron-quattro"
+  },
+  {
+    "id": "3488",
+    "slug": "Audi-Q6-Sportback-e-tron-quattro"
+  },
+  {
+    "id": "3489",
+    "slug": "Kia-EV5-814-kWh-AWD"
+  },
+  {
+    "id": "3490",
+    "slug": "Kia-EV2-422-kWh"
+  },
+  {
+    "id": "3491",
+    "slug": "Kia-EV2-61-kWh"
+  },
+  {
+    "id": "3492",
+    "slug": "Lexus-ES-350e"
+  },
+  {
+    "id": "3493",
+    "slug": "Lexus-ES-500e-DIRECT-4"
+  },
+  {
+    "id": "3494",
+    "slug": "BYD-ATTO-2-511-kWh"
+  },
+  {
+    "id": "3495",
+    "slug": "Volkswagen-ID4-Pure"
+  },
+  {
+    "id": "3496",
+    "slug": "Volkswagen-ID4-Pro"
+  },
+  {
+    "id": "3497",
+    "slug": "Volkswagen-ID4-Pro-4MOTION"
+  },
+  {
+    "id": "3498",
+    "slug": "Volkswagen-ID4-GTX"
+  },
+  {
+    "id": "3499",
+    "slug": "Volkswagen-ID5-Pure"
+  },
+  {
+    "id": "3500",
+    "slug": "Volkswagen-ID5-Pro"
+  },
+  {
+    "id": "3501",
+    "slug": "Volkswagen-ID5-Pro-4MOTION"
+  },
+  {
+    "id": "3502",
+    "slug": "Volkswagen-ID5-GTX"
+  },
+  {
+    "id": "3503",
+    "slug": "Audi-Q4-e-tron-55-quattro"
+  },
+  {
+    "id": "3504",
+    "slug": "Audi-Q4-Sportback-e-tron-55-quattro"
+  },
+  {
+    "id": "3505",
+    "slug": "BMW-iX3-40"
+  },
+  {
+    "id": "3506",
+    "slug": "Subaru-E-Outback-AWD"
+  },
+  {
+    "id": "3507",
+    "slug": "CUPRA-Raval-85-kW---37-kWh"
+  },
+  {
+    "id": "3508",
+    "slug": "CUPRA-Raval-99-kW---37-kWh"
+  },
+  {
+    "id": "3509",
+    "slug": "CUPRA-Raval-155-kW---52-kWh"
+  },
+  {
+    "id": "3510",
+    "slug": "CUPRA-Raval-VZ"
+  },
+  {
+    "id": "3511",
+    "slug": "CUPRA-Born-140-kW---58-kWh"
+  },
+  {
+    "id": "3512",
+    "slug": "CUPRA-Born-170-kW---79-kWh"
+  },
+  {
+    "id": "3513",
+    "slug": "CUPRA-Born-VZ"
+  },
+  {
+    "id": "3514",
+    "slug": "Abarth-600e-Competizione"
+  },
+  {
+    "id": "3515",
+    "slug": "BYD-SEAL-825-kWh-RWD-Design"
+  },
+  {
+    "id": "3516",
+    "slug": "BYD-SEAL-825-kWh-AWD-Excellence"
+  },
+  {
+    "id": "3517",
+    "slug": "BYD-SEAL-614-kWh-RWD-Comfort"
+  },
+  {
+    "id": "3518",
+    "slug": "GAC-AION-UT-60-kWh"
+  },
+  {
+    "id": "3519",
+    "slug": "Mercedes-Benz-VLE-300"
+  },
+  {
+    "id": "3520",
+    "slug": "Volkswagen-ID3-Neo-50-kWh"
+  },
+  {
+    "id": "3521",
+    "slug": "Volkswagen-ID3-Neo-58-kWh"
+  },
+  {
+    "id": "3522",
+    "slug": "Volkswagen-ID3-Neo-79-kWh"
+  },
+  {
+    "id": "3551",
+    "slug": "Mercedes-Benz-C-400-4MATIC"
+  },
+  {
+    "id": "3554",
+    "slug": "Hyundai-IONIQ-3-422-kWh"
+  },
+  {
+    "id": "3555",
+    "slug": "Hyundai-IONIQ-3-61-kWh"
+  },
+  {
+    "id": "3556",
+    "slug": "BMW-i7-50-xDrive"
+  },
+  {
+    "id": "3557",
+    "slug": "BMW-i7-60-xDrive"
+  },
+  {
+    "id": "3558",
+    "slug": "BMW-i7-M70-xDrive"
+  },
+  {
+    "id": "3559",
+    "slug": "GAC-AION-V-75-kWh"
+  },
+  {
+    "id": "3560",
+    "slug": "Porsche-Cayenne-Coupe-Electric"
+  },
+  {
+    "id": "3561",
+    "slug": "Porsche-Cayenne-S-Coupe-Electric"
+  },
+  {
+    "id": "3562",
+    "slug": "Porsche-Cayenne-Turbo-Coupe-Electric"
+  },
+  {
+    "id": "3563",
+    "slug": "Leapmotor-B05-562-kWh"
+  },
+  {
+    "id": "3564",
+    "slug": "Leapmotor-B05-671-kWh"
+  },
+  {
+    "id": "3565",
+    "slug": "Skoda-Elroq-60"
+  },
+  {
+    "id": "3566",
+    "slug": "Skoda-Elroq-85"
+  },
+  {
+    "id": "3567",
+    "slug": "Skoda-Elroq-85x"
+  },
+  {
+    "id": "3568",
+    "slug": "Skoda-Elroq-RS"
+  },
+  {
+    "id": "3569",
+    "slug": "Skoda-Enyaq-60"
+  },
+  {
+    "id": "3570",
+    "slug": "Skoda-Enyaq-85"
+  },
+  {
+    "id": "3571",
+    "slug": "Skoda-Enyaq-85x"
+  },
+  {
+    "id": "3572",
+    "slug": "Skoda-Enyaq-RS"
+  },
+  {
+    "id": "3573",
+    "slug": "Skoda-Enyaq-Coupe-60"
+  },
+  {
+    "id": "3574",
+    "slug": "Skoda-Enyaq-Coupe-85"
+  },
+  {
+    "id": "3575",
+    "slug": "Skoda-Enyaq-Coupe-85x"
+  },
+  {
+    "id": "3576",
+    "slug": "Skoda-Enyaq-Coupe-RS"
+  },
+  {
+    "id": "3577",
+    "slug": "Mercedes-Benz-EQS-400"
+  },
+  {
+    "id": "3578",
+    "slug": "Mercedes-Benz-EQS-450plus"
+  },
+  {
+    "id": "3579",
+    "slug": "Mercedes-Benz-EQS-500-4MATIC"
+  },
+  {
+    "id": "3580",
+    "slug": "Mercedes-Benz-EQS-580-4MATIC"
+  },
+  {
+    "id": "3581",
+    "slug": "Volkswagen-ID-Polo-52-kWh"
+  },
+  {
+    "id": "3582",
+    "slug": "Geely-EX5-Proplus"
+  },
+  {
+    "id": "3583",
+    "slug": "Geely-EX5-Maxplus"
+  },
+  {
+    "id": "3584",
+    "slug": "Zeekr-X-Core-RWD"
+  },
+  {
+    "id": "3585",
+    "slug": "Zeekr-X-Long-Range-RWD"
+  },
+  {
+    "id": "3586",
+    "slug": "Zeekr-X-Privilege-AWD"
+  },
+  {
+    "id": "3587",
+    "slug": "Audi-Q4-e-tron"
+  },
+  {
+    "id": "3588",
+    "slug": "Audi-Q4-e-tron-performance"
+  },
+  {
+    "id": "3589",
+    "slug": "Audi-Q4-e-tron-quattro"
+  },
+  {
+    "id": "3590",
+    "slug": "Audi-Q4-e-tron-quattro-performance"
+  },
+  {
+    "id": "3591",
+    "slug": "Audi-Q4-Sportback-e-tron"
+  },
+  {
+    "id": "3592",
+    "slug": "Audi-Q4-Sportback-e-tron-performance"
+  },
+  {
+    "id": "3593",
+    "slug": "Audi-Q4-Sportback-e-tron-quattro"
+  },
+  {
+    "id": "3594",
+    "slug": "Audi-Q4-Sportback-e-tron-quattro-performance"
+  },
+  {
+    "id": "3595",
+    "slug": "Tesla-Model-Y-Premium-RWD"
+  },
+  {
+    "id": "3596",
+    "slug": "Mazda-CX-6e-78-kWh"
+  },
+  {
+    "id": "3597",
+    "slug": "Ford-Puma-Gen-E"
+  },
+  {
+    "id": "3598",
+    "slug": "Volkswagen-ID7-59-kWh"
+  },
+  {
+    "id": "3599",
+    "slug": "Volkswagen-ID7-77-kWh"
+  },
+  {
+    "id": "3600",
+    "slug": "Volkswagen-ID7-86-kWh"
+  },
+  {
+    "id": "3601",
+    "slug": "Volkswagen-ID7-GTX"
+  },
+  {
+    "id": "3602",
+    "slug": "Volkswagen-ID7-Tourer-59-kWh"
+  },
+  {
+    "id": "3603",
+    "slug": "Volkswagen-ID7-Tourer-77-kWh"
+  },
+  {
+    "id": "3604",
+    "slug": "Volkswagen-ID7-Tourer-86-kWh"
+  },
+  {
+    "id": "3605",
+    "slug": "Volkswagen-ID7-Tourer-GTX"
+  },
+  {
+    "id": "3606",
+    "slug": "Polestar-4-Coupe-Rear-Motor"
+  },
+  {
+    "id": "3607",
+    "slug": "Polestar-4-Coupe-Dual-Motor"
+  },
+  {
+    "id": "3608",
+    "slug": "CUPRA-Tavascan-140-kW---58-kWh"
+  },
+  {
+    "id": "3609",
+    "slug": "CUPRA-Tavascan-210-kW---77-kWh-Endurance"
+  },
+  {
+    "id": "3610",
+    "slug": "CUPRA-Tavascan-250-kW---77-kWh-VZ"
+  },
+  {
+    "id": "3611",
+    "slug": "XPENG-X9-FWD-Standard-Range"
+  },
+  {
+    "id": "3612",
+    "slug": "XPENG-X9-FWD-Long-Range"
+  },
+  {
+    "id": "3613",
+    "slug": "XPENG-X9-AWD-Performance"
+  },
+  {
+    "id": "3620",
+    "slug": "Skoda-Epiq-35"
+  },
+  {
+    "id": "3621",
+    "slug": "Skoda-Epiq-40"
+  },
+  {
+    "id": "3622",
+    "slug": "Skoda-Epiq-55"
+  },
+  {
+    "id": "3623",
+    "slug": "DS-Automobiles-N7-FWD"
+  },
+  {
+    "id": "3624",
+    "slug": "DS-Automobiles-N7-FWD-Long-Range"
+  },
+  {
+    "id": "3625",
+    "slug": "DS-Automobiles-N7-AWD-Long-Range"
+  },
+  {
+    "id": "3626",
+    "slug": "Mercedes-Benz-AMG-GT-4-Door-Coupe-63-4MATICplus"
+  },
+  {
+    "id": "3627",
+    "slug": "Mercedes-Benz-AMG-GT-4-Door-Coupe-55-4MATICplus"
+  },
+  {
+    "id": "3628",
+    "slug": "Mercedes-Benz-CLA-Shooting-Brake-200"
+  },
+  {
+    "id": "3629",
+    "slug": "Voyah-Dream-108-kWh"
+  },
+  {
+    "id": "3630",
+    "slug": "Volkswagen-ID-Buzz-NWB-Pure"
+  },
+  {
+    "id": "3631",
+    "slug": "Volkswagen-ID-Buzz-NWB-Pro"
+  },
+  {
+    "id": "3632",
+    "slug": "Volkswagen-ID-Buzz-NWB-Pro-4MOTION"
+  },
+  {
+    "id": "3633",
+    "slug": "Volkswagen-ID-Buzz-NWB-GTX"
+  },
+  {
+    "id": "3634",
+    "slug": "Volkswagen-ID-Buzz-LWB-Pro"
+  },
+  {
+    "id": "3635",
+    "slug": "Volkswagen-ID-Buzz-LWB-Pro-4MOTION"
+  },
+  {
+    "id": "3636",
+    "slug": "Volkswagen-ID-Buzz-LWB-GTX"
+  },
+  {
+    "id": "3637",
+    "slug": "Kia-EV3-Standard-Range"
+  },
+  {
+    "id": "3638",
+    "slug": "Kia-EV3-Long-Range"
+  },
+  {
+    "id": "3639",
+    "slug": "Kia-EV3-Long-Range-AWD"
+  },
+  {
+    "id": "3640",
+    "slug": "JAC-E30X-41-kWh"
+  },
+  {
+    "id": "3641",
+    "slug": "JAC-E30X-515-kWh"
+  },
+  {
+    "id": "3643",
+    "slug": "Ferrari-Luce"
+  },
+  {
+    "id": "3644",
+    "slug": "Ford-Explorer-Standard-Range-RWD"
+  },
+  {
+    "id": "3645",
+    "slug": "Ford-Explorer-Extended-Range-RWD"
+  },
+  {
+    "id": "3646",
+    "slug": "Ford-Explorer-Extended-Range-AWD"
+  },
+  {
+    "id": "3647",
+    "slug": "Ford-Capri-Standard-Range-RWD"
+  },
+  {
+    "id": "3648",
+    "slug": "Ford-Capri-Extended-Range-RWD"
+  },
+  {
+    "id": "3649",
+    "slug": "Ford-Capri-Extended-Range-AWD"
+  },
+  {
+    "id": "3650",
+    "slug": "Rolls-Royce-Spectre-Series-II"
+  },
+  {
+    "id": "3651",
+    "slug": "Kia-EV5-814-kWh-GT"
+  },
+  {
+    "id": "3652",
+    "slug": "Toyota-Hilux-Electric-592-kWh"
+  },
+  {
+    "id": "3653",
+    "slug": "Mercedes-Benz-GLC-250"
+  },
+  {
+    "id": "3654",
+    "slug": "Mercedes-Benz-GLC-300-4MATIC"
+  },
+  {
+    "id": "3655",
+    "slug": "Peugeot-e-208-GTi"
+  },
+  {
+    "id": "3656",
+    "slug": "Honda-Super-N"
+  },
+  {
+    "id": "3657",
+    "slug": "BMW-i3-50-xDrive"
+  },
+  {
+    "id": "3658",
+    "slug": "Skoda-Peaq-60"
+  },
+  {
+    "id": "3659",
+    "slug": "Skoda-Peaq-90"
+  },
+  {
+    "id": "3660",
+    "slug": "Skoda-Peaq-90x"
+  },
+  {
+    "id": "3661",
+    "slug": "Jeep-Compass-Electric-Long-Range"
+  },
+  {
+    "id": "3662",
+    "slug": "Jeep-Compass-Electric-4xe"
+  },
+  {
+    "id": "3663",
+    "slug": "Kia-EV3-GT"
+  },
+  {
+    "id": "3664",
+    "slug": "BMW-iX5-60-xDrive"
+  }
+]

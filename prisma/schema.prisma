@@ -1,0 +1,135 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Category {
+  id          String    @id @default(uuid())
+  name        String
+  slug        String    @unique
+  description String?
+  articles    Article[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Article {
+  id             String    @id @default(uuid())
+  title          String
+  slug           String    @unique
+  summary        String
+  content        String
+  imageUrl       String?
+  viewCount      Int       @default(0)
+  isFeatured     Boolean   @default(false)
+  categoryId     String
+  category       Category  @relation(fields: [categoryId], references: [id])
+  publishedAt    DateTime  @default(now())
+  comments       Comment[]
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model Comment {
+  id          String   @id @default(uuid())
+  authorName  String
+  authorEmail String?
+  content     String
+  isApproved  Boolean  @default(false)
+  articleId   String
+  article     Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AdPlacement {
+  id          String   @id @default(uuid())
+  slotCode    String   @unique
+  adClient    String
+  adSlot      String
+  minHeight   Int
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Setting {
+  id    String @id @default(uuid())
+  key   String @unique
+  value String
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model ChargingStation {
+  id          String   @id @default(uuid())
+  name        String
+  provider    String
+  city        String
+  district    String
+  address     String
+  chargerType String   @default("AC/DC")
+  powerKw     Int      @default(50)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ElectricVehicle {
+  id                  String   @id @default(uuid())
+  brand               String
+  model               String
+  variant             String?
+  year                Int
+  segment             String
+  imageUrl            String?
+  imageUrls           String? // JSON string array for multiple photos
+
+  // Battery & Range
+  batteryCapacityKwh  Float?
+  rangeKm             Int?
+
+  // Performance
+  powerHp             Int?
+  powerKw             Int?
+  torqueNm            Int?
+  acceleration0100    Float?
+  topSpeedKmh         Int?
+  driveType           String?
+
+  // Charging
+  maxDcChargingKw     Int?
+  dcCharge10To80Min   Float?
+  acChargingKw        Float?
+
+  // Dimensions
+  lengthMm            Int?
+  widthMm             Int?
+  heightMm            Int?
+  wheelbaseMm         Int?
+  curbWeightKg        Int?
+  trunkLiters         Int?
+
+  // Price & Market
+  priceStartTl        Int?
+  priceStartEur       Int?
+  availableInTurkey   Boolean  @default(true)
+
+  // Special Features (JSON string array)
+  specialFeatures     String?
+
+  isActive            Boolean  @default(true)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@unique([brand, model, variant, year])
+}

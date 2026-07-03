@@ -1,0 +1,210 @@
+"use client";
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { updateArticleAction } from '@/app/actions/admin';
+import Link from 'next/link';
+import { Save, ArrowLeft } from 'lucide-react';
+
+interface Category {
+  id: string;
+  name: string;
+}
+
+interface Article {
+  id: string;
+  title: string;
+  slug: string;
+  summary: string;
+  content: string;
+  imageUrl: string | null;
+  categoryId: string;
+  isFeatured: boolean;
+}
+
+interface EditArticleFormProps {
+  article: Article;
+  categories: Category[];
+}
+
+export default function EditArticleForm({ article, categories }: EditArticleFormProps) {
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  const [title, setTitle] = useState(article.title);
+  const [slug, setSlug] = useState(article.slug);
+  const [isSlugManual, setIsSlugManual] = useState(true);
+
+  const sluggify = (text: string) => {
+    const trMap: { [key: string]: string } = {
+      'ç': 'c', 'Ç': 'c', 'ğ': 'g', 'Ğ': 'g', 'ı': 'i', 'İ': 'i',
+      'ö': 'o', 'Ö': 'o', 'ş': 's', 'Ş': 's', 'ü': 'u', 'Ü': 'u',
+    };
+    return text
+      .toString()
+      .toLowerCase()
+      .replace(/[çÇğĞıİöÖşŞüÜ]/g, (match) => trMap[match] || match)
+      .replace(/\s+/g, '-')
+      .replace(/[^\w\-]+/g, '')
+      .replace(/\-\-+/g, '-')
+      .replace(/^-+/, '')
+      .replace(/-+$/, '');
+  };
+
+  const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setTitle(val);
+    if (!isSlugManual) {
+      setSlug(sluggify(val));
+    }
+  };
+
+  const handleSlugChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSlug(e.target.value);
+    setIsSlugManual(true);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const isFeaturedCheckbox = e.currentTarget.querySelector('#isFeatured') as HTMLInputElement;
+    formData.set('isFeatured', isFeaturedCheckbox?.checked ? 'true' : 'false');
+
+    const res = await updateArticleAction(article.id, formData);
+
+    if (res.success) {
+      router.push('/admin');
+      router.refresh();
+    } else {
+      setError(res.error || 'Hata oluştu.');
+      setLoading(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6 max-w-4xl">
+      <div className="flex items-center justify-between border-b border-gray-100 pb-5">
+        <div className="flex items-center space-x-2">
+          <Link href="/admin" className="text-gray-400 hover:text-gray-700 p-1">
+            <ArrowLeft className="h-5 w-5" />
+          </Link>
+          <h1 className="text-xl font-extrabold text-gray-900">Haberi Düzenle</h1>
+        </div>
+        <button
+          type="submit"
+          disabled={loading}
+          className="inline-flex items-center bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-4 py-2.5 rounded-xl text-sm transition-colors shadow-sm cursor-pointer disabled:opacity-50"
+        >
+          <Save className="h-4 w-4 mr-2" />
+          {loading ? 'Kaydediliyor...' : 'Değişiklikleri Kaydet'}
+        </button>
+      </div>
+
+      {error && (
+        <div className="bg-red-50 border border-red-100 text-red-650 text-sm px-4 py-3 rounded-xl">
+          {error}
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label htmlFor="title" className="block text-sm font-bold text-gray-700">Haber Başlığı *</label>
+          <input
+            id="title"
+            name="title"
+            type="text"
+            required
+            value={title}
+            onChange={handleTitleChange}
+            className="block w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 focus:bg-white transition-all"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label htmlFor="slug" className="block text-sm font-bold text-gray-700">URL Uzantısı (Slug) *</label>
+          <input
+            id="slug"
+            name="slug"
+            type="text"
+            required
+            value={slug}
+            onChange={handleSlugChange}
+            className="block w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 focus:bg-white transition-all font-mono"
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label htmlFor="categoryId" className="block text-sm font-bold text-gray-700">Kategori *</label>
+          <select
+            id="categoryId"
+            name="categoryId"
+            required
+            defaultValue={article.categoryId}
+            className="block w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 focus:bg-white transition-all"
+          >
+            {categories.map((cat) => (
+              <option key={cat.id} value={cat.id}>{cat.name}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="space-y-2">
+          <label htmlFor="imageUrl" className="block text-sm font-bold text-gray-700">Görsel URL'si</label>
+          <input
+            id="imageUrl"
+            name="imageUrl"
+            type="text"
+            defaultValue={article.imageUrl || ''}
+            className="block w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 focus:bg-white transition-all"
+          />
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <label htmlFor="summary" className="block text-sm font-bold text-gray-700">Özet (Spot Metin) *</label>
+        <textarea
+          id="summary"
+          name="summary"
+          required
+          rows={2}
+          defaultValue={article.summary}
+          className="block w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 focus:bg-white transition-all"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <label htmlFor="content" className="block text-sm font-bold text-gray-700">Haber İçeriği (HTML Destekli) *</label>
+        <p className="text-xs text-gray-450 font-medium">Reklam yerleşimi için paragrafları &lt;p&gt;...&lt;/p&gt; etiketleri arasına yazın.</p>
+        <textarea
+          id="content"
+          name="content"
+          required
+          rows={10}
+          defaultValue={article.content}
+          className="block w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 focus:bg-white transition-all font-mono"
+        />
+      </div>
+
+      <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl border border-gray-150">
+        <input
+          id="isFeatured"
+          name="isFeatured"
+          type="checkbox"
+          value="true"
+          defaultChecked={article.isFeatured}
+          className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded cursor-pointer"
+        />
+        <div className="text-sm">
+          <label htmlFor="isFeatured" className="font-bold text-gray-800 cursor-pointer">Manşet Alanında Göster (Öne Çıkar)</label>
+          <p className="text-gray-550 text-xs mt-0.5">Bu seçeneği işaretlerseniz haber sitenin en tepesindeki büyük manşet alanında listelenir.</p>
+        </div>
+      </div>
+    </form>
+  );
+}
