@@ -27,6 +27,10 @@ async function main() {
     } else {
       console.log(`Database already has ${articleCount} articles. Seeding skipped to protect production data.`);
     }
+
+    // Always run the new SaaS articles addition script to ensure they are added safely if missing
+    console.log("Checking and adding new SaaS articles...");
+    execSync('node prisma/add-saas-articles.js', { stdio: 'inherit' });
   } catch (e) {
     console.error("Database connection error or schema not pushed yet:", e.message);
   } finally {
