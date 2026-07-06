@@ -39,6 +39,10 @@ async function main() {
     // Always run the TechCrunch articles addition script
     console.log("Checking and adding TechCrunch climate articles...");
     execSync('node prisma/add-techcrunch-articles.js', { stdio: 'inherit' });
+
+    // Always run the user articles addition script
+    console.log("Checking and adding user-provided articles...");
+    execSync('node prisma/add-user-articles.js', { stdio: 'inherit' });
   } catch (e) {
     console.error("Database connection error or schema not pushed yet:", e.message);
   } finally {
