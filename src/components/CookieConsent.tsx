@@ -33,7 +33,7 @@ export default function CookieConsent() {
           <h4 className="text-sm font-bold text-gray-900">Çerez Tercihleri</h4>
           <p className="text-xs text-gray-500 leading-relaxed">
             Sitemizde size en iyi deneyimi sunabilmek, site trafiğini analiz etmek ve kişiselleştirilmiş reklamlar göstermek için çerezler kullanıyoruz. Daha fazla bilgi için{' '}
-            <Link href="/gizlilik-politikasi" className="text-emerald-750 underline hover:text-emerald-800">
+            <Link href="/gizlilik-politikasi" className="text-emerald-700 underline hover:text-emerald-800">
               Gizlilik Politikamızı
             </Link>{' '}
             inceleyebilirsiniz.
@@ -48,7 +48,7 @@ export default function CookieConsent() {
           </button>
           <button
             onClick={handleDecline}
-            className="flex-1 bg-gray-50 text-gray-700 text-xs font-semibold py-2 px-4 rounded-xl hover:bg-gray-105 border border-gray-100 transition-colors cursor-pointer"
+            className="flex-1 bg-gray-50 text-gray-700 text-xs font-semibold py-2 px-4 rounded-xl hover:bg-gray-100 border border-gray-100 transition-colors cursor-pointer"
           >
             Reddet
           </button>
