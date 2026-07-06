@@ -52,6 +52,27 @@ export default async function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        {/* Schema Markup (JSON-LD) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Enerjic",
+              "url": "https://enerjic.com",
+              "description": "Elektrikli araçlar, temiz enerji, SaaS ve yeşil teknolojiler üzerine Türkiye’nin yeni nesil yerelleştirilmiş bilgi kaynağı.",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Enerjic",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://enerjic.com/icon.png"
+                }
+              }
+            })
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col bg-white text-gray-800 font-sans">
         <Header categories={categories} />

@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function CookieConsent() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Check if consent has already been given
+    // Check if consent has already been given, hide if yes
     const consent = localStorage.getItem('cookie-consent');
-    if (!consent) {
-      setIsVisible(true);
+    if (consent === 'accepted' || consent === 'declined') {
+      setIsVisible(false);
     }
   }, []);
 

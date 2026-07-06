@@ -22,6 +22,12 @@ export default function Footer() {
             <p className="text-sm text-gray-450 leading-relaxed">
               Elektrikli araçlar, temiz enerji, SaaS ve yeşil teknolojiler üzerine Türkiye’nin yeni nesil yerelleştirilmiş bilgi kaynağı.
             </p>
+            <div className="text-xs text-gray-400 pt-1">
+              <span>E-posta: </span>
+              <a href="mailto:info@enerjic.com" className="text-emerald-400 hover:text-emerald-300 transition-colors font-medium">
+                info@enerjic.com
+              </a>
+            </div>
           </div>
 
           {/* Categories */}
