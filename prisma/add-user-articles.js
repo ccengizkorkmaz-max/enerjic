@@ -45,7 +45,7 @@ function mdToHtml(md) {
 }
 
 async function main() {
-  console.log("=== Seeding 6 User-Provided Organic Articles ===");
+  console.log("=== Seeding 7 User-Provided Organic Articles ===");
 
   // Fetch category IDs
   const categories = await prisma.category.findMany();
@@ -128,7 +128,7 @@ Elektrikli araç sahipliği (EV) yaygınlaştıkça, potansiyel alıcıların ve
 
 Elektrikli araç kullanmanın en karlı ve konforlu yöntemi, aracı kendi evinizde veya müstakil garajınızda kurulan 7-11 kW kapasiteli bir duvar kutusu (wallbox) ile şarj etmektir. 2026 yılı güncel mesken elektrik tarifeleri göz önüne alındığında, ev tipi elektrik birim fiyatı kilovatsaat (kWh) başına ortalama 2.5 ila 3.5 TL civarındadır. 
 
-Standart bir elektrikli aracın 100 kilometrede ortalama 16 ila 18 kWh energy tükettiğini varsaydığımızda, evden şarj edilen bir araçla 100 kilometre yol gitmenin maliyeti sadece 45 ila 60 TL arasında kalmaktadır. Bu rakam, ortalama 100 kilometrede 8-10 litre benzin tüketen ve kilometre başına yaklaşık 3.5 - 5 TL harcayan akaryakıtlı bir otomobille karşılaştırıldığında yaklaşık 6 ila 8 kat daha ucuz bir seyahat anlamına gelmektedir. Yıllık ortalama 15.000 kilometre yol yapan bir sürücü için ev şarjı, yıllık bütçede devasa bir yakıt tasarrufunu beraberinde getirir.
+Standart bir elektrikli aracın 100 kilometrede ortalama 16 ila 18 kWh enerji tükettiğini varsaydığımızda, evden şarj edilen bir araçla 100 kilometre yol gitmenin maliyeti sadece 45 ila 60 TL arasında kalmaktadır. Bu rakam, ortalama 100 kilometrede 8-10 litre benzin tüketen ve kilometre başına yaklaşık 3.5 - 5 TL harcayan akaryakıtlı bir otomobille karşılaştırıldığında yaklaşık 6 ila 8 kat daha ucuz bir seyahat anlamına gelmektedir. Yıllık ortalama 15.000 kilometre yol yapan bir sürücü için ev şarjı, yıllık bütçede devasa bir yakıt tasarrufunu beraberinde verir.
 
 ## İş Yerinde AC Şarj ve Otoyollarda Hızlı DC Şarj
 
@@ -161,7 +161,7 @@ Pazarda giriş seviyesini temsil eden 7,4 kW gücündeki temel modeller, genelli
 
 ## Kurulum, Kablolama ve Apartman İzinleri
 
-Cihazı satın aldıktan sonra karşılaşılan asıl değişken kalemi altyapı ve işçilik maliyetleridir. This cost is directly dependent on the distance between the garage where the charging station will be installed and the main power distribution panel, the building type, and the power capacity of the existing wiring.
+Cihazı satın aldıktan sonra karşılaşılan asıl değişken kalemi altyapı ve işçilik maliyetleridir. Bu maliyet, şarj istasyonunun kurulacağı garaj ile ana elektrik panosu arasındaki mesafeye, bina tipine ve mevcut elektrik tesisatının gücüne doğrudan bağlıdır. 
 
 Ana panoya yakın, sadece birkaç metrelik kablolama gerektiren basit kurulumlar son derece ekonomik bütçelerle tamamlanabiliyor. Ancak kablo mesafesi arttıkça, panoda sigorta yenilemeleri, kaçak akım rölesi eklemeleri ve kablo kanalı inşaat işleri devreye girdiğinde kurulum maliyetleri artış gösteriyor. Apartman veya sitelerde ortak alana yapılacak kurulumlarda ise apartman yönetimi onayı alınması, kabloların daire sayaçlarına çekilmesi veya ortak sayaçtan süzme sayaç ile ayrılması gibi karmaşık süreçler işçilik maliyetini yükseltebiliyor. Ayrıca, evinizin ana elektrik panosunun trifaze (3 fazlı) ve yeterli akım gücünde olmaması durumunda panoda güç artışı yapılması ek elektrikçi maliyetleri doğuruyor.
 
@@ -196,7 +196,7 @@ Bununla birlikte, SaaS dünyasında abonelik modeli sunulduğu için müşteri m
 
 ## Yapay Zeka Entegrasyonu ve Globalleşme Fırsatları
 
-Son yıllarda yapay zekanın SaaS ürünlerine derinlemesine entegre edilmesi bulut yazılım pazarını tamamen yeni bir boyuta taşıdı. Modern SaaS araçları artık sadece veri girişi yapılan veya basit raporlar sunan pasif sistemler olmaktan çıktı. Kullanıcı davranışlarını analiz eden, geleceğe yönelik öneriler sunan ve tekrarlayan iş süreçlerini tamamen otomatikleştiren akıllı asistanlara dönüştü. 
+Son yıllarda yapay zakanın SaaS ürünlerine derinlemesine entegre edilmesi bulut yazılım pazarını tamamen yeni bir boyuta taşıdı. Modern SaaS araçları artık sadece veri girişi yapılan veya basit raporlar sunan pasif sistemler olmaktan çıktı. Kullanıcı davranışlarını analiz eden, geleceğe yönelik öneriler sunan ve tekrarlayan iş süreçlerini tamamen otomatikleştiren akıllı asistanlara dönüştü. 
 
 Aynı zamanda, fiziksel ürün satışındaki lojistik, stok yönetimi ve yerel gümrük sınırları gibi engellerin SaaS ürünlerinde bulunmaması, doğru bir küresel pazarlama stratejisiyle dünyanın her yerine yazılım ihraç etmeyi kolaylaştırıyor. Türkiye gibi dinamik, genç ve yazılım yeteneği yüksek ülkeler için dikey SaaS girişimleri kurmak, küresel teknoloji pazarından pay almanın en etkili yoludur.
 
@@ -227,11 +227,36 @@ Ancak dijitalleşen bu devasa altyapılar, siber güvenlik tehditlerini de berab
 
 ## Nesnelerin İnterneti ve Veriden Değer Üretmek
 
-Fiziksel cihazların birbirleriyle ve internet ağıyla sürekli veri paylaşmasında rol oynayan Nesnelerin İnterneti (IoT) teknolojisi, sanayiden ev içi kullanıma kadar geniş bir alana yayılıyor. Akıllı fabrikalardaki sensörler, lojistik araç takip sistemleri ve akıllı şehir sayaçları, sahadan anlık veri toplayarak bakım ihtiyaçlarının önceden tahmin edilmesini (kestirimci bakım) ve kaynakların en verimli şekilde optimize edilmesini sağlıyor. 
+Fiziksel cihazlerin birbirleriyle ve internet ağıyla sürekli veri paylaşmasında rol oynayan Nesnelerin İnterneti (IoT) teknolojisi, sanayiden ev içi kullanıma kadar geniş bir alana yayılıyor. Akıllı fabrikalardaki sensörler, lojistik araç takip sistemleri ve akıllı şehir sayaçları, sahadan anlık veri toplayarak bakım ihtiyaçlarının önceden tahmin edilmesini (kestirimci bakım) ve kaynakların en verimli şekilde optimize edilmesini sağlıyor. 
 
 Tüm bu sistemlerin ürettiği devasa veri havuzunu anlamlandırmak ise büyük veri analitiğinin konusudur. Veriyi ham halde saklamak yerine analiz ederek stratejik içgörülere dönüştüren ve operasyonel işleri yazılımsal robotlarla (RPA) otomatikleştiren kurumlar, rekabette her zaman bir adım önde kalmayı başarıyor.
 
 Trend teknolojiler, geleceğin değil doğrudan bugünün konusudur. İş dünyasında rekabet avantajı elde etmek, operasyonel verimliliği artırmak ve kullanıcı beklentilerine çok daha hızlı cevap verebilmek için teknolojiyi lüks bir gider değil, stratejik bir yatırım olarak konumlandırmak gerekir. Doğru teknolojik altyapı, gerçek bir ihtiyaçla birleştiğinde sadece mevcut süreçleri iyileştirmekle kalmaz, kurumların geleceğini de kökten dönüştürür.`
+    },
+    {
+      title: "Elektrikli Araçlarda Drag Yarışları: Sessiz Gücün Pistteki Yükselişi",
+      slug: "elektrikli-araclarda-drag-yarislari",
+      summary: "Elektrikli araçlar, anlık tork avantajı ve yüksek hızlanma kabiliyetleriyle drag yarışlarında yeni bir performans çağının kapısını aralıyor.",
+      imageUrl: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=800&q=80",
+      isFeatured: false,
+      categoryId: categoryMap['elektrikli-araclar'],
+      content: `## Elektrikli Otomobillerin Pistlerdeki Performans Sınavı
+
+Elektrikli araçlar uzun süre boyunca yalnızca çevreci, sessiz ve ekonomik ulaşım çözümleri olarak görüldü. Ancak son yıllarda bu algı hızla değişmeye başladı. Artık elektrikli otomobiller sadece şehir içi kullanımda değil, performans dünyasında da güçlü bir şekilde kendine yer buluyor. Bu dönüşümün en dikkat çekici alanlarından biri ise drag yarışları. Düz bir pistte iki aracın belirli bir mesafeyi en kısa sürede tamamlamaya çalıştığı bu hızlanma odaklı motor sporunda, elektrikli motorların sahip olduğu üstünlük geleneksel mühendislik algılarını tamamen sarsıyor.
+
+## Kalkış Anındaki Tepki Süresi ve Anlık Tork Avantajı
+
+Drag yarışlarında viraj kabiliyeti ya da uzun süreli dayanıklılıktan çok, kalkış anındaki güç aktarımı, çekiş kontrolü, ağırlık dengesi ve hızlanma performansı ön plana çıkar. İşte tam bu noktada elektrikli araçlar büyük bir avantaja sahiptir. Geleneksel içten yanmalı motorlarda maksimum tork değerlerine ulaşmak için motor devrinin (RPM) belirli bir seviyeye yükselmesi gerekirken, elektrikli motorlar enerjiyi aldıkları ilk milisaniyeden itibaren maksimum torku tekerleklere aktarabilir. Bu anlık tork avantajı, elektrikli araçların çizgiyi geçtikten hemen sonra rakiplerine karşı inanılmaz bir ivmelenme farkı atmasını sağlıyor.
+
+Sektördeki bu performans sıçraması sadece teoride kalmıyor. Rimac Nevera R gibi elektrikli hiper otomobiller, 2025 yılı verilerine göre çeyrek mili sadece 7.90 saniyede geçebildiğini ve 0-100 km/s hızlanmasını ise fizik kurallarını zorlayan 1.72 saniye gibi sürelerde tamamladığını duyurdu. Tesla Model S Plaid, Lucid Air Sapphire ve Porsche Taycan Turbo GT gibi modeller de seri üretim elektrikli araçların drag pistlerinde süper otomobilleri nasıl geride bıraktığının en güçlü örnekleridir.
+
+## Sessiz Güç Kültürü ve Pist Güvenliği
+
+Geleneksel drag yarışlarında motor sesi, egzoz patlamaları ve mekanik kükremeler büyük bir spor kültürünün parçasıdır. Elektrikli drag yarışlarında ise pist neredeyse tamamen sessizdir; duyulan tek şey lastiklerin asfaltı kavrama sesi ve rüzgarın uğultusudur. Bu durum başlangıçta motor sporları tutkunları için alışılmadık bir deneyim olsa da ortaya çıkan hızlanma değerleri ve teknolojik üstünlük yeni bir heyecan dalgası yaratıyor. Resmi drag federasyonları (NHRA) ve elektrikli drag yarışları organizasyonu (NEDRA), elektrikli araçları motor gücü ve ağırlık gibi kriterlere göre yüzlerce farklı kategoriye ayırarak bu yeni spor dalını resmi kurallarla yaygınlaştırıyor.
+
+Bu ani ve güçlü hızlanma kabiliyetinin sokaklarda veya trafiğe açık alanlarda test edilmesi ise büyük bir güvenlik riski oluşturur. Elektrikli araçların kontrolsüz güç aktarımı, acemi sürücüler için tehlikeli durumlara yol açabileceğinden, bu tür performans denemelerinin kesinlikle güvenlik önlemleri alınmış kapalı pistlerde yapılması zorunludur.
+
+Elektrikli araçlar, drag yarışlarında yalnızca alternatif bir seçenek değil, performans dünyasının yeni ve güçlü oyuncularından biri haline geliyor. Anlık tork, gelişmiş yazılım kontrolü ve yüksek hızlanma kabiliyeti sayesinde elektrikli araçlar pistlerde sessiz ama son derece iddialı bir devrim başlatıyor. Geleceğin drag yarışlarında motor sesi belki daha az duyulacak, ancak hızın etkisi çok daha güçlü hissedilecek.`
     }
   ];
 
