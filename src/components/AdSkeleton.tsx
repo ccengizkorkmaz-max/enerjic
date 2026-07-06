@@ -94,19 +94,21 @@ export default function AdSkeleton({
           />
         ) : (
           /* User's Adaptive A-Ads Iframe - does not block AdSense review and routes earnings directly to user's account */
-          <div className="w-full flex justify-center items-center z-10">
+          {/* A-Ads Adaptive Ad Unit */}
+          <div id="frame" style={{ width: '100%', margin: 'auto', position: 'relative', zIndex: 99998 }}>
             <iframe
+              data-aa="2447062"
               src={fallbackIframeSrc}
               style={{
-                width: '100%',
-                height: `${iframeHeight}px`,
                 border: '0px',
                 padding: '0',
-                margin: '0',
+                width: '70%',
+                height: `${iframeHeight}px`,
                 overflow: 'hidden',
+                display: 'block',
+                margin: 'auto',
                 backgroundColor: 'transparent'
               }}
-              allowTransparency={true}
             />
           </div>
         )}
