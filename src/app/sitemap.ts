@@ -31,19 +31,39 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('Sitemap DB categories fetch error: ', e);
   }
 
+  // Fetch EV brands for software update pages
+  let softwareUpdateBrands: string[] = [];
+  try {
+    const updates = await db.softwareUpdate.findMany({
+      select: { brand: true },
+      distinct: ['brand'],
+    });
+    softwareUpdateBrands = updates.map(u => u.brand.toLowerCase());
+  } catch (e) {
+    console.error('Sitemap SW updates fetch error: ', e);
+  }
+
+  // Static pages
   const staticRoutes = [
-    '',
-    '/hakkimizda',
-    '/iletisim',
-    '/gizlilik-politikasi',
-    '/kullanim-sartlari',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
+    { route: '', priority: 1.0, freq: 'daily' as const },
+    { route: '/elektrikli-araclar', priority: 0.9, freq: 'daily' as const },
+    { route: '/yazilim-guncellemeleri', priority: 0.8, freq: 'daily' as const },
+    { route: '/sarj-rehberi', priority: 0.8, freq: 'weekly' as const },
+    { route: '/tasarruf-hesaplayici', priority: 0.7, freq: 'monthly' as const },
+    { route: '/elektrikli-araclar/liderlik-tablolari', priority: 0.7, freq: 'weekly' as const },
+    { route: '/elektrikli-araclar/oneri', priority: 0.7, freq: 'monthly' as const },
+    { route: '/hakkimizda', priority: 0.5, freq: 'monthly' as const },
+    { route: '/iletisim', priority: 0.5, freq: 'monthly' as const },
+    { route: '/gizlilik-politikasi', priority: 0.3, freq: 'yearly' as const },
+    { route: '/kullanim-sartlari', priority: 0.3, freq: 'yearly' as const },
+  ].map((item) => ({
+    url: `${baseUrl}${item.route}`,
     lastModified: new Date(),
-    changeFrequency: 'daily' as const,
-    priority: route === '' ? 1.0 : 0.5,
+    changeFrequency: item.freq,
+    priority: item.priority,
   }));
 
+  // Category pages
   const categoryRoutes = categories.map((cat) => ({
     url: `${baseUrl}/kategori/${cat.slug}`,
     lastModified: cat.updatedAt,
@@ -51,6 +71,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // Article pages
   const articleRoutes = articles.map((art) => ({
     url: `${baseUrl}/haber/${art.slug}`,
     lastModified: art.updatedAt,
@@ -58,5 +79,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...categoryRoutes, ...articleRoutes];
+  // Software update brand pages
+  const swUpdateRoutes = softwareUpdateBrands.map((brand) => ({
+    url: `${baseUrl}/yazilim-guncellemeleri/${brand}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...categoryRoutes, ...articleRoutes, ...swUpdateRoutes];
 }
