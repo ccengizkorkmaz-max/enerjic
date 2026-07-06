@@ -51,24 +51,21 @@ export default function AdSkeleton({
 
   let widthClass = 'w-full';
   let labelText = 'Sponsorlu Reklam';
-  let fallbackIframeSrc = '';
-  let iframeWidth = '100%';
+  // Use user's official Adaptive A-Ads ID
+  const fallbackIframeSrc = 'https://acceptable.a-ads.com/2447062/?size=Adaptive';
   let iframeHeight = '250';
 
   if (slotCode === 'header_banner') {
     widthClass = 'max-w-[728px] mx-auto w-full';
     labelText = 'Sponsorlu Reklam';
-    fallbackIframeSrc = 'https://ad.a-ads.com/2418520?size=728x90';
     iframeHeight = '90';
   } else if (slotCode === 'sidebar_top') {
     widthClass = 'w-[300px] mx-auto';
     labelText = 'Sponsorlu Reklam';
-    fallbackIframeSrc = 'https://ad.a-ads.com/2418521?size=300x250';
     iframeHeight = '250';
   } else if (slotCode === 'in_article_p3') {
     widthClass = 'w-full';
     labelText = 'Sponsorlu Reklam';
-    fallbackIframeSrc = 'https://ad.a-ads.com/2418520?size=728x90'; // Responsive size alternative
     iframeHeight = '90';
   }
 
@@ -96,12 +93,12 @@ export default function AdSkeleton({
             data-full-width-responsive="true"
           />
         ) : (
-          /* Fallback A-Ads Static Iframe - 100% compliant and does not block AdSense review */
+          /* User's Adaptive A-Ads Iframe - does not block AdSense review and routes earnings directly to user's account */
           <div className="w-full flex justify-center items-center z-10">
             <iframe
               src={fallbackIframeSrc}
               style={{
-                width: slotCode === 'sidebar_top' ? '300px' : '100%',
+                width: '100%',
                 height: `${iframeHeight}px`,
                 border: '0px',
                 padding: '0',
