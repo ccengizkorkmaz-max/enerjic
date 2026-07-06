@@ -45,7 +45,7 @@ function mdToHtml(md) {
 }
 
 async function main() {
-  console.log("=== Seeding 4 User-Provided Organic Articles ===");
+  console.log("=== Seeding 6 User-Provided Organic Articles ===");
 
   // Fetch category IDs
   const categories = await prisma.category.findMany();
@@ -128,7 +128,7 @@ Elektrikli araç sahipliği (EV) yaygınlaştıkça, potansiyel alıcıların ve
 
 Elektrikli araç kullanmanın en karlı ve konforlu yöntemi, aracı kendi evinizde veya müstakil garajınızda kurulan 7-11 kW kapasiteli bir duvar kutusu (wallbox) ile şarj etmektir. 2026 yılı güncel mesken elektrik tarifeleri göz önüne alındığında, ev tipi elektrik birim fiyatı kilovatsaat (kWh) başına ortalama 2.5 ila 3.5 TL civarındadır. 
 
-Standart bir elektrikli aracın 100 kilometrede ortalama 16 ila 18 kWh enerji tükettiğini varsaydığımızda, evden şarj edilen bir araçla 100 kilometre yol gitmenin maliyeti sadece 45 ila 60 TL arasında kalmaktadır. Bu rakam, ortalama 100 kilometrede 8-10 litre benzin tüketen ve kilometre başına yaklaşık 3.5 - 5 TL harcayan akaryakıtlı bir otomobille karşılaştırıldığında yaklaşık 6 ila 8 kat daha ucuz bir seyahat anlamına gelmektedir. Yıllık ortalama 15.000 kilometre yol yapan bir sürücü için ev şarjı, yıllık bütçede devasa bir yakıt tasarrufunu beraberinde getirir.
+Standart bir elektrikli aracın 100 kilometrede ortalama 16 ila 18 kWh energy tükettiğini varsaydığımızda, evden şarj edilen bir araçla 100 kilometre yol gitmenin maliyeti sadece 45 ila 60 TL arasında kalmaktadır. Bu rakam, ortalama 100 kilometrede 8-10 litre benzin tüketen ve kilometre başına yaklaşık 3.5 - 5 TL harcayan akaryakıtlı bir otomobille karşılaştırıldığında yaklaşık 6 ila 8 kat daha ucuz bir seyahat anlamına gelmektedir. Yıllık ortalama 15.000 kilometre yol yapan bir sürücü için ev şarjı, yıllık bütçede devasa bir yakıt tasarrufunu beraberinde getirir.
 
 ## İş Yerinde AC Şarj ve Otoyollarda Hızlı DC Şarj
 
@@ -138,7 +138,7 @@ Uzun yolculukların vazgeçilmezi olan ve 50 kW ile 350 kW arasında yüksek gü
 
 ## Şarj Verimliliğini ve Tüketimi Etkileyen Dinamikler
 
-Elektrikli araçlarda şarj maliyetti sadece birim fiyatla sınırlı değildir. Sürüş tarzınız ve hava koşulları tüketimi doğrudan etkiler. Özellikle kış aylarında kabin ısıtması ve bataryanın optimum sıcaklıkta kalması için harcanan enerji, tüketim değerlerini yüzde 20-30 oranında artırabilir. Ayrıca şehir içi sürüşlerde rejeneratif frenleme (motorun yavaşlarken elektrik üretmesi) sistemini aktif olarak kullanmak, şarj ihtiyacını azaltarak dolaylı yoldan maliyetleri düşürür.
+Elektrikli araçlarda şarj maliyeti sadece birim fiyatla sınırlı değildir. Sürüş tarzınız ve hava koşulları tüketimi doğrudan etkiler. Özellikle kış aylarında kabin ısıtması ve bataryanın optimum sıcaklıkta kalması için harcanan enerji, tüketim değerlerini yüzde 20-30 oranında artırabilir. Ayrıca şehir içi sürüşlerde rejeneratif frenleme (motorun yavaşlarken elektrik üretmesi) sistemini aktif olarak kullanmak, şarj ihtiyacını azaltarak dolaylı yoldan maliyetleri düşürür.
 
 Şarj işlemi sırasında kablolarda ve akım dönüştürücülerde yaşanan yüzde 5 ila 15 arasındaki enerji kayıplarını da hesaba katmak gerekir. Uzun vadeli maliyet hesaplarında, evine güneş enerjisi (GES) kuran veya elektrik kullanımında üç zamanlı tarife seçerek şarjı gece saat 22:00 ile 06:00 arasına zamanlayan sürücüler, kilometre başına maliyetlerini neredeyse sıfıra yaklaştırabilmektedir. Elektrikli araçların sunduğu bu esnek şarj ve düşük işletme maliyeti, onları sadece çevreci değil, aynı zamanda günümüzün en ekonomik ulaşım alternatifi haline getirmektedir.`
     },
@@ -161,7 +161,7 @@ Pazarda giriş seviyesini temsil eden 7,4 kW gücündeki temel modeller, genelli
 
 ## Kurulum, Kablolama ve Apartman İzinleri
 
-Cihazı satın aldıktan sonra karşılaşılan asıl değişken kalemi altyapı ve işçilik maliyetleridir. Bu maliyet, şarj istasyonunun kurulacağı garaj ile ana elektrik panosu arasındaki mesafeye, bina tipine ve mevcut elektrik tesisatının gücüne doğrudan bağlıdır. 
+Cihazı satın aldıktan sonra karşılaşılan asıl değişken kalemi altyapı ve işçilik maliyetleridir. This cost is directly dependent on the distance between the garage where the charging station will be installed and the main power distribution panel, the building type, and the power capacity of the existing wiring.
 
 Ana panoya yakın, sadece birkaç metrelik kablolama gerektiren basit kurulumlar son derece ekonomik bütçelerle tamamlanabiliyor. Ancak kablo mesafesi arttıkça, panoda sigorta yenilemeleri, kaçak akım rölesi eklemeleri ve kablo kanalı inşaat işleri devreye girdiğinde kurulum maliyetleri artış gösteriyor. Apartman veya sitelerde ortak alana yapılacak kurulumlarda ise apartman yönetimi onayı alınması, kabloların daire sayaçlarına çekilmesi veya ortak sayaçtan süzme sayaç ile ayrılması gibi karmaşık süreçler işçilik maliyetini yükseltebiliyor. Ayrıca, evinizin ana elektrik panosunun trifaze (3 fazlı) ve yeterli akım gücünde olmaması durumunda panoda güç artışı yapılması ek elektrikçi maliyetleri doğuruyor.
 
@@ -170,6 +170,68 @@ Ana panoya yakın, sadece birkaç metrelik kablolama gerektiren basit kurulumlar
 Wallbox kurulumu ilk bakışta ek bir finansal yük gibi görünse de, uzun vadede elektrikli aracın sunduğu düşük şarj maliyetinden maksimum düzeyde yararlanmayı sağlıyor. Yıllık ortalama 12.000 ila 15.000 kilometre yol kat eden bir sürücü, dışarıdaki DC hızlı şarj istasyonları yerine evden şarj etmeyi tercih ettiğinde yıllık çok ciddi bir yakıt tasarrufu elde ediyor. 
 
 Bu tasarruf oranı göz önüne alındığında, yapılan Wallbox ve kurulum yatırımı genellikle 1 ila 2 yıl içinde kendini tamamen amorti ediyor. Yatırım yapmadan önce mevcut elektrik tesisatınızın gücünü ölçtürmek ve bir elektrik mühendisinden rapor almak en doğru adımdır. Çoğu binek elektrikli araç için 11 kW gücündeki trifaze bir şarj istasyonu kurdurmak, hem şebekeyi yormamak hem de makul sürelerde (ortalama 6-8 saatte) tam dolum elde etmek için en optimum çözümü sunmaktadır.`
+    },
+    {
+      title: "SaaS Girişimleri: Dijital Dünyada Ölçeklenebilir İş Modeli",
+      slug: "saas-girisimleri-dijital-dunyada-olceklenebilir-is-modeli",
+      summary: "SaaS girişimleri, düşük başlangıç maliyeti, abonelik modeli ve ölçeklenebilir yapısıyla dijital ekonominin en güçlü iş modellerinden biri haline geliyor.",
+      imageUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80",
+      isFeatured: false,
+      categoryId: categoryMap['girisimcilik-saas'],
+      content: `## Dijital Dünyada Hizmet Olarak Yazılım (SaaS)
+
+Dijitalleşmenin büyük bir hız kazanmasıyla birlikte girişimcilik ekosisteminde en çok öne çıkan iş modellerinin başında SaaS (Software as a Service) geliyor. Türkçeye "hizmet olarak yazılım" şeklinde çevrilen SaaS, kullanıcıların bir yazılım lisansını satın alıp kendi bilgisayarlarına veya yerel sunucularına kurması yerine, bulut altyapısı üzerinden internet aracılığıyla abonelik modeliyle kullanmasına dayanıyor. Günümüzde muhasebeden insan kaynaklarına, müşteri ilişkileri yönetiminden (CRM) siber güvenliğe kadar iş dünyasının hemen hemen her alanında bulut tabanlı SaaS çözümleri tercih ediliyor.
+
+## Ölçeklenebilir Yapı ve Öngörülebilir Nakit Akışı
+
+SaaS iş modelinin teknoloji girişimcileri için bu kadar cazip olmasının temel nedeni, sunduğu üst düzey ölçeklenebilirlik potansiyelidir. Geleneksel yazılım satışında ürün genellikle tek seferlik lisans satışıyla satılır ve her yeni müşteri edinimi yüksek satış eforu gerektirir. 
+
+Buna karşın SaaS modelinde müşteriler aylık veya yıllık abonelik ücretleri öderler. Bu durum, girişimlere düzenli ve öngörülebilir bir nakit akışı sağlayarak uzun vadeli finansal planlamaları çok daha güvenli yapmalarına olanak tanır. Kullanıcı tarafında ise yüksek ilk kurulum maliyetleri, sunucu altyapı yatırımları ve karmaşık sistem bakım süreçleri tamamen ortadan kalkar.
+
+## Gerçek Problemlere Odaklanmak ve Müşteri Başarısı
+
+Başarılı bir SaaS girişimi kurmanın en kritik kuralı, pazarda gerçek ve can yakan bir problemi çözmektir. Sadece teknolojik olarak gelişmiş veya karmaşık bir kod yapısına sahip ürünler geliştirmek ticari başarı için yeterli değildir. Ürünün, işletmelerin zaman kaybını azaltması, operasyonel maliyetleri düşürmesi, verimliliği artırması veya veri analitiğiyle karar alma süreçlerini kolaylaştırması gerekir. 
+
+Bununla birlikte, SaaS dünyasında abonelik modeli sunulduğu için müşteri memnuniyeti ve müşteri başarısı (Customer Success) yönetimi hayati önem taşır. Kullanıcılar aldıkları hizmetten memnun kalmadıklarında aboneliklerini kolaylıkla iptal edebilirler. Bu nedenle girişimler için sadece yeni satış yapmak değil, mevcut müşteriyi elde tutmak (retention) ve abonelik iptal oranını (churn rate) minimumda tutmak büyümenin anahtarıdır.
+
+## Yapay Zeka Entegrasyonu ve Globalleşme Fırsatları
+
+Son yıllarda yapay zekanın SaaS ürünlerine derinlemesine entegre edilmesi bulut yazılım pazarını tamamen yeni bir boyuta taşıdı. Modern SaaS araçları artık sadece veri girişi yapılan veya basit raporlar sunan pasif sistemler olmaktan çıktı. Kullanıcı davranışlarını analiz eden, geleceğe yönelik öneriler sunan ve tekrarlayan iş süreçlerini tamamen otomatikleştiren akıllı asistanlara dönüştü. 
+
+Aynı zamanda, fiziksel ürün satışındaki lojistik, stok yönetimi ve yerel gümrük sınırları gibi engellerin SaaS ürünlerinde bulunmaması, doğru bir küresel pazarlama stratejisiyle dünyanın her yerine yazılım ihraç etmeyi kolaylaştırıyor. Türkiye gibi dinamik, genç ve yazılım yeteneği yüksek ülkeler için dikey SaaS girişimleri kurmak, küresel teknoloji pazarından pay almanın en etkili yoludur.
+
+SaaS modeli, girişimciler için yalnızca bir yazılım modeli sunmakla kalmaz; aynı zamanda sürdürülebilir, ölçeklenebilir ve globalleşmeye son derece açık bir iş yaklaşımı vaat eder. Doğru probleme odaklanan, güçlü bir ekiple ve doğru büyüme stratejisiyle geliştirilen bir SaaS ürünü, küçük bir fikirle başlayıp küresel ölçekte dev bir dijital işletmeye dönüşme gücüne sahiptir.`
+    },
+    {
+      title: "Trend Teknolojiler: İş Dünyasını ve Günlük Hayatı Dönüştüren Yeni Nesil Çözümler",
+      slug: "trend-teknolojiler-is-dunyasini-donusturen-yeni-cozumler",
+      summary: "Yapay zekâ, siber güvenlik, bulut bilişim, nesnelerin interneti ve otomasyon gibi trend teknolojiler iş dünyasını ve günlük hayatı yeniden şekillendiriyor.",
+      imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+      isFeatured: false,
+      categoryId: categoryMap['trend-teknolojiler'],
+      content: `## Teknolojik Dönüşümün Yeni Standartları
+
+Günümüzde teknoloji artık sadece şirketlerin iş süreçlerini destekleyen ikincil bir araç olmaktan çıktı. Üretim modellerinden iletişim kanallarına, müşteri ilişkilerinden günlük yaşam alışkanlıklarımıza kadar her şeyi baştan tanımlayan ana sürükleyici güç konumuna geldi. Yapay zeka, bulut bilişim, yeni nesil siber güvenlik yaklaşımları, nesnelerin interneti (IoT), büyük veri analitiği ve akıllı otomasyon sistemleri gibi trend teknolojiler, günümüz iş dünyasında şirketlerin rekabet gücünü ve hayatta kalma sınırlarını belirliyor.
+
+## Karar Mekanizmalarında Yapay Zeka ve Otonom Ajanlar
+
+Teknoloji dünyasının en sıcak başlığı olan yapay zeka, sadece basit metinler yazan veya görseller üreten popüler araçlardan çok daha derin bir anlama sahip. Modern iş dünyasında yapay zeka, finansal risk analizlerinden akıllı üretim hatlarının yönetimine, müşteri hizmetleri botlarından kişiselleştirilmiş sağlık teknolojilerine kadar kritik karar destek mekanizması olarak kullanılıyor. 
+
+Bu alandaki yeni devrim ise otonom yapay zeka ajanları (Agentic AI) ile yaşanıyor. Sadece verilen komuta yanıt veren sistemlerin ötesine geçen bu ajanlar, kendi başlarına planlama yapabiliyor, karmaşık ve çok adımlı görevleri takip edebiliyor ve diğer dijital sistemlerle etkileşime girerek iş süreçlerini tamamen otonom hale getiriyor.
+
+## Bulut Bilişim ve Genişleyen Siber Güvenlik Sınırları
+
+Şirketlerin fiziksel sunucu yatırımları ve dev veri depolama donanımları satın almak yerine bulut altyapılarına geçiş yapması, operasyonel esnekliği artırırken maliyetleri de ciddi oranda düşürdü. Hibrit ve çoklu bulut stratejileri, kurumların verilerini hem güvenli hem de yüksek erişilebilir şekilde saklamasına imkan tanıyor. 
+
+Ancak dijitalleşen bu devasa altyapılar, siber güvenlik tehditlerini de beraberinde büyütüyor. Uzaktan çalışma sistemleri, akıllı saha cihazları (IoT) ve bulut servisleri nedeniyle genişleyen saldırı yüzeyini korumak için geleneksel güvenlik duvarları artık yetersiz kalıyor. Bu nedenle modern güvenlik mimarileri, tehditler oluştuktan sonra savunma yapmak yerine, potansiyel riskleri yapay zeka ile önceden tespit edip engelleyen proaktif yaklaşımlara odaklanıyor.
+
+## Nesnelerin İnterneti ve Veriden Değer Üretmek
+
+Fiziksel cihazların birbirleriyle ve internet ağıyla sürekli veri paylaşmasında rol oynayan Nesnelerin İnterneti (IoT) teknolojisi, sanayiden ev içi kullanıma kadar geniş bir alana yayılıyor. Akıllı fabrikalardaki sensörler, lojistik araç takip sistemleri ve akıllı şehir sayaçları, sahadan anlık veri toplayarak bakım ihtiyaçlarının önceden tahmin edilmesini (kestirimci bakım) ve kaynakların en verimli şekilde optimize edilmesini sağlıyor. 
+
+Tüm bu sistemlerin ürettiği devasa veri havuzunu anlamlandırmak ise büyük veri analitiğinin konusudur. Veriyi ham halde saklamak yerine analiz ederek stratejik içgörülere dönüştüren ve operasyonel işleri yazılımsal robotlarla (RPA) otomatikleştiren kurumlar, rekabette her zaman bir adım önde kalmayı başarıyor.
+
+Trend teknolojiler, geleceğin değil doğrudan bugünün konusudur. İş dünyasında rekabet avantajı elde etmek, operasyonel verimliliği artırmak ve kullanıcı beklentilerine çok daha hızlı cevap verebilmek için teknolojiyi lüks bir gider değil, stratejik bir yatırım olarak konumlandırmak gerekir. Doğru teknolojik altyapı, gerçek bir ihtiyaçla birleştiğinde sadece mevcut süreçleri iyileştirmekle kalmaz, kurumların geleceğini de kökten dönüştürür.`
     }
   ];
 
