@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 import { getSEOMetadata } from "@/lib/seo";
 import { db } from "@/lib/db";
 import "./globals.css";
@@ -56,6 +57,7 @@ export default async function RootLayout({
         <Header categories={categories} />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );
