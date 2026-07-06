@@ -63,6 +63,13 @@ export default function Header({ categories = [] }: HeaderProps) {
                 <span>EV Kataloğu</span>
                 <span className="text-[9px] font-black uppercase bg-emerald-600 text-white px-1.5 py-0.5 rounded-full scale-90 tracking-normal leading-none">1.3K+</span>
               </Link>
+              <Link
+                href="/yazilim-guncellemeleri"
+                className="text-xs font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 hover:text-blue-800 px-3 py-2.5 rounded-xl transition-all duration-200 flex items-center space-x-1.5 border border-blue-100/50 shadow-sm shrink-0"
+              >
+                <svg className="h-3.5 w-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" /></svg>
+                <span>OTA Güncellemeleri</span>
+              </Link>
 
               {navLinks.map((link) => (
                 <Link
@@ -136,6 +143,14 @@ export default function Header({ categories = [] }: HeaderProps) {
                 <span>EV Kataloğu</span>
               </div>
               <span className="text-[10px] font-black uppercase bg-emerald-600 text-white px-2 py-0.5 rounded-full tracking-normal leading-none">1.3K+ Araç</span>
+            </Link>
+            <Link
+              href="/yazilim-guncellemeleri"
+              onClick={() => setIsOpen(false)}
+              className="text-base font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 px-4 py-3 rounded-xl transition-all duration-200 flex items-center space-x-2 border border-blue-100/50 shadow-sm"
+            >
+              <svg className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" /></svg>
+              <span>OTA Güncellemeleri</span>
             </Link>
 
             {navLinks.map((link) => (

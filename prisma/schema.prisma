@@ -133,3 +133,26 @@ model ElectricVehicle {
 
   @@unique([brand, model, variant, year])
 }
+
+model SoftwareUpdate {
+  id              String   @id @default(uuid())
+  brand           String
+  model           String?
+  version         String
+  previousVersion String?
+  updateType      String   // "major", "minor", "patch", "security", "recall"
+  title           String
+  changelog       String
+  highlights      String?  // JSON array of key features
+  releaseDate     DateTime
+  sourceUrl       String?
+  sourceName      String?
+  isSecurityFix   Boolean  @default(false)
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([brand])
+  @@index([releaseDate])
+  @@unique([brand, version, model])
+}
