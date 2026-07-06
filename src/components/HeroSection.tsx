@@ -55,9 +55,9 @@ export default function HeroSection({ featured, popular }: HeroSectionProps) {
               <span className="text-xs font-semibold text-gray-400">
                 {formatDate(featured.publishedAt)}
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 group-hover:text-emerald-700 transition-colors duration-300 leading-tight">
+              <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 group-hover:text-emerald-700 transition-colors duration-300 leading-tight">
                 {featured.title}
-              </h2>
+              </h1>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed line-clamp-3">
                 {featured.summary}
               </p>
