@@ -9,6 +9,7 @@ import Sidebar from '@/components/Sidebar';
 import InArticleAd from '@/components/InArticleAd';
 import AdSkeleton from '@/components/AdSkeleton';
 import CommentSection from '@/components/CommentSection';
+import ShareButtons from '@/components/ShareButtons';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -150,6 +151,8 @@ export default async function ArticleDetailPage({ params }: PageProps) {
               {article.summary}
             </p>
           </div>
+
+          <ShareButtons title={article.title} />
 
           {/* Image */}
           {article.imageUrl && (

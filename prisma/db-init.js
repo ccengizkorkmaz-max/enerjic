@@ -35,6 +35,10 @@ async function main() {
     // Always run the new articles script to insert our latest 4 AdSense-optimized articles
     console.log("Checking and adding new AdSense-optimized articles...");
     execSync('node prisma/seed-new-articles.js', { stdio: 'inherit' });
+
+    // Always run the TechCrunch articles addition script
+    console.log("Checking and adding TechCrunch climate articles...");
+    execSync('node prisma/add-techcrunch-articles.js', { stdio: 'inherit' });
   } catch (e) {
     console.error("Database connection error or schema not pushed yet:", e.message);
   } finally {
