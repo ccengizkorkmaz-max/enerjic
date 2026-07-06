@@ -45,7 +45,7 @@ function mdToHtml(md) {
 }
 
 async function main() {
-  console.log("=== Seeding 7 User-Provided Organic Articles ===");
+  console.log("=== Seeding 8 User-Provided Organic Articles ===");
 
   // Fetch category IDs
   const categories = await prisma.category.findMany();
@@ -227,7 +227,7 @@ Ancak dijitalleşen bu devasa altyapılar, siber güvenlik tehditlerini de berab
 
 ## Nesnelerin İnterneti ve Veriden Değer Üretmek
 
-Fiziksel cihazlerin birbirleriyle ve internet ağıyla sürekli veri paylaşmasında rol oynayan Nesnelerin İnterneti (IoT) teknolojisi, sanayiden ev içi kullanıma kadar geniş bir alana yayılıyor. Akıllı fabrikalardaki sensörler, lojistik araç takip sistemleri ve akıllı şehir sayaçları, sahadan anlık veri toplayarak bakım ihtiyaçlarının önceden tahmin edilmesini (kestirimci bakım) ve kaynakların en verimli şekilde optimize edilmesini sağlıyor. 
+Fiziksel cihazların birbirleriyle ve internet ağıyla sürekli veri paylaşmasında rol oynayan Nesnelerin İnterneti (IoT) teknolojisi, sanayiden ev içi kullanıma kadar geniş bir alana yayılıyor. Akıllı fabrikalardaki sensörler, lojistik araç takip sistemleri ve akıllı şehir sayaçları, sahadan anlık veri toplayarak bakım ihtiyaçlarının önceden tahmin edilmesini (kestirimci bakım) ve kaynakların en verimli şekilde optimize edilmesini sağlıyor. 
 
 Tüm bu sistemlerin ürettiği devasa veri havuzunu anlamlandırmak ise büyük veri analitiğinin konusudur. Veriyi ham halde saklamak yerine analiz ederek stratejik içgörülere dönüştüren ve operasyonel işleri yazılımsal robotlarla (RPA) otomatikleştiren kurumlar, rekabette her zaman bir adım önde kalmayı başarıyor.
 
@@ -257,6 +257,35 @@ Geleneksel drag yarışlarında motor sesi, egzoz patlamaları ve mekanik kükre
 Bu ani ve güçlü hızlanma kabiliyetinin sokaklarda veya trafiğe açık alanlarda test edilmesi ise büyük bir güvenlik riski oluşturur. Elektrikli araçların kontrolsüz güç aktarımı, acemi sürücüler için tehlikeli durumlara yol açabileceğinden, bu tür performans denemelerinin kesinlikle güvenlik önlemleri alınmış kapalı pistlerde yapılması zorunludur.
 
 Elektrikli araçlar, drag yarışlarında yalnızca alternatif bir seçenek değil, performans dünyasının yeni ve güçlü oyuncularından biri haline geliyor. Anlık tork, gelişmiş yazılım kontrolü ve yüksek hızlanma kabiliyeti sayesinde elektrikli araçlar pistlerde sessiz ama son derece iddialı bir devrim başlatıyor. Geleceğin drag yarışlarında motor sesi belki daha az duyulacak, ancak hızın etkisi çok daha güçlü hissedilecek.`
+    },
+    {
+      title: "Elektrikli Araçlarda Siber Güvenlik: Tekerlekli Bilgisayarların Yeni Riski",
+      slug: "elektrikli-araclarda-siber-guvenlik",
+      summary: "Elektrikli ve bağlantılı araçların yaygınlaşmasıyla birlikte otomotiv dünyasında siber güvenlik, lüks bir özellik olmaktan çıkıp doğrudan can ve veri güvenliği konusu haline geliyor.",
+      imageUrl: "https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=800&q=80",
+      isFeatured: false,
+      categoryId: categoryMap['elektrikli-araclar'],
+      content: `## Otomotiv Dünyasının Yeni Gerçeği: Tekerlekli Bilgisayarlar
+
+Otomotiv endüstrisi, tarihinin en büyük dönüşüm süreçlerinden birini yaşıyor. Elektrikli araçların (EV) yükselişiyle birlikte otomobiller artık sadece mekanik parçalardan ve motorlardan oluşan taşıtlar olmaktan çıktı; binlerce satır kodun çalıştığı, internete sürekli bağlı olan devasa birer mobil bilgisayara dönüştü. Yazılım tanımlı araçlar (SDV) çağında, araçların menzili, performansı, batarya yönetimi ve sürüş destek sistemleri yazılım güncellemeleriyle uzaktan değiştirilebiliyor. Bu teknolojik esneklik sürücüler için harika bir konfor alanı sunsa da, beraberinde otomotiv dünyasının daha önce hiç karşılaşmadığı büyüklükte siber güvenlik risklerini getiriyor.
+
+## Genişleyen Saldırı Yüzeyi ve Regülasyonların Rolü
+
+Elektrikli araçlarda siber saldırganların hedef alabileceği saldırı yüzeyi, geleneksel araçlara kıyasla çok daha geniş ve karmaşıktır. Araçların mobil uygulamaları, bulut hesapları, şarj istasyonu bağlantıları, Bluetooth ve Wi-Fi ağları, navigasyon verileri, OTA (havadan) yazılım güncellemeleri, batarya yönetim sistemleri (BMS) ve hatta ödeme altyapıları potansiyel birer giriş noktası haline geliyor. 
+
+Bu risklerin farkında olan uluslararası regülasyonlar, otomobil üreticilerine katı kurallar getirmeye başladı. UNECE R155 düzenlemesi araç üreticilerinden kapsamlı bir Siber Güvenlik Yönetim Sistemi (CSMS) kurmalarını talep ederken, UNECE R156 ise uzaktan yazılım güncellemelerinin güvenliğini yöneten bir sistem (SUMS) zorunluluğu getiriyor. Benzer şekilde ISO/SAE 21434 standardı da siber güvenliği yalnızca araç üretim aşamasıyla sınırlamayıp, tasarım aşamasından aracın ömrünü tamamlayıp hurdaya ayrılmasına kadar geçen tüm yaşam döngüsü boyunca sürdürülmesini zorunlu kılıyor.
+
+## Havadan Güncellemeler (OTA) ve Şarj Altyapısı Güvenliği
+
+Elektrikli araç ekosisteminde en kritik alanların başında havadan yazılım güncellemeleri (OTA) geliyor. Bu güncellemelerin güvenli dijital imzalarla doğrulanmaması ve güvenli sunuculardan dağıtılmaması durumunda, kötü niyetli aktörlerin araca manipüle edilmiş yazılımlar yüklemesi teorik olarak mümkün hale gelebilir. Bu nedenle, gelecekte araçların yazılım paketlerinde kriptografik doğrulamalar, geri alma mekanizmaları ve günlüğe kaydetme standartları uygulanacaktır.
+
+Siber güvenlik açıkları sadece aracın kendisinde değil, bağlandığı şarj ağlarında da ortaya çıkabiliyor. Özellikle kabloyu takar takmaz aracı tanıyan ve otomatik ödeme başlatan "Plug & Charge" gibi kolaylıklar, kimlik doğrulama süreçleri ve veri şifreleme protokolleri doğru yapılandırılmadığında veri sızıntılarına veya finansal manipülasyonlara zemin hazırlayabilir. Bu noktada ISO 15118 standardı, araç ile şarj cihazı arasındaki dijital iletişimin siber güvenlik çerçevesini çizmede hayati bir rol üstleniyor.
+
+## Otomotiv Siber Güvenlik Operasyon Merkezleri ve Gelecek
+
+Geleceğin elektrikli araç ekosisteminde, tıpkı büyük kurumsal şirketlerde olduğu gibi araçlar ve bağlı sistemler için özel Siber Güvenlik Operasyon Merkezleri (SOC) kurulması gerekecektir. Araçlardaki olağan dışı veri trafikleri, beklenmeyen yazılım davranışları veya anormal şarj/batarya komutları anlık olarak izlenerek potansiyel saldırılar daha başlamadan engellenecektir.
+
+Elektrikli araç dünyasındaki gelecek rekabeti sadece menzil uzunluğu, batarya kapasitesi veya ivmelenme hızları üzerinden şekillenmeyecektir. Yakın gelecekte tüketicilerin ve denetleyici kurumların en önemli kriteri, bir aracın siber tehditlere karşı ne kadar korunaklı olduğu, verileri nasıl sakladığı ve şarj altyapılarıyla ne kadar güvenli iletişim kurabildiği olacaktır. Otomotiv siber güvenliği artık lüks bir konfor detayı değil; doğrudan can güvenliği, veri gizliliği ve marka güvenilirliğinin temel direğidir.`
     }
   ];
 
