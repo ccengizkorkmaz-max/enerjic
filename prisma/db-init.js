@@ -31,6 +31,10 @@ async function main() {
     // Always run the new SaaS articles addition script to ensure they are added safely if missing
     console.log("Checking and adding new SaaS articles...");
     execSync('node prisma/add-saas-articles.js', { stdio: 'inherit' });
+
+    // Always run the new articles script to insert our latest 4 AdSense-optimized articles
+    console.log("Checking and adding new AdSense-optimized articles...");
+    execSync('node prisma/seed-new-articles.js', { stdio: 'inherit' });
   } catch (e) {
     console.error("Database connection error or schema not pushed yet:", e.message);
   } finally {
