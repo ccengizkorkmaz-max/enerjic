@@ -93,8 +93,6 @@ export default function AdSkeleton({
             data-full-width-responsive="true"
           />
         ) : (
-          /* User's Adaptive A-Ads Iframe - does not block AdSense review and routes earnings directly to user's account */
-          {/* A-Ads Adaptive Ad Unit */}
           <div id="frame" style={{ width: '100%', margin: 'auto', position: 'relative', zIndex: 99998 }}>
             <iframe
               data-aa="2447062"
