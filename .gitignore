@@ -46,3 +46,5 @@ next-env.d.ts
 *.db-shm
 *.db-wal
 
+# local car images download cache
+/public/img/cars/
