@@ -67,6 +67,10 @@ async function main() {
     // Always run the EV software updates seed script
     console.log("Checking and adding EV software updates...");
     execSync('node prisma/seed-software-updates.js', { stdio: 'inherit' });
+
+    // Seed bulk charging stations (130+ stations across Turkey)
+    console.log("Checking and adding bulk charging stations...");
+    execSync('node prisma/seed-stations-bulk.js', { stdio: 'inherit' });
   } catch (e) {
     console.error("Database connection error or schema not pushed yet:", e.message);
   } finally {
