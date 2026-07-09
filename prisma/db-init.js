@@ -52,6 +52,10 @@ async function main() {
     console.log("Checking and adding EV battery fire article...");
     execSync('node prisma/add-ev-fire-article.js', { stdio: 'inherit' });
 
+    // Always run the battery geopolitics article seed script
+    console.log("Checking and adding battery geopolitics article...");
+    execSync('node prisma/add-battery-geopolitics-article.js', { stdio: 'inherit' });
+
     // Always run the EV software updates seed script
     console.log("Checking and adding EV software updates...");
     execSync('node prisma/seed-software-updates.js', { stdio: 'inherit' });

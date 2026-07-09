@@ -7,21 +7,13 @@ import AdSkeleton from '@/components/AdSkeleton';
 export const revalidate = 60; // ISR cache regeneration time
 
 export default async function HomePage() {
-  // Fetch featured article
+  // Fetch the most recently published article as hero
   let featuredArticle = null;
   try {
     featuredArticle = await db.article.findFirst({
-      where: { isFeatured: true },
       include: { category: true },
       orderBy: { publishedAt: 'desc' },
     });
-
-    if (!featuredArticle) {
-      featuredArticle = await db.article.findFirst({
-        include: { category: true },
-        orderBy: { publishedAt: 'desc' },
-      });
-    }
   } catch (e) {
     console.error('Home Page: Error fetching featured article', e);
   }
