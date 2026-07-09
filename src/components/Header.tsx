@@ -54,7 +54,7 @@ export default function Header({ categories = [] }: HeaderProps) {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1.5 xl:space-x-3">
+            <nav className="hidden lg:flex items-center space-x-2.5 xl:space-x-5">
               <Link
                 href="/elektrikli-araclar"
                 className="text-[11px] font-black text-emerald-700 bg-emerald-50 hover:bg-emerald-100 hover:text-emerald-800 px-2.5 py-2 rounded-xl transition-all duration-200 flex items-center space-x-1 border border-emerald-100/50 shadow-sm shrink-0"
@@ -79,38 +79,19 @@ export default function Header({ categories = [] }: HeaderProps) {
                 <span>OTA</span>
               </Link>
 
-              <div className="w-px h-5 bg-gray-200 mx-1 hidden xl:block" />
+              <div className="w-px h-5 bg-gray-200 mx-1" />
 
-              {/* Dynamic Categories (Visible on xl screen size) */}
+              {/* Dynamic Categories (Fully visible on desktop) */}
               {navLinks.map((link) => (
                 <Link
                   key={link.slug}
                   href={`/kategori/${link.slug}`}
-                  className="text-xs font-semibold text-gray-500 hover:text-emerald-700 hover:bg-emerald-50/50 px-2 py-1.5 rounded-lg transition-all duration-200 whitespace-nowrap hidden xl:block"
+                  className="text-xs font-semibold text-gray-500 hover:text-emerald-700 hover:bg-emerald-50/50 px-2.5 py-1.5 rounded-lg transition-all duration-200 whitespace-nowrap"
                 >
                   {link.name}
                 </Link>
               ))}
             </nav>
-          </div>
-
-          {/* Search bar & Hamburger button */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <form onSubmit={handleSearch} className="relative">
-              <input
-                type="text"
-                placeholder="Arama yap..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-36 xl:w-48 bg-gray-50 border border-gray-200 text-xs rounded-full py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 focus:bg-white transition-all duration-200 text-gray-800"
-              />
-              <button
-                type="submit"
-                className="absolute right-3 top-2 text-gray-400 hover:text-emerald-600"
-              >
-                <Search className="h-4 w-4" />
-              </button>
-            </form>
           </div>
 
           {/* Hamburger button */}
@@ -122,6 +103,27 @@ export default function Header({ categories = [] }: HeaderProps) {
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* Centered Large Search Bar Row (Desktop Only) */}
+      <div className="hidden lg:block border-t border-gray-100/60 bg-gray-50/20 py-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+          <form onSubmit={handleSearch} className="relative w-full max-w-2xl">
+            <input
+              type="text"
+              placeholder="Sitede arama yap..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-white border border-gray-200 text-sm rounded-full py-2.5 pl-6 pr-12 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-200 text-gray-800 shadow-sm"
+            />
+            <button
+              type="submit"
+              className="absolute right-4 top-3 text-gray-400 hover:text-emerald-600"
+            >
+              <Search className="h-4.5 w-4.5" />
+            </button>
+          </form>
         </div>
       </div>
 
