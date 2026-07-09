@@ -4,7 +4,7 @@ const path = require('path');
 const db = new PrismaClient();
 
 async function main() {
-  const jsonPath = 'C:\\Users\\cengiz.korkmaz\\.gemini\\antigravity-ide\\brain\\27065b63-12a8-4c73-b491-bf296c73c967\\scratch\\scraped_stations_perfect.json';
+  const jsonPath = path.join(__dirname, 'scraped_stations_perfect.json');
   
   if (!fs.existsSync(jsonPath)) {
     console.error("Scraped stations JSON not found at:", jsonPath);
