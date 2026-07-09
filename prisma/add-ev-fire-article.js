@@ -151,7 +151,7 @@ Elektrikli araçların pilleri durup dururken, hiçbir etki olmadan aniden patla
           imageUrl: articleData.imageUrl,
           categoryId: articleData.categoryId,
           isFeatured: false,
-          publishedAt: new Date()
+          publishedAt: new Date("2026-07-03T10:30:00.000Z")
         }
       });
       console.log(`Created database article: ${articleData.title}`);

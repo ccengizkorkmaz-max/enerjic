@@ -142,7 +142,8 @@ Savaşın kimyası değişti; karbon moleküllerinin yerini lityum iyonları ald
           summary: articleData.summary,
           content: htmlContent,
           imageUrl: articleData.imageUrl,
-          categoryId: articleData.categoryId
+          categoryId: articleData.categoryId,
+          publishedAt: new Date("2026-07-05T14:00:00.000Z")
         }
       });
       console.log(`Updated database article: ${articleData.title}`);
@@ -156,7 +157,7 @@ Savaşın kimyası değişti; karbon moleküllerinin yerini lityum iyonları ald
           imageUrl: articleData.imageUrl,
           categoryId: articleData.categoryId,
           isFeatured: false,
-          publishedAt: new Date()
+          publishedAt: new Date("2026-07-05T14:00:00.000Z")
         }
       });
       console.log(`Created database article: ${articleData.title}`);

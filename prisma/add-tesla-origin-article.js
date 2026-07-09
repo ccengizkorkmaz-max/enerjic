@@ -164,7 +164,8 @@ Detroit'in kibirli devleri EV1'i öldeki ezerken kendi sonlarını hazırladıkl
           summary: articleData.summary,
           content: htmlContent,
           imageUrl: articleData.imageUrl,
-          categoryId: articleData.categoryId
+          categoryId: articleData.categoryId,
+          publishedAt: new Date("2026-07-07T09:15:00.000Z")
         }
       });
       console.log(`Updated database article: ${articleData.title}`);
@@ -178,7 +179,7 @@ Detroit'in kibirli devleri EV1'i öldeki ezerken kendi sonlarını hazırladıkl
           imageUrl: articleData.imageUrl,
           categoryId: articleData.categoryId,
           isFeatured: false,
-          publishedAt: new Date()
+          publishedAt: new Date("2026-07-07T09:15:00.000Z")
         }
       });
       console.log(`Created database article: ${articleData.title}`);
