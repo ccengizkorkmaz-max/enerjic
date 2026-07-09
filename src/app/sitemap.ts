@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { db } from '@/lib/db';
+import { slugify } from '@/lib/slugify';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://enerjic.com';
@@ -87,5 +88,57 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...categoryRoutes, ...articleRoutes, ...swUpdateRoutes];
+  // Fetch unique cities & districts for charging stations pSEO
+  let chargingStationRoutes: any[] = [];
+  try {
+    const stations = await db.chargingStation.findMany({
+      where: { isActive: true },
+      select: { city: true, district: true }
+    });
+
+    // Main landing
+    chargingStationRoutes.push({
+      url: `${baseUrl}/sarj-istasyonlari`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    });
+
+    // Unique cities routes
+    const uniqueCities = [...new Set(stations.map(s => s.city))];
+    uniqueCities.forEach(city => {
+      chargingStationRoutes.push({
+        url: `${baseUrl}/sarj-istasyonlari/${slugify(city)}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+      });
+    });
+
+    // Unique district routes (City/District combination)
+    const uniqueCityDistricts = Array.from(
+      new Set(stations.map(s => `${s.city}|${s.district}`))
+    );
+    uniqueCityDistricts.forEach(combo => {
+      const [city, district] = combo.split('|');
+      if (city && district) {
+        chargingStationRoutes.push({
+          url: `${baseUrl}/sarj-istasyonlari/${slugify(city)}/${slugify(district)}`,
+          lastModified: new Date(),
+          changeFrequency: 'weekly' as const,
+          priority: 0.7,
+        });
+      }
+    });
+  } catch (e) {
+    console.error('Sitemap charging stations fetch error: ', e);
+  }
+
+  return [
+    ...staticRoutes, 
+    ...categoryRoutes, 
+    ...articleRoutes, 
+    ...swUpdateRoutes,
+    ...chargingStationRoutes
+  ];
 }

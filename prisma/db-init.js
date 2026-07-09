@@ -83,10 +83,6 @@ async function main() {
     // Apply uploaded ImgBB remote cloud URLs to vehicles
     console.log("Applying ImgBB URLs to database...");
     execSync('node prisma/apply-imgbb-urls.js', { stdio: 'inherit' });
-
-    // Apply direct Wikipedia backup URLs to any remaining missing/broken vehicle images
-    console.log("Applying direct Wikipedia image URLs to missing/broken vehicles...");
-    execSync('node prisma/apply-wikipedia-direct-urls.js', { stdio: 'inherit' });
   } catch (e) {
     console.error("Database connection error or schema not pushed yet:", e.message);
   } finally {

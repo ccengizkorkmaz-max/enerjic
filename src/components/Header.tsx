@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Leaf, Search, Menu, X, Car } from 'lucide-react';
+import { Leaf, Search, Menu, X, Car, Zap } from 'lucide-react';
 
 interface Category {
   name: string;
@@ -62,6 +62,14 @@ export default function Header({ categories = [] }: HeaderProps) {
                 <Car className="h-3.5 w-3.5 text-emerald-600 animate-pulse" />
                 <span>EV Kataloğu</span>
                 <span className="text-[8px] font-black uppercase bg-emerald-600 text-white px-1 py-0.5 rounded-full scale-90 tracking-normal leading-none">1.3K+</span>
+              </Link>
+              <Link
+                href="/sarj-istasyonlari"
+                className="text-[11px] font-black text-amber-700 bg-amber-50 hover:bg-amber-100 hover:text-amber-800 px-2.5 py-2 rounded-xl transition-all duration-200 flex items-center space-x-1 border border-amber-100/50 shadow-sm shrink-0"
+              >
+                <Zap className="h-3.5 w-3.5 text-amber-500 animate-pulse" />
+                <span>Şarj Noktaları</span>
+                <span className="text-[8px] font-black uppercase bg-amber-600 text-white px-1 py-0.5 rounded-full scale-90 tracking-normal leading-none">6K+</span>
               </Link>
               <Link
                 href="/yazilim-guncellemeleri"
@@ -145,6 +153,17 @@ export default function Header({ categories = [] }: HeaderProps) {
                 <span>EV Kataloğu</span>
               </div>
               <span className="text-[10px] font-black uppercase bg-emerald-600 text-white px-2 py-0.5 rounded-full tracking-normal leading-none">1.3K+ Araç</span>
+            </Link>
+            <Link
+              href="/sarj-istasyonlari"
+              onClick={() => setIsOpen(false)}
+              className="text-base font-black text-amber-700 bg-amber-50 hover:bg-amber-100 px-4 py-3 rounded-xl transition-all duration-200 flex items-center justify-between border border-amber-100/50 shadow-sm"
+            >
+              <div className="flex items-center space-x-2">
+                <Zap className="h-5 w-5 text-amber-500 animate-pulse" />
+                <span>Şarj Noktaları</span>
+              </div>
+              <span className="text-[10px] font-black uppercase bg-amber-600 text-white px-2 py-0.5 rounded-full tracking-normal leading-none">6.3K+ Nokta</span>
             </Link>
             <Link
               href="/yazilim-guncellemeleri"
