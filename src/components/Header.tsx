@@ -78,38 +78,7 @@ export default function Header({ categories = [] }: HeaderProps) {
                 <svg className="h-3.5 w-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" /></svg>
                 <span>OTA</span>
               </Link>
-
-              <div className="w-px h-5 bg-gray-200 mx-1" />
-
-              {navLinks.map((link) => (
-                <Link
-                  key={link.slug}
-                  href={`/kategori/${link.slug}`}
-                  className="text-xs font-semibold text-gray-600 hover:text-emerald-700 hover:bg-emerald-50 hover:bg-opacity-50 px-2 py-1.5 rounded-lg transition-all duration-200 whitespace-nowrap"
-                >
-                  {link.name}
-                </Link>
-              ))}
             </nav>
-          </div>
-
-          {/* Search bar & Mobile Menu button */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <form onSubmit={handleSearch} className="relative">
-              <input
-                type="text"
-                placeholder="Arama yap..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-60 bg-gray-50 border border-gray-200 text-sm rounded-full py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 focus:bg-white transition-all duration-200 text-gray-800"
-              />
-              <button
-                type="submit"
-                className="absolute right-3 top-2 text-gray-400 hover:text-emerald-600"
-              >
-                <Search className="h-4.5 w-4.5" />
-              </button>
-            </form>
           </div>
 
           {/* Hamburger button */}
@@ -121,6 +90,41 @@ export default function Header({ categories = [] }: HeaderProps) {
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* Sub-header for desktop (Categories & Search Bar) */}
+      <div className="hidden lg:block border-t border-gray-100/70 bg-gray-50/30 py-2.5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          {/* Categories Nav */}
+          <nav className="flex items-center space-x-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.slug}
+                href={`/kategori/${link.slug}`}
+                className="text-xs font-semibold text-gray-600 hover:text-emerald-700 hover:bg-emerald-50/50 px-2.5 py-1.5 rounded-lg transition-all duration-200 whitespace-nowrap"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Search bar positioned in this sub-row */}
+          <form onSubmit={handleSearch} className="relative">
+            <input
+              type="text"
+              placeholder="Sitede arama yap..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-56 bg-white border border-gray-200 text-xs rounded-full py-1.5 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-200 text-gray-800"
+            />
+            <button
+              type="submit"
+              className="absolute right-3 top-1.5 text-gray-400 hover:text-emerald-600"
+            >
+              <Search className="h-4 w-4" />
+            </button>
+          </form>
         </div>
       </div>
 
