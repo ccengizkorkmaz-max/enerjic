@@ -61,14 +61,14 @@ async function main() {
     title: "Fatih Altaylı Neden Hiç Elektrikli Araç Makalesi Yazmıyor?",
     slug: "fatih-altayli-neden-hic-elektrikli-arac-makalesi-yazmiyor",
     summary: "Fatih Altaylı elektrikli araçlar hakkında yazı yazmıyor mu? Tam tersine: Kia EV6'dan Mercedes EQS'e, BYD'den Togg'a kadar onlarca model test etti. Peki neden 'yazmıyor' gibi algılanıyor? Cevap, medyanın dönüşümünde gizli.",
-    imageUrl: "https://images.unsplash.com/photo-1504711434969-e33886168d5c?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?auto=format&fit=crop&w=800&q=80",
     isFeatured: false,
     categoryId: category.id,
     content: `Aslında bu yaygın bir yanlış anlaşılma; çünkü Fatih Altaylı elektrikli araçlar hakkında son derece aktif bir şekilde yazılar yazıyor, incelemeler yapıyor ve YouTube programlarında bu konuyu sıkça masaya yatırıyor. Kendisi Türkiye'de otomotiv editörlüğü geçmişi olan ve yeni çıkan hemen her önemli modeli bizzat test eden nadir köşe yazarlarından biridir.
 
 Eğer son dönemde gözünüzden kaçtıysa, elektrikli araçlar konusundaki yazı geçmişini ve bu sektöre yaklaşımını şu şekilde özetleyebiliriz:
 
-[IMG:https://images.unsplash.com/photo-1504711434969-e33886168d5c?auto=format&fit=crop&w=1200&q=80|Otomotiv gazeteciliği: Elektrikli araç incelemelerinin yeni çağı dijital platformlara taşındı]
+[IMG:https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?auto=format&fit=crop&w=1200&q=80|Otomotiv gazeteciliği: Elektrikli araç incelemelerinin yeni çağı dijital platformlara taşındı]
 
 ## 1. Bizzat Yazıyor ve Test Ediyor
 
