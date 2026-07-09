@@ -71,6 +71,10 @@ async function main() {
     // Seed bulk charging stations (130+ stations across Turkey)
     console.log("Checking and adding bulk charging stations...");
     execSync('node prisma/seed-stations-bulk.js', { stdio: 'inherit' });
+
+    // Seed scraped charging stations from vmob.tr (3600+ stations)
+    console.log("Checking and seeding scraped stations from vmob.tr...");
+    execSync('node prisma/seed-scraped-stations.js', { stdio: 'inherit' });
   } catch (e) {
     console.error("Database connection error or schema not pushed yet:", e.message);
   } finally {
