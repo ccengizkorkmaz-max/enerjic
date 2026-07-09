@@ -90,7 +90,7 @@ Bir varil petrolü çıkarıp yakarsınız ve biter. Bir pil hücresi ise rafine
 
 **Kritik Denklem:** Bugün bir ülke petrol rezervine sahip olmasa da enerji ithal ederek ayakta kalabilir. Ancak yarının dünyasında batarya ekosisteminin dışında kalan bir ülke, endüstriyel olarak tamamen "felç" olma riskiyle karşı karşıya.
 
-[IMG:https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=1200&q=80|Lityum-iyon pil hücreleri: 21. yüzyılın yeni "ham petrolü"]
+[IMG:https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=1200&q=80|Lityum-iyon pil hücreleri: 21. yüzyılın yeni "ham petrolü"]
 
 ## Yeni Harita: Lityum Üçgeni ve Çin Hegemonyası
 
@@ -135,7 +135,17 @@ Savaşın kimyası değişti; karbon moleküllerinin yerini lityum iyonları ald
     });
 
     if (existing) {
-      console.log(`Article already exists: ${articleData.title}`);
+      await prisma.article.update({
+        where: { slug: articleData.slug },
+        data: {
+          title: articleData.title,
+          summary: articleData.summary,
+          content: htmlContent,
+          imageUrl: articleData.imageUrl,
+          categoryId: articleData.categoryId
+        }
+      });
+      console.log(`Updated database article: ${articleData.title}`);
     } else {
       await prisma.article.create({
         data: {

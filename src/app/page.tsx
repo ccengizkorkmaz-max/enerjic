@@ -18,13 +18,13 @@ export default async function HomePage() {
     console.error('Home Page: Error fetching featured article', e);
   }
 
-  // Fetch popular articles (3 items)
+  // Fetch popular articles by view count (3 items)
   let popularArticles: any[] = [];
   try {
     popularArticles = await db.article.findMany({
       where: featuredArticle ? { id: { not: featuredArticle.id } } : {},
       include: { category: true },
-      orderBy: { publishedAt: 'desc' },
+      orderBy: { viewCount: 'desc' },
       take: 3,
     });
   } catch (e) {
