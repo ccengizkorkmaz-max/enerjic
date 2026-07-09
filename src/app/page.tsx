@@ -3,6 +3,8 @@ import HeroSection from '@/components/HeroSection';
 import LoadMoreFeed from '@/components/LoadMoreFeed';
 import Sidebar from '@/components/Sidebar';
 import AdSkeleton from '@/components/AdSkeleton';
+import NearbyStations from '@/components/NearbyStations';
+import { getStationStats } from '@/app/actions/stations';
 
 export const revalidate = 60; // ISR cache regeneration time
 
@@ -71,6 +73,9 @@ export default async function HomePage() {
   const headerAd = adPlacements.find((p) => p.slotCode === 'header_banner') || null;
   const sidebarAd = adPlacements.find((p) => p.slotCode === 'sidebar_top') || null;
 
+  // Fetch station stats for the charging widget
+  const stationStats = await getStationStats();
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
       {/* Header Banner Ad Placement */}
@@ -80,6 +85,9 @@ export default async function HomePage() {
 
       {/* Hero Section */}
       <HeroSection featured={featuredArticle} popular={popularArticles} />
+
+      {/* Nearby Charging Stations Widget */}
+      <NearbyStations stats={stationStats} />
 
       {/* Main Grid Content */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
