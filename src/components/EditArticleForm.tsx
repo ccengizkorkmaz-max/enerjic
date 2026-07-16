@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { updateArticleAction } from '@/app/actions/admin';
 import Link from 'next/link';
-import { Save, ArrowLeft } from 'lucide-react';
+import { Save, ArrowLeft, Bold, Italic, Heading2, Heading3, List, Table, Code, Eye } from 'lucide-react';
 
 interface Category {
   id: string;
@@ -35,6 +35,9 @@ export default function EditArticleForm({ article, categories }: EditArticleForm
   const [title, setTitle] = useState(article.title);
   const [slug, setSlug] = useState(article.slug);
   const [isSlugManual, setIsSlugManual] = useState(true);
+  const [imageUrl, setImageUrl] = useState(article.imageUrl || '');
+  const [content, setContent] = useState(article.content);
+  const [editorMode, setEditorMode] = useState<'visual' | 'html'>('visual');
 
   const sluggify = (text: string) => {
     const trMap: { [key: string]: string } = {
@@ -65,6 +68,26 @@ export default function EditArticleForm({ article, categories }: EditArticleForm
     setIsSlugManual(true);
   };
 
+  const insertTable = () => {
+    const tableHtml = `
+<table style="width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.95rem;">
+  <thead>
+    <tr>
+      <th style="text-align:left; padding:0.75rem; border-bottom:2px solid #047857; font-weight:700; color:#111827;">Sütun 1</th>
+      <th style="text-align:left; padding:0.75rem; border-bottom:2px solid #047857; font-weight:700; color:#111827;">Sütun 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:0.75rem; border-bottom:1px solid #e5e7eb;">Hücre 1</td>
+      <td style="padding:0.75rem; border-bottom:1px solid #e5e7eb;">Hücre 2</td>
+    </tr>
+  </tbody>
+</table>
+`;
+    document.execCommand('insertHTML', false, tableHtml);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
@@ -73,6 +96,7 @@ export default function EditArticleForm({ article, categories }: EditArticleForm
     const formData = new FormData(e.currentTarget);
     const isFeaturedCheckbox = e.currentTarget.querySelector('#isFeatured') as HTMLInputElement;
     formData.set('isFeatured', isFeaturedCheckbox?.checked ? 'true' : 'false');
+    formData.set('content', content);
 
     const res = await updateArticleAction(article.id, formData);
 
@@ -156,13 +180,31 @@ export default function EditArticleForm({ article, categories }: EditArticleForm
 
         <div className="space-y-2">
           <label htmlFor="imageUrl" className="block text-sm font-bold text-gray-700">Görsel URL'si</label>
-          <input
-            id="imageUrl"
-            name="imageUrl"
-            type="text"
-            defaultValue={article.imageUrl || ''}
-            className="block w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 focus:bg-white transition-all"
-          />
+          <div className="flex items-start gap-4">
+            <div className="flex-grow">
+              <input
+                id="imageUrl"
+                name="imageUrl"
+                type="text"
+                value={imageUrl}
+                onChange={(e) => setImageUrl(e.target.value)}
+                placeholder="Örn: /images/articles/range_vs_charging.png"
+                className="block w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 focus:bg-white transition-all"
+              />
+            </div>
+            {imageUrl && (
+              <div className="relative group h-[42px] w-[75px] rounded-lg overflow-hidden bg-gray-50 border border-gray-200 shadow-sm shrink-0">
+                <img
+                  src={imageUrl}
+                  alt="Haber Görseli"
+                  className="object-cover w-full h-full"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/images/electric_car_future.png';
+                  }}
+                />
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -179,16 +221,126 @@ export default function EditArticleForm({ article, categories }: EditArticleForm
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="content" className="block text-sm font-bold text-gray-700">Haber İçeriği (HTML Destekli) *</label>
-        <p className="text-xs text-gray-450 font-medium">Reklam yerleşimi için paragrafları &lt;p&gt;...&lt;/p&gt; etiketleri arasına yazın.</p>
-        <textarea
-          id="content"
-          name="content"
-          required
-          rows={10}
-          defaultValue={article.content}
-          className="block w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 focus:bg-white transition-all font-mono"
-        />
+        <div className="flex items-center justify-between">
+          <div className="space-y-0.5">
+            <label className="block text-sm font-bold text-gray-700">Haber İçeriği *</label>
+            <p className="text-[11px] text-gray-450 font-medium">Reklam yerleşimi için paragrafları &lt;p&gt;...&lt;/p&gt; etiketleri arasına yazın.</p>
+          </div>
+          <div className="flex bg-gray-150 p-0.5 rounded-lg border border-gray-200 shrink-0">
+            <button
+              type="button"
+              onClick={() => setEditorMode('visual')}
+              className={`flex items-center gap-1 px-2.5 py-1 text-xs font-bold rounded-md transition-all cursor-pointer ${
+                editorMode === 'visual'
+                  ? 'bg-white text-emerald-800 shadow-sm'
+                  : 'text-gray-550 hover:text-gray-800'
+              }`}
+            >
+              <Eye className="h-3 w-3" />
+              Görsel Editör
+            </button>
+            <button
+              type="button"
+              onClick={() => setEditorMode('html')}
+              className={`flex items-center gap-1 px-2.5 py-1 text-xs font-bold rounded-md transition-all cursor-pointer ${
+                editorMode === 'html'
+                  ? 'bg-white text-emerald-800 shadow-sm'
+                  : 'text-gray-550 hover:text-gray-800'
+              }`}
+            >
+              <Code className="h-3 w-3" />
+              HTML Kodu
+            </button>
+          </div>
+        </div>
+
+        {editorMode === 'visual' && (
+          <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
+            <div className="flex flex-wrap items-center gap-0.5 px-3 py-1.5 border-b border-gray-150 bg-gray-50/50">
+              <button
+                type="button"
+                onClick={() => document.execCommand('bold', false)}
+                className="p-1.5 text-gray-550 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors cursor-pointer"
+                title="Kalın (Bold)"
+              >
+                <Bold className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => document.execCommand('italic', false)}
+                className="p-1.5 text-gray-550 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors cursor-pointer"
+                title="İtalik (Italic)"
+              >
+                <Italic className="h-4 w-4" />
+              </button>
+              <div className="w-px h-4 bg-gray-200 mx-1"></div>
+              <button
+                type="button"
+                onClick={() => document.execCommand('formatBlock', false, 'H2')}
+                className="px-2 py-1 text-xs font-bold text-gray-550 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors cursor-pointer"
+                title="Başlık 2 (H2)"
+              >
+                H2
+              </button>
+              <button
+                type="button"
+                onClick={() => document.execCommand('formatBlock', false, 'H3')}
+                className="px-2 py-1 text-xs font-bold text-gray-550 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors cursor-pointer"
+                title="Başlık 3 (H3)"
+              >
+                H3
+              </button>
+              <button
+                type="button"
+                onClick={() => document.execCommand('formatBlock', false, 'P')}
+                className="px-2 py-1 text-xs font-bold text-gray-550 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors cursor-pointer"
+                title="Paragraf (P)"
+              >
+                P
+              </button>
+              <div className="w-px h-4 bg-gray-200 mx-1"></div>
+              <button
+                type="button"
+                onClick={() => document.execCommand('insertUnorderedList', false)}
+                className="p-1.5 text-gray-550 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors cursor-pointer"
+                title="Madde İşaretli Liste"
+              >
+                <List className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                onClick={insertTable}
+                className="p-1.5 text-gray-550 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors cursor-pointer flex items-center gap-1 text-xs font-bold"
+                title="Tablo Ekle"
+              >
+                <Table className="h-4 w-4" />
+                <span>Tablo Ekle</span>
+              </button>
+            </div>
+            <div
+              contentEditable
+              suppressContentEditableWarning
+              onBlur={(e) => {
+                setContent(e.currentTarget.innerHTML);
+              }}
+              dangerouslySetInnerHTML={{ __html: content }}
+              className="block w-full min-h-[350px] max-h-[600px] overflow-y-auto px-5 py-4 text-gray-800 focus:outline-none transition-all font-sans prose max-w-none border-0"
+              style={{ outline: 'none' }}
+            />
+          </div>
+        )}
+
+        {editorMode === 'html' && (
+          <textarea
+            id="content"
+            name="content"
+            required
+            rows={14}
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            className="block w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-850 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 focus:bg-white transition-all font-mono"
+          />
+        )}
       </div>
 
       <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl border border-gray-150">
