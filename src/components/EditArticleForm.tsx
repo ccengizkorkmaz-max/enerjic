@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { updateArticleAction } from '@/app/actions/admin';
 import Link from 'next/link';
 import { Save, ArrowLeft, Bold, Italic, Heading2, Heading3, List, Table, Code, Eye, Upload, Loader2 } from 'lucide-react';
+import SocialMediaAssistant from './SocialMediaAssistant';
 
 interface Category {
   id: string;
@@ -146,6 +147,7 @@ export default function EditArticleForm({ article, categories }: EditArticleForm
   };
 
   return (
+    <>
     <form onSubmit={handleSubmit} className="space-y-6 max-w-4xl">
       <div className="flex items-center justify-between border-b border-gray-100 pb-5">
         <div className="flex items-center space-x-2">
@@ -415,5 +417,22 @@ export default function EditArticleForm({ article, categories }: EditArticleForm
         </div>
       </div>
     </form>
+
+    <SocialMediaAssistant
+      article={{
+        id: article.id,
+        title: title,
+        summary: article.summary,
+        imageUrl: imageUrl || null,
+        category: (() => {
+          const cat = categories.find(c => c.id === article.categoryId);
+          return {
+            name: cat?.name || 'Genel',
+            slug: (cat as any)?.slug || 'genel'
+          };
+        })()
+      }}
+    />
+    </>
   );
 }
