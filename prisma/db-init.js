@@ -64,6 +64,10 @@ async function main() {
     console.log("Checking and adding Fatih Altayli article...");
     execSync('node prisma/add-fatih-altayli-article.js', { stdio: 'inherit' });
 
+    // Always run the Range vs Charging article seed script
+    console.log("Checking and adding Range vs Charging article...");
+    execSync('node prisma/add-menzil-vs-hizli-sarj-article.js', { stdio: 'inherit' });
+
     // Always run the EV software updates seed script
     console.log("Checking and adding EV software updates...");
     execSync('node prisma/seed-software-updates.js', { stdio: 'inherit' });
