@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { updateArticleAction } from '@/app/actions/admin';
 import Link from 'next/link';
-import { Save, ArrowLeft, Bold, Italic, Heading2, Heading3, List, Table, Code, Eye } from 'lucide-react';
+import { Save, ArrowLeft, Bold, Italic, Heading2, Heading3, List, Table, Code, Eye, Upload, Loader2 } from 'lucide-react';
 
 interface Category {
   id: string;
@@ -38,6 +38,42 @@ export default function EditArticleForm({ article, categories }: EditArticleForm
   const [imageUrl, setImageUrl] = useState(article.imageUrl || '');
   const [content, setContent] = useState(article.content);
   const [editorMode, setEditorMode] = useState<'visual' | 'html'>('visual');
+  const [uploadingImage, setUploadingImage] = useState(false);
+  const [uploadError, setUploadError] = useState('');
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploadingImage(true);
+    setUploadError('');
+
+    try {
+      const formData = new FormData();
+      formData.append('image', file);
+      formData.append('key', '8d3f54c640c3574f58f2ce9433f27ec7');
+
+      const res = await fetch('https://api.imgbb.com/1/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!res.ok) {
+        throw new Error('Görsel sunucuya yüklenirken hata oluştu.');
+      }
+
+      const data = await res.json();
+      if (data.success && data.data?.url) {
+        setImageUrl(data.data.url);
+      } else {
+        throw new Error('Yükleme başarısız oldu.');
+      }
+    } catch (err: any) {
+      setUploadError(err.message || 'Yükleme sırasında bir hata oluştu.');
+    } finally {
+      setUploadingImage(false);
+    }
+  };
 
   const sluggify = (text: string) => {
     const trMap: { [key: string]: string } = {
@@ -179,21 +215,10 @@ export default function EditArticleForm({ article, categories }: EditArticleForm
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="imageUrl" className="block text-sm font-bold text-gray-700">Görsel URL'si</label>
-          <div className="flex items-start gap-4">
-            <div className="flex-grow">
-              <input
-                id="imageUrl"
-                name="imageUrl"
-                type="text"
-                value={imageUrl}
-                onChange={(e) => setImageUrl(e.target.value)}
-                placeholder="Örn: /images/articles/range_vs_charging.png"
-                className="block w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 focus:bg-white transition-all"
-              />
-            </div>
+          <label className="block text-sm font-bold text-gray-700">Haber Görseli</label>
+          <div className="flex flex-col sm:flex-row items-start gap-4">
             {imageUrl && (
-              <div className="relative group h-[42px] w-[75px] rounded-lg overflow-hidden bg-gray-50 border border-gray-200 shadow-sm shrink-0">
+              <div className="relative group h-20 w-36 rounded-xl overflow-hidden bg-gray-50 border border-gray-200 shadow-sm shrink-0">
                 <img
                   src={imageUrl}
                   alt="Haber Görseli"
@@ -204,6 +229,38 @@ export default function EditArticleForm({ article, categories }: EditArticleForm
                 />
               </div>
             )}
+            <div className="flex-grow space-y-2 w-full">
+              <div className="flex gap-2">
+                <input
+                  id="imageUrl"
+                  name="imageUrl"
+                  type="text"
+                  value={imageUrl}
+                  onChange={(e) => setImageUrl(e.target.value)}
+                  placeholder="Örn: /images/articles/range_vs_charging.png"
+                  className="block w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 focus:bg-white transition-all text-xs"
+                />
+                <label className="inline-flex items-center gap-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-bold px-4 py-2.5 rounded-xl text-sm transition-colors cursor-pointer shrink-0 border border-emerald-100/50 shadow-sm">
+                  {uploadingImage ? (
+                    <Loader2 className="h-4 w-4 animate-spin text-emerald-600" />
+                  ) : (
+                    <Upload className="h-4 w-4 text-emerald-600" />
+                  )}
+                  <span>{uploadingImage ? 'Yükleniyor...' : 'Görsel Yükle'}</span>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    disabled={uploadingImage}
+                    onChange={handleImageUpload}
+                    className="hidden"
+                  />
+                </label>
+              </div>
+              <p className="text-[11px] text-gray-450 font-medium">Görsel URL'si girebilir veya bilgisayarınızdan doğrudan hızlı resim sunucusuna (ImgBB) yükleyebilirsiniz.</p>
+              {uploadError && (
+                <p className="text-xs text-red-650 font-medium bg-red-50 border border-red-100 rounded-lg px-2.5 py-1.5">{uploadError}</p>
+              )}
+            </div>
           </div>
         </div>
       </div>
