@@ -1,13 +1,8 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { 
-  generateSocialCaptionsAction, 
-  checkInstagramConnectionAction, 
-  disconnectInstagramAction,
-  publishToInstagramAction 
-} from '@/app/actions/social';
-import { Sparkles, Copy, Check, Download, Image as ImageIcon, FileText, Share2, Link2, Unlink, RefreshCw } from 'lucide-react';
+import { generateSocialCaptionsAction } from '@/app/actions/social';
+import { Sparkles, Copy, Check, Download, Image as ImageIcon, FileText, Share2, Linkedin, RefreshCw } from 'lucide-react';
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -42,50 +37,7 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
   const [aspectRatio, setAspectRatio] = useState<'post' | 'story'>('post');
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
-  // Instagram Connection States
-  const [igConnected, setIgConnected] = useState(false);
-  const [igAccountName, setIgAccountName] = useState('');
-  const [checkingIg, setCheckingIg] = useState(true);
-  const [publishingToIg, setPublishingToIg] = useState(false);
-  const [publishSuccess, setPublishSuccess] = useState(false);
-  const [publishError, setPublishError] = useState('');
-
-  // Check Instagram connection status on load
-  const checkConnection = async () => {
-    setCheckingIg(true);
-    try {
-      const res = await checkInstagramConnectionAction();
-      if (res.connected && res.accountName) {
-        setIgConnected(true);
-        setIgAccountName(res.accountName);
-      } else {
-        setIgConnected(false);
-      }
-    } catch (err) {
-      setIgConnected(false);
-    } finally {
-      setCheckingIg(false);
-    }
-  };
-
-  useEffect(() => {
-    checkConnection();
-  }, []);
-
-  const handleDisconnect = async () => {
-    if (!confirm('Instagram bağlantısını kesmek istediğinize emin misiniz?')) return;
-    try {
-      const res = await disconnectInstagramAction();
-      if (res.success) {
-        setIgConnected(false);
-        setIgAccountName('');
-      } else {
-        alert('Bağlantı kesilemedi.');
-      }
-    } catch (err) {
-      alert('Hata oluştu.');
-    }
-  };
+  const [shareSuccess, setShareSuccess] = useState<string | null>(null);
 
   // Generate captions using server action
   const handleGenerateCaptions = async () => {
@@ -110,32 +62,54 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
     setTimeout(() => setCopiedField(null), 2000);
   };
 
-  // Direct publish to Instagram
-  const handleDirectPublish = async () => {
-    if (!canvasRef.current) return;
+  const handleDownload = () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const url = canvas.toDataURL('image/jpeg', 0.95);
+    const link = document.createElement('a');
+    link.download = `enerjic_${article.id.substring(0, 8)}_${aspectRatio}.jpg`;
+    link.href = url;
+    link.click();
+  };
+
+  // Instagram Flow: Copy text + Download image + Open Instagram
+  const shareOnInstagram = () => {
     if (!captions) {
-      alert('Öncelikle paylaşım yazılarını hazırlamalısınız.');
+      alert('Lütfen önce "Paylaşım Yazılarını Hazırla" butonuna basarak içerikleri üretin.');
+      return;
+    }
+    
+    // 1. Download image
+    handleDownload();
+    
+    // 2. Copy text
+    navigator.clipboard.writeText(captions.instagram);
+    
+    // 3. Status notification
+    setShareSuccess('instagram');
+    setTimeout(() => setShareSuccess(null), 5000);
+
+    // 4. Open Instagram in a new tab
+    window.open('https://www.instagram.com/', '_blank');
+  };
+
+  // LinkedIn Flow: Copy text + Open LinkedIn
+  const shareOnLinkedIn = () => {
+    if (!captions) {
+      alert('Lütfen önce "Paylaşım Yazılarını Hazırla" butonuna basarak içerikleri üretin.');
       return;
     }
 
-    setPublishingToIg(true);
-    setPublishSuccess(false);
-    setPublishError('');
+    // 1. Copy text
+    navigator.clipboard.writeText(captions.linkedin);
 
-    try {
-      const base64Image = canvasRef.current.toDataURL('image/jpeg', 0.95);
-      const res = await publishToInstagramAction(base64Image, captions.instagram);
-      
-      if (res.success) {
-        setPublishSuccess(true);
-      } else {
-        setPublishError(res.error || 'Paylaşım yapılamadı.');
-      }
-    } catch (err: any) {
-      setPublishError(err.message || 'Bilinmeyen bir hata oluştu.');
-    } finally {
-      setPublishingToIg(false);
-    }
+    // 2. Status notification
+    setShareSuccess('linkedin');
+    setTimeout(() => setShareSuccess(null), 5000);
+
+    // 3. Open LinkedIn Share
+    const shareUrl = `https://www.linkedin.com/feed/`;
+    window.open(shareUrl, '_blank');
   };
 
   // Draw share card on Canvas
@@ -150,17 +124,14 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
     canvas.width = width;
     canvas.height = height;
 
-    // 1. Draw Background
     if (template === 'gradient' || !article.imageUrl) {
-      // Premium emerald/dark gradient
       const grad = ctx.createLinearGradient(0, 0, width, height);
-      grad.addColorStop(0, '#022c22'); // very dark green
-      grad.addColorStop(0.5, '#064e3b'); // dark emerald
+      grad.addColorStop(0, '#022c22');
+      grad.addColorStop(0.5, '#064e3b');
       grad.addColorStop(1, '#022c22');
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, width, height);
 
-      // Add clean abstract glow circles
       ctx.beginPath();
       ctx.arc(width * 0.1, height * 0.2, width * 0.4, 0, Math.PI * 2);
       ctx.fillStyle = 'rgba(16, 185, 129, 0.05)';
@@ -173,11 +144,9 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
 
       renderTextAndBranding(ctx, width, height);
     } else {
-      // Image template (Full background image with overlay)
       const img = new Image();
       img.crossOrigin = 'anonymous';
       img.onload = () => {
-        // Draw and cover image
         const imgRatio = img.width / img.height;
         const canvasRatio = width / height;
         let drawWidth = width;
@@ -195,7 +164,6 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
 
         ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
 
-        // Koyu degrade maske
         const mask = ctx.createLinearGradient(0, 0, 0, height);
         mask.addColorStop(0, 'rgba(2, 44, 34, 0.3)');
         mask.addColorStop(0.5, 'rgba(2, 44, 34, 0.6)');
@@ -206,7 +174,6 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
         renderTextAndBranding(ctx, width, height);
       };
       img.onerror = () => {
-        // Fallback to gradient if image fails due to CORS
         const grad = ctx.createLinearGradient(0, 0, width, height);
         grad.addColorStop(0, '#022c22');
         grad.addColorStop(1, '#064e3b');
@@ -219,8 +186,7 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
   };
 
   const renderTextAndBranding = (ctx: CanvasRenderingContext2D, width: number, height: number) => {
-    // Brand header
-    ctx.fillStyle = '#10b981'; // Emerald 500
+    ctx.fillStyle = '#10b981';
     ctx.font = 'bold 36px sans-serif';
     ctx.fillText('ENERJİC', 80, 100);
 
@@ -228,7 +194,6 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
     ctx.font = '300 24px sans-serif';
     ctx.fillText('.COM', 245, 100);
 
-    // Decorative line
     ctx.strokeStyle = 'rgba(16, 185, 129, 0.3)';
     ctx.lineWidth = 2;
     ctx.beginPath();
@@ -236,25 +201,20 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
     ctx.lineTo(width - 80, 130);
     ctx.stroke();
 
-    // Category Badge
     const categoryName = article.category.name.toUpperCase();
     ctx.font = 'bold 24px sans-serif';
     const badgeTextWidth = ctx.measureText(categoryName).width;
     const padX = 24;
-    const padY = 14;
     const badgeX = 80;
     const badgeY = height * 0.25;
 
-    // Draw badge background
     ctx.fillStyle = '#10b981';
     roundRect(ctx, badgeX, badgeY - 28, badgeTextWidth + padX * 2, 48, 12);
     ctx.fill();
 
-    // Badge text
     ctx.fillStyle = '#ffffff';
     ctx.fillText(categoryName, badgeX + padX, badgeY + 4);
 
-    // Draw Main Title
     ctx.fillStyle = '#ffffff';
     ctx.font = 'bold 56px sans-serif';
     const maxTextWidth = width - 160;
@@ -268,9 +228,8 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
       currentY += lineHeight;
     });
 
-    // Draw summary text (if space allows)
     if (aspectRatio === 'post' || titleLines.length <= 3) {
-      ctx.fillStyle = '#9ca3af'; // Gray 400
+      ctx.fillStyle = '#9ca3af';
       ctx.font = '300 32px sans-serif';
       const summaryLines = wrapText(ctx, article.summary, maxTextWidth);
       currentY += 20;
@@ -280,7 +239,6 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
       });
     }
 
-    // Bottom Branding Footer
     ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
     ctx.font = '28px sans-serif';
     ctx.fillText('Temiz Enerji ve Sürdürülebilir Teknolojiler', 80, height - 90);
@@ -326,16 +284,6 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
     ctx.closePath();
   };
 
-  const handleDownload = () => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const url = canvas.toDataURL('image/jpeg', 0.95);
-    const link = document.createElement('a');
-    link.download = `enerjic_${article.id.substring(0, 8)}_${aspectRatio}.jpg`;
-    link.href = url;
-    link.click();
-  };
-
   useEffect(() => {
     drawCanvas();
   }, [template, aspectRatio, article]);
@@ -348,49 +296,11 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
           <h3 className="text-lg font-bold text-gray-900">Sosyal Medya Paylaşım Asistanı</h3>
         </div>
         <span className="bg-emerald-50 text-emerald-700 text-xs font-semibold px-2.5 py-1 rounded-full">
-          Görsel & Metin Asistanı
+          Pratik Hızlı Paylaşım
         </span>
       </div>
 
-      {/* Connection Widget */}
-      <div className="bg-gray-50 border border-gray-100 rounded-xl p-4 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 rounded-lg flex items-center justify-center text-white">
-            <InstagramIcon className="w-6 h-6" />
-          </div>
-          <div>
-            <h4 className="text-sm font-bold text-gray-800">Instagram API Bağlantısı</h4>
-            <p className="text-xs text-gray-500">
-              {checkingIg ? 'Bağlantı durumu kontrol ediliyor...' : igConnected ? `Bağlı Hesap: ${igAccountName}` : 'Doğrudan otomatik paylaşım için hesabınızı bağlayın.'}
-            </p>
-          </div>
-        </div>
-
-        <div>
-          {checkingIg ? (
-            <div className="w-4 h-4 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin" />
-          ) : igConnected ? (
-            <button
-              onClick={handleDisconnect}
-              className="flex items-center space-x-1.5 text-xs text-red-600 hover:text-red-700 font-bold bg-white border border-red-200 px-3.5 py-2 rounded-xl hover:bg-red-50 transition"
-            >
-              <Unlink className="w-3.5 h-3.5" />
-              <span>Bağlantıyı Kes</span>
-            </button>
-          ) : (
-            <a
-              href="/api/social/instagram/auth"
-              className="flex items-center space-x-1.5 text-xs text-white font-bold bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 px-4 py-2.5 rounded-xl shadow hover:opacity-90 transition"
-            >
-              <Link2 className="w-3.5 h-3.5" />
-              <span>Instagram Hesabını Bağla</span>
-            </a>
-          )}
-        </div>
-      </div>
-
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Left Column: Visual Card Generator */}
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <h4 className="text-sm font-bold text-gray-700 uppercase tracking-wider flex items-center">
@@ -416,7 +326,6 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
             </div>
           </div>
 
-          {/* Preview Area */}
           <div className="flex justify-center bg-gray-50 rounded-xl p-4 border border-dashed border-gray-200">
             <div className={`relative bg-gray-950 shadow-md overflow-hidden ${
               aspectRatio === 'post' ? 'w-full max-w-[320px] aspect-square' : 'w-[200px] aspect-[9/16]'
@@ -425,7 +334,6 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
             </div>
           </div>
 
-          {/* Design Presets */}
           <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center bg-gray-50 rounded-xl p-4 border border-gray-100 gap-4">
             <div className="space-y-1">
               <span className="text-xs text-gray-500 font-medium">Tasarım Teması</span>
@@ -466,7 +374,6 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
           </div>
         </div>
 
-        {/* Right Column: AI Caption Generator */}
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <h4 className="text-sm font-bold text-gray-700 uppercase tracking-wider flex items-center">
@@ -487,7 +394,6 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
 
           {captions ? (
             <div className="space-y-6">
-              {/* Instagram Card */}
               <div className="border border-gray-100 rounded-xl p-4 bg-gray-50">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-extrabold text-emerald-700 uppercase tracking-wider">Instagram Paylaşımı</span>
@@ -513,7 +419,6 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
                 </p>
               </div>
 
-              {/* LinkedIn Card */}
               <div className="border border-gray-100 rounded-xl p-4 bg-gray-50">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-extrabold text-emerald-700 uppercase tracking-wider">LinkedIn Paylaşımı</span>
@@ -539,38 +444,33 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
                 </p>
               </div>
 
-              {/* Direct Publish Button */}
-              {igConnected && (
-                <div className="border-t border-gray-100 pt-4 mt-4">
-                  <button
-                    onClick={handleDirectPublish}
-                    disabled={publishingToIg}
-                    className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:opacity-95 disabled:bg-gray-300 text-white font-bold py-3 px-4 rounded-xl text-sm shadow-md transition duration-200 cursor-pointer disabled:cursor-not-allowed"
-                  >
-                    {publishingToIg ? (
-                      <>
-                        <RefreshCw className="w-5 h-5 animate-spin" />
-                        <span>Instagram'a Yükleniyor...</span>
-                      </>
-                    ) : (
-                      <>
-                        <InstagramIcon className="w-5 h-5" />
-                        <span>Instagram'da Hemen Paylaş</span>
-                      </>
-                    )}
-                  </button>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-gray-100 pt-4">
+                <button
+                  onClick={shareOnInstagram}
+                  className="flex items-center justify-center space-x-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-bold py-3 px-4 rounded-xl text-xs shadow hover:opacity-95 transition cursor-pointer"
+                >
+                  <InstagramIcon className="w-4 h-4" />
+                  <span>Instagram'da Paylaş</span>
+                </button>
 
-                  {publishSuccess && (
-                    <div className="mt-3 bg-emerald-50 border border-emerald-100 rounded-lg p-3 text-center text-xs font-bold text-emerald-700">
-                      🎉 Paylaşım başarıyla yapıldı! Instagram hesabınızı kontrol edebilirsiniz.
-                    </div>
-                  )}
+                <button
+                  onClick={shareOnLinkedIn}
+                  className="flex items-center justify-center space-x-2 bg-blue-700 text-white font-bold py-3 px-4 rounded-xl text-xs shadow hover:bg-blue-800 transition cursor-pointer"
+                >
+                  <Linkedin className="w-4 h-4" />
+                  <span>LinkedIn'de Paylaş</span>
+                </button>
+              </div>
 
-                  {publishError && (
-                    <div className="mt-3 bg-red-50 border border-red-100 rounded-lg p-3 text-center text-xs font-bold text-red-700">
-                      ❌ Hata: {publishError}
-                    </div>
-                  )}
+              {shareSuccess === 'instagram' && (
+                <div className="bg-emerald-50 border border-emerald-100 rounded-xl p-3 text-xs text-emerald-800 font-semibold text-center animate-fade-in">
+                  🎉 Paylaşım kartı indirildi ve açıklama panoya kopyalandı! Instagram'da "+" butonuna basıp yapıştırabilirsiniz.
+                </div>
+              )}
+
+              {shareSuccess === 'linkedin' && (
+                <div className="bg-emerald-50 border border-emerald-100 rounded-xl p-3 text-xs text-emerald-800 font-semibold text-center animate-fade-in">
+                  🎉 LinkedIn açıklaması panoya kopyalandı! Açılan sayfada doğrudan yapıştırabilirsiniz.
                 </div>
               )}
 
