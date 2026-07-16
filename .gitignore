@@ -48,3 +48,9 @@ next-env.d.ts
 
 # local car images download cache
 /public/img/cars/
+
+# sensitive credentials
+prisma/service-account.json
+
+# large PDF source files
+/kaynaklar/
