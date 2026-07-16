@@ -40,10 +40,29 @@ export default async function VehicleDetailPage({ params }: Props) {
 
   const fmt = (n: number | null) => n ? n.toLocaleString('tr-TR') : '—';
 
-  // Parse all image URLs
-  const imageUrls: string[] = vehicle.imageUrls
-    ? (() => { try { return JSON.parse(vehicle.imageUrls); } catch { return []; } })()
-    : vehicle.imageUrl ? [vehicle.imageUrl] : [];
+  // Parse all image URLs (filter out local non-existent cache paths in production, prefer main remote URL)
+  let parsedUrls: string[] = [];
+  try {
+    if (vehicle.imageUrls) {
+      parsedUrls = JSON.parse(vehicle.imageUrls);
+    }
+  } catch {
+    parsedUrls = [];
+  }
+
+  // Filter out local paths in production if they are relative (start with /img/) and we have a valid remote imageUrl
+  if (vehicle.imageUrl && vehicle.imageUrl.startsWith('http')) {
+    parsedUrls = parsedUrls.filter(url => !url.startsWith('/img/'));
+    if (!parsedUrls.includes(vehicle.imageUrl)) {
+      parsedUrls.unshift(vehicle.imageUrl);
+    }
+  }
+
+  if (parsedUrls.length === 0 && vehicle.imageUrl) {
+    parsedUrls = [vehicle.imageUrl];
+  }
+
+  const imageUrls = parsedUrls;
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

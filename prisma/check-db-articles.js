@@ -1,24 +1,29 @@
 const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+const db = new PrismaClient();
 
 async function main() {
-  const count = await prisma.article.count();
-  const articles = await prisma.article.findMany({
-    include: { category: true },
-    orderBy: { publishedAt: 'desc' },
-    take: 5
+  const stats = await db.chargingStation.groupBy({
+    by: ['city'],
+    _count: {
+      id: true
+    },
+    orderBy: {
+      _count: {
+        id: 'desc'
+      }
+    }
   });
-  console.log("Total database article count:", count);
-  console.log("5 Most Recent Articles:");
-  articles.forEach((art, i) => {
-    console.log(`${i+1}. Title: "${art.title}"`);
-    console.log(`   Slug: "${art.slug}"`);
-    console.log(`   PublishedAt: ${art.publishedAt.toISOString()}`);
-    console.log(`   CreatedAt: ${art.createdAt.toISOString()}`);
-    console.log(`   Category: "${art.category.name}"`);
-    console.log(`   isFeatured: ${art.isFeatured}`);
-  });
-  await prisma.$disconnect();
+
+  console.log("=== SEHİRLERE GÖRE İSTASYON SAYILARI ===");
+  let total = 0;
+  for (const s of stats) {
+    console.log(`${s.city}: ${s._count.id} istasyon`);
+    total += s._count.id;
+  }
+  console.log(`========================================`);
+  console.log(`Toplam kayıtlı istasyon sayısı: ${total}`);
+  
+  await db.$disconnect();
 }
 
 main().catch(console.error);

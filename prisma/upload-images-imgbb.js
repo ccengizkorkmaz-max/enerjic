@@ -18,7 +18,7 @@ const CARS_DIR = path.join(__dirname, '..', 'public', 'img', 'cars');
 const MAPPING_FILE = path.join(__dirname, 'imgbb-mapping.json');
 const DELAY_MS = 2000;          // delay between uploads (ms)
 const RATE_LIMIT_WAIT = 65000;  // wait 65s on rate limit
-const MAX_RETRIES = 3;
+const MAX_RETRIES = 5;
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
@@ -60,6 +60,11 @@ async function uploadToImgBB(filePath, name, retries = 0) {
   }
 
   if (!res.ok) {
+    if (retries < MAX_RETRIES) {
+      console.log(`  ⚠️ API error ${res.status}. Waiting ${RATE_LIMIT_WAIT / 1000}s before retry ${retries + 1}/${MAX_RETRIES}...`);
+      await sleep(RATE_LIMIT_WAIT);
+      return uploadToImgBB(filePath, name, retries + 1);
+    }
     throw new Error(`ImgBB API error ${res.status}`);
   }
 

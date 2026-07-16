@@ -68,6 +68,14 @@ async function main() {
     console.log("Checking and adding Range vs Charging article...");
     execSync('node prisma/add-menzil-vs-hizli-sarj-article.js', { stdio: 'inherit' });
 
+    // Always run the Turkey EV market article seed script
+    console.log("Checking and adding Turkey EV market article...");
+    execSync('node prisma/add-turkiye-avrupa-lideri-article.js', { stdio: 'inherit' });
+
+    // Update Turkey EV article with extended content
+    console.log("Updating Turkey EV article with extended content...");
+    execSync('node prisma/_update-turkiye-article.js', { stdio: 'inherit' });
+
     // Always run the EV software updates seed script
     console.log("Checking and adding EV software updates...");
     execSync('node prisma/seed-software-updates.js', { stdio: 'inherit' });

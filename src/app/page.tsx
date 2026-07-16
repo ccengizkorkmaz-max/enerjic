@@ -9,64 +9,19 @@ import { getStationStats } from '@/app/actions/stations';
 export const revalidate = 60; // ISR cache regeneration time
 
 export default async function HomePage() {
-  // Fetch the most recently published article as hero
-  let featuredArticle = null;
+  // Fetch the 10 most recent articles for the hero carousel
+  let heroArticles: any[] = [];
   try {
-    featuredArticle = await db.article.findFirst({
+    heroArticles = await db.article.findMany({
       include: { category: true },
       orderBy: { publishedAt: 'desc' },
+      take: 10,
     });
   } catch (e) {
-    console.error('Home Page: Error fetching featured article', e);
+    console.error('Home Page: Error fetching hero articles', e);
   }
 
-  // Fetch popular articles with smart rotation:
-  // 1. Prioritize articles from last 5 days (newest first)
-  // 2. Fill remaining slots with most-read (viewCount) articles
-  let popularArticles: any[] = [];
-  try {
-    const fiveDaysAgo = new Date();
-    fiveDaysAgo.setDate(fiveDaysAgo.getDate() - 5);
-
-    const heroExclude = featuredArticle ? { id: { not: featuredArticle.id } } : {};
-
-    // First: get recent articles (last 5 days), excluding hero
-    const recentArticles = await db.article.findMany({
-      where: {
-        ...heroExclude,
-        publishedAt: { gte: fiveDaysAgo },
-      },
-      include: { category: true },
-      orderBy: { publishedAt: 'desc' },
-      take: 3,
-    });
-
-    if (recentArticles.length >= 3) {
-      // Enough fresh content — show newest
-      popularArticles = recentArticles;
-    } else {
-      // Fill remaining slots with most-read articles
-      const recentIds = recentArticles.map((a) => a.id);
-      const excludeAll = featuredArticle
-        ? [...recentIds, featuredArticle.id]
-        : recentIds;
-
-      const topRead = await db.article.findMany({
-        where: { id: { notIn: excludeAll } },
-        include: { category: true },
-        orderBy: { viewCount: 'desc' },
-        take: 3 - recentArticles.length,
-      });
-
-      popularArticles = [...recentArticles, ...topRead];
-    }
-  } catch (e) {
-    console.error('Home Page: Error fetching popular articles', e);
-  }
-
-  const excludeIds: string[] = [];
-  if (featuredArticle) excludeIds.push(featuredArticle.id);
-  popularArticles.forEach((a) => excludeIds.push(a.id));
+  const excludeIds: string[] = heroArticles.map((a) => a.id);
 
   // Fetch chronological feed (up to 5 items)
   let feedArticles: any[] = [];
@@ -114,8 +69,8 @@ export default async function HomePage() {
         <AdSkeleton slotCode="header_banner" placement={headerAd} />
       </div>
 
-      {/* Hero Section */}
-      <HeroSection featured={featuredArticle} popular={popularArticles} />
+      {/* Hero Carousel Section */}
+      <HeroSection articles={heroArticles} />
 
       {/* Nearby Charging Stations Widget */}
       <NearbyStations stats={stationStats} />

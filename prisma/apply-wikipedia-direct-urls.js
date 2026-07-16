@@ -78,10 +78,30 @@ async function main() {
   
   console.log(`Analyzing ${vehicles.length} total vehicles...`);
   
-  const targets = vehicles.filter(v => {
+  // Clean up any wrong Nintendo/console image mappings from previous runs first
+  console.log("Cleaning up previous wrong console/non-car image assignments...");
+  const wrongImages = vehicles.filter(v => 
+    v.imageUrl && (
+      v.imageUrl.toLowerCase().includes('nintendo') || 
+      v.imageUrl.toLowerCase().includes('ds_lite') ||
+      v.imageUrl.toLowerCase().includes('console') ||
+      v.imageUrl.toLowerCase().includes('game')
+    )
+  );
+  
+  for (const w of wrongImages) {
+    await db.electricVehicle.update({
+      where: { id: w.id },
+      data: { imageUrl: null }
+    });
+  }
+  console.log(`Reset ${wrongImages.length} wrong console/non-car image mappings.`);
+
+  // Refetch target list after resetting wrong images
+  const targets = (await db.electricVehicle.findMany()).filter(v => {
     return !v.imageUrl || 
            v.imageUrl.includes('ev-database.org') || 
-           v.imageUrl.startsWith('/img/'); // local paths that aren't pushed to git yet
+           v.imageUrl.startsWith('/img/');
   });
 
   console.log(`Found ${targets.length} target vehicles to update with direct Wikipedia URLs.`);
@@ -92,26 +112,29 @@ async function main() {
   for (const v of targets) {
     index++;
     const shortModel = cleanModelName(v.model);
-    const query = `${v.brand} ${shortModel}`.trim();
+    
+    // Always append " car" to guarantee we get a vehicle image, and handle "DS" brands properly
+    const brandTerm = v.brand.toLowerCase() === 'ds' ? 'DS Automobiles' : v.brand;
+    const query = `${brandTerm} ${shortModel} car`.trim();
     
     console.log(`[${index}/${targets.length}] Finding Wiki URL for: "${query}"...`);
     
     let imgUrl = await searchWikipediaImage(query);
     
-    // Fallback 1: Brand + first word of model
+    // Fallback 1: Brand + first word of model + car
     if (!imgUrl) {
       const firstWordModel = v.model.split(' ')[0];
-      const fallbackQuery1 = `${v.brand} ${firstWordModel}`.trim();
+      const fallbackQuery1 = `${brandTerm} ${firstWordModel} car`.trim();
       imgUrl = await searchWikipediaImage(fallbackQuery1);
     }
 
-    // Fallback 2: Brand only
+    // Fallback 2: Brand only + car
     if (!imgUrl) {
-      imgUrl = await searchWikipediaImage(v.brand);
+      const fallbackQuery2 = `${brandTerm} car`.trim();
+      imgUrl = await searchWikipediaImage(fallbackQuery2);
     }
 
     if (imgUrl) {
-      // Directly update the DB record with the Wikimedia URL
       await db.electricVehicle.update({
         where: { id: v.id },
         data: { imageUrl: imgUrl }
@@ -122,7 +145,6 @@ async function main() {
       console.log(`  No image found for: ${v.brand} ${v.model}`);
     }
 
-    // Small delay to avoid rate limits
     await sleep(250);
   }
 
