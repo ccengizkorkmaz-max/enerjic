@@ -156,3 +156,12 @@ model SoftwareUpdate {
   @@index([releaseDate])
   @@unique([brand, version, model])
 }
+
+model InstagramSession {
+  id                 String   @id @default(uuid())
+  accessToken        String
+  instagramAccountId String
+  accountName        String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}

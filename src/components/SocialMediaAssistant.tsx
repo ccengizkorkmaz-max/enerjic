@@ -1,8 +1,23 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { generateSocialCaptionsAction } from '@/app/actions/social';
-import { Sparkles, Copy, Check, Download, Image as ImageIcon, FileText, Share2 } from 'lucide-react';
+import { 
+  generateSocialCaptionsAction, 
+  checkInstagramConnectionAction, 
+  disconnectInstagramAction,
+  publishToInstagramAction 
+} from '@/app/actions/social';
+import { Sparkles, Copy, Check, Download, Image as ImageIcon, FileText, Share2, Link2, Unlink, RefreshCw } from 'lucide-react';
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    </svg>
+  );
+}
 
 interface Article {
   id: string;
@@ -27,6 +42,51 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
   const [aspectRatio, setAspectRatio] = useState<'post' | 'story'>('post');
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
+  // Instagram Connection States
+  const [igConnected, setIgConnected] = useState(false);
+  const [igAccountName, setIgAccountName] = useState('');
+  const [checkingIg, setCheckingIg] = useState(true);
+  const [publishingToIg, setPublishingToIg] = useState(false);
+  const [publishSuccess, setPublishSuccess] = useState(false);
+  const [publishError, setPublishError] = useState('');
+
+  // Check Instagram connection status on load
+  const checkConnection = async () => {
+    setCheckingIg(true);
+    try {
+      const res = await checkInstagramConnectionAction();
+      if (res.connected && res.accountName) {
+        setIgConnected(true);
+        setIgAccountName(res.accountName);
+      } else {
+        setIgConnected(false);
+      }
+    } catch (err) {
+      setIgConnected(false);
+    } finally {
+      setCheckingIg(false);
+    }
+  };
+
+  useEffect(() => {
+    checkConnection();
+  }, []);
+
+  const handleDisconnect = async () => {
+    if (!confirm('Instagram bağlantısını kesmek istediğinize emin misiniz?')) return;
+    try {
+      const res = await disconnectInstagramAction();
+      if (res.success) {
+        setIgConnected(false);
+        setIgAccountName('');
+      } else {
+        alert('Bağlantı kesilemedi.');
+      }
+    } catch (err) {
+      alert('Hata oluştu.');
+    }
+  };
+
   // Generate captions using server action
   const handleGenerateCaptions = async () => {
     setLoading(true);
@@ -48,6 +108,34 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
     navigator.clipboard.writeText(text);
     setCopiedField(field);
     setTimeout(() => setCopiedField(null), 2000);
+  };
+
+  // Direct publish to Instagram
+  const handleDirectPublish = async () => {
+    if (!canvasRef.current) return;
+    if (!captions) {
+      alert('Öncelikle paylaşım yazılarını hazırlamalısınız.');
+      return;
+    }
+
+    setPublishingToIg(true);
+    setPublishSuccess(false);
+    setPublishError('');
+
+    try {
+      const base64Image = canvasRef.current.toDataURL('image/jpeg', 0.95);
+      const res = await publishToInstagramAction(base64Image, captions.instagram);
+      
+      if (res.success) {
+        setPublishSuccess(true);
+      } else {
+        setPublishError(res.error || 'Paylaşım yapılamadı.');
+      }
+    } catch (err: any) {
+      setPublishError(err.message || 'Bilinmeyen bir hata oluştu.');
+    } finally {
+      setPublishingToIg(false);
+    }
   };
 
   // Draw share card on Canvas
@@ -83,7 +171,6 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
       ctx.fillStyle = 'rgba(5, 150, 105, 0.05)';
       ctx.fill();
 
-      // Render content
       renderTextAndBranding(ctx, width, height);
     } else {
       // Image template (Full background image with overlay)
@@ -119,7 +206,7 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
         renderTextAndBranding(ctx, width, height);
       };
       img.onerror = () => {
-        // Fallback to gradient if image fails due to CORS/load issues
+        // Fallback to gradient if image fails due to CORS
         const grad = ctx.createLinearGradient(0, 0, width, height);
         grad.addColorStop(0, '#022c22');
         grad.addColorStop(1, '#064e3b');
@@ -158,7 +245,7 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
     const badgeX = 80;
     const badgeY = height * 0.25;
 
-    // Draw badge background (glassmorphic / solid)
+    // Draw badge background
     ctx.fillStyle = '#10b981';
     roundRect(ctx, badgeX, badgeY - 28, badgeTextWidth + padX * 2, 48, 12);
     ctx.fill();
@@ -181,7 +268,7 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
       currentY += lineHeight;
     });
 
-    // Draw summary text (if space allows, especially for Post template)
+    // Draw summary text (if space allows)
     if (aspectRatio === 'post' || titleLines.length <= 3) {
       ctx.fillStyle = '#9ca3af'; // Gray 400
       ctx.font = '300 32px sans-serif';
@@ -199,7 +286,6 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
     ctx.fillText('Temiz Enerji ve Sürdürülebilir Teknolojiler', 80, height - 90);
   };
 
-  // Helper: Wrap text inside maximum width
   const wrapText = (ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string[] => {
     const words = text.split(' ');
     const lines: string[] = [];
@@ -219,7 +305,6 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
     return lines;
   };
 
-  // Helper: Draw rounded rectangle
   const roundRect = (
     ctx: CanvasRenderingContext2D,
     x: number,
@@ -263,8 +348,45 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
           <h3 className="text-lg font-bold text-gray-900">Sosyal Medya Paylaşım Asistanı</h3>
         </div>
         <span className="bg-emerald-50 text-emerald-700 text-xs font-semibold px-2.5 py-1 rounded-full">
-          Kurulumsuz Yöntem
+          Görsel & Metin Asistanı
         </span>
+      </div>
+
+      {/* Connection Widget */}
+      <div className="bg-gray-50 border border-gray-100 rounded-xl p-4 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 rounded-lg flex items-center justify-center text-white">
+            <InstagramIcon className="w-6 h-6" />
+          </div>
+          <div>
+            <h4 className="text-sm font-bold text-gray-800">Instagram API Bağlantısı</h4>
+            <p className="text-xs text-gray-500">
+              {checkingIg ? 'Bağlantı durumu kontrol ediliyor...' : igConnected ? `Bağlı Hesap: ${igAccountName}` : 'Doğrudan otomatik paylaşım için hesabınızı bağlayın.'}
+            </p>
+          </div>
+        </div>
+
+        <div>
+          {checkingIg ? (
+            <div className="w-4 h-4 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin" />
+          ) : igConnected ? (
+            <button
+              onClick={handleDisconnect}
+              className="flex items-center space-x-1.5 text-xs text-red-600 hover:text-red-700 font-bold bg-white border border-red-200 px-3.5 py-2 rounded-xl hover:bg-red-50 transition"
+            >
+              <Unlink className="w-3.5 h-3.5" />
+              <span>Bağlantıyı Kes</span>
+            </button>
+          ) : (
+            <a
+              href="/api/social/instagram/auth"
+              className="flex items-center space-x-1.5 text-xs text-white font-bold bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 px-4 py-2.5 rounded-xl shadow hover:opacity-90 transition"
+            >
+              <Link2 className="w-3.5 h-3.5" />
+              <span>Instagram Hesabını Bağla</span>
+            </a>
+          )}
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -304,7 +426,7 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
           </div>
 
           {/* Design Presets */}
-          <div className="flex justify-between items-center bg-gray-50 rounded-xl p-4 border border-gray-100">
+          <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center bg-gray-50 rounded-xl p-4 border border-gray-100 gap-4">
             <div className="space-y-1">
               <span className="text-xs text-gray-500 font-medium">Tasarım Teması</span>
               <div className="flex space-x-2">
@@ -336,7 +458,7 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
 
             <button
               onClick={handleDownload}
-              className="flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs shadow-md transition duration-200"
+              className="flex items-center justify-center space-x-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs shadow-md transition duration-200"
             >
               <Download className="w-4 h-4" />
               <span>Görseli İndir</span>
@@ -386,7 +508,7 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
                     )}
                   </button>
                 </div>
-                <p className="text-xs text-gray-700 leading-relaxed whitespace-pre-wrap max-h-36 overflow-y-auto pr-1">
+                <p className="text-xs text-gray-700 leading-relaxed whitespace-pre-wrap max-h-32 overflow-y-auto pr-1">
                   {captions.instagram}
                 </p>
               </div>
@@ -412,19 +534,54 @@ export default function SocialMediaAssistant({ article }: SocialMediaAssistantPr
                     )}
                   </button>
                 </div>
-                <p className="text-xs text-gray-700 leading-relaxed whitespace-pre-wrap max-h-36 overflow-y-auto pr-1">
+                <p className="text-xs text-gray-700 leading-relaxed whitespace-pre-wrap max-h-32 overflow-y-auto pr-1">
                   {captions.linkedin}
                 </p>
               </div>
 
-              <div className="flex justify-end">
+              {/* Direct Publish Button */}
+              {igConnected && (
+                <div className="border-t border-gray-100 pt-4 mt-4">
+                  <button
+                    onClick={handleDirectPublish}
+                    disabled={publishingToIg}
+                    className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:opacity-95 disabled:bg-gray-300 text-white font-bold py-3 px-4 rounded-xl text-sm shadow-md transition duration-200 cursor-pointer disabled:cursor-not-allowed"
+                  >
+                    {publishingToIg ? (
+                      <>
+                        <RefreshCw className="w-5 h-5 animate-spin" />
+                        <span>Instagram'a Yükleniyor...</span>
+                      </>
+                    ) : (
+                      <>
+                        <InstagramIcon className="w-5 h-5" />
+                        <span>Instagram'da Hemen Paylaş</span>
+                      </>
+                    )}
+                  </button>
+
+                  {publishSuccess && (
+                    <div className="mt-3 bg-emerald-50 border border-emerald-100 rounded-lg p-3 text-center text-xs font-bold text-emerald-700">
+                      🎉 Paylaşım başarıyla yapıldı! Instagram hesabınızı kontrol edebilirsiniz.
+                    </div>
+                  )}
+
+                  {publishError && (
+                    <div className="mt-3 bg-red-50 border border-red-100 rounded-lg p-3 text-center text-xs font-bold text-red-700">
+                      ❌ Hata: {publishError}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <div className="flex justify-between">
                 <button
                   onClick={handleGenerateCaptions}
                   disabled={loading}
                   className="text-xs text-emerald-600 hover:text-emerald-700 font-bold underline flex items-center space-x-1"
                 >
                   <Sparkles className="w-3 h-3" />
-                  <span>{loading ? 'Yeniden üretiliyor...' : 'Yeniden Üret'}</span>
+                  <span>{loading ? 'Yeniden üretiliyor...' : 'Paylaşım Yazılarını Yenile'}</span>
                 </button>
               </div>
             </div>
