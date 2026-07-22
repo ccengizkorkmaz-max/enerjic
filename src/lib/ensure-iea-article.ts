@@ -7,7 +7,15 @@ export async function ensureIEAArticle() {
       where: { slug },
     });
 
-    if (existing) return;
+    const imageUrl = 'https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1920&auto=format&fit=crop';
+
+    if (existing) {
+      await db.article.update({
+        where: { id: existing.id },
+        data: { imageUrl },
+      });
+      return;
+    }
 
     let category = await db.category.findFirst({
       where: { slug: 'temiz-enerji' },
@@ -21,7 +29,6 @@ export async function ensureIEAArticle() {
 
     const title = 'IEA 2026 Küresel Batarya Raporu: Üretim Kapasitesi 4 TWh’a Ulaştı, Çin Hakimiyeti Sürecek mi?';
     const summary = "Uluslararası Enerji Ajansı'nın (IEA) Global EV Outlook 2026 raporuna göre küresel lityum-iyon batarya üretim kapasitesi 4 TWh seviyesini aştı. Prizmatik hücrelerden tedarik zincirindeki jeopolitik risklere kadar 2026 batarya piyasasının öne çıkan tüm detayları.";
-    const imageUrl = 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=1200&auto=format&fit=crop';
 
     const content = `
 <p class="lead font-medium text-xl text-gray-700 mb-6">
