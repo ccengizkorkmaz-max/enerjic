@@ -10,6 +10,22 @@ export default async function AdPlacementsPage() {
     placements = await db.adPlacement.findMany({
       orderBy: { slotCode: 'asc' },
     });
+
+    if (placements.length === 0) {
+      const publisherId = 'ca-pub-3275598773792351';
+      await db.adPlacement.createMany({
+        data: [
+          { slotCode: 'header_banner', adClient: publisherId, adSlot: '1234567890', minHeight: 90, isActive: true },
+          { slotCode: 'sidebar_top', adClient: publisherId, adSlot: '1234567890', minHeight: 250, isActive: true },
+          { slotCode: 'in_article_p3', adClient: publisherId, adSlot: '1234567890', minHeight: 90, isActive: true },
+        ],
+        skipDuplicates: true,
+      });
+
+      placements = await db.adPlacement.findMany({
+        orderBy: { slotCode: 'asc' },
+      });
+    }
   } catch (e) {
     console.error('Error fetching ad placements: ', e);
   }
