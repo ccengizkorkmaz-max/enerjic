@@ -4,6 +4,7 @@ import { db } from '@/lib/db';
 import { getSEOMetadata } from '@/lib/seo';
 import Sidebar from '@/components/Sidebar';
 import LoadMoreFeed from '@/components/LoadMoreFeed';
+import NewsCategoryBar from '@/components/NewsCategoryBar';
 import AdSkeleton from '@/components/AdSkeleton';
 
 export const dynamic = 'force-dynamic';
@@ -88,6 +89,9 @@ export default async function CategoryPage({ params }: PageProps) {
       <div className="flex justify-center mb-6">
         <AdSkeleton slotCode="header_banner" placement={headerAd} />
       </div>
+
+      {/* Button-style News Categories Bar */}
+      <NewsCategoryBar activeSlug={slug} />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-4">
         {/* Main Feed Column */}

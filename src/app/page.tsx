@@ -6,6 +6,7 @@ import AdSkeleton from '@/components/AdSkeleton';
 import NearbyStations from '@/components/NearbyStations';
 import { getStationStats } from '@/app/actions/stations';
 import { ensureIEAArticle } from '@/lib/ensure-iea-article';
+import NewsCategoryBar from '@/components/NewsCategoryBar';
 
 export const revalidate = 60; // ISR cache regeneration time
 
@@ -71,6 +72,9 @@ export default async function HomePage() {
       <div className="flex justify-center mb-6">
         <AdSkeleton slotCode="header_banner" placement={headerAd} />
       </div>
+
+      {/* Button-style News Categories Bar */}
+      <NewsCategoryBar />
 
       {/* Hero Carousel Section */}
       <HeroSection articles={heroArticles} />
