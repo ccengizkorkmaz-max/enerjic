@@ -38,6 +38,18 @@ export default async function AdPlacementsPage() {
         </p>
       </div>
 
+      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-amber-900 text-xs leading-relaxed space-y-2">
+        <div className="font-bold text-sm text-amber-950 flex items-center">
+          💡 Reklamların Sitede Görünmesi İçin Kontrol Listesi:
+        </div>
+        <ol className="list-decimal list-inside space-y-1.5 text-amber-800">
+          <li><strong>Gerçek AdSlot ID'leri:</strong> AdSense Panelinizden (<em>Reklamlar &gt; Reklam birimine göre</em>) oluşturduğunuz 10 haneli özel Slot ID'lerinizi aşağıdaki <code>adSlot</code> alanlarına yazın. (Örnek: <code>1234567890</code> varsayılan koda Google reklam sunmaz).</li>
+          <li><strong>Google Taraması ve Zamanlama:</strong> AdSense hesabı yeni onaylandığında Google botlarının site içeriğini index'leyip reklam doldurmaya başlaması <strong>2 ila 24 saat</strong> sürebilmektedir.</li>
+          <li><strong>Otomatik Reklamlar (Auto Ads):</strong> Özel slot ID girmeden Google'ın otomatik yerleştirmesini isterseniz, AdSense panelinden <em>Otomatik Reklamlar</em> seçeneğini açmanız yeterlidir.</li>
+          <li><strong>AdBlocker / Reklam Engelleyici:</strong> Test ederken tarayıcınızdaki reklam engelleyicilerin kapalı olduğundan emin olun.</li>
+        </ol>
+      </div>
+
       <div className="grid grid-cols-1 gap-8">
         {placements.map((placement) => (
           <div
