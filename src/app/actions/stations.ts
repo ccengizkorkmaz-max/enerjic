@@ -44,8 +44,8 @@ export async function getNearbyStations(city: string) {
     const stations = await db.chargingStation.findMany({
       where: {
         isActive: true,
-        city: { equals: city, mode: 'insensitive' as any },
-      },
+        city: { equals: city, mode: 'insensitive' } as any,
+      } as any,
       take: 6,
       orderBy: { powerKw: 'desc' },
     });

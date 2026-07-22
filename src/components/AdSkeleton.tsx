@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 interface AdPlacement {
   slotCode: string;
@@ -21,29 +21,36 @@ export default function AdSkeleton({
 }: AdSkeletonProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isAdsenseApproved, setIsAdsenseApproved] = useState(false);
+  const pushedRef = useRef(false);
 
   const isActive = placement ? placement.isActive : true;
-  const adClient = placement ? placement.adClient : 'ca-pub-xxxxxxxxxxxxxxxx';
-  const adSlot = placement ? placement.adSlot : '1234567890';
-  const minHeight = placement ? placement.minHeight : (slotCode === 'header_banner' ? 90 : 250);
+  const adClient = placement?.adClient || 'ca-pub-3275598773792351';
+  const adSlot = placement?.adSlot || '1234567890';
+  const minHeight = placement?.minHeight || (slotCode === 'header_banner' ? 90 : 250);
 
   useEffect(() => {
-    // Check if the client is using the real approved publisher ID
-    if (adClient && adClient !== 'ca-pub-xxxxxxxxxxxxxxxx' && adClient.includes('3275598773792351')) {
+    // Check if a valid AdSense publisher ID is present
+    const isValidPublisherId = Boolean(
+      adClient && 
+      adClient.startsWith('ca-pub-') && 
+      !adClient.includes('xxxxxxxxxxxxxxxx')
+    );
+
+    if (isValidPublisherId) {
       setIsAdsenseApproved(true);
-      try {
-        if (typeof window !== 'undefined') {
-          const adsbygoogle = (window as any).adsbygoogle || [];
-          adsbygoogle.push({});
-          setIsLoaded(true);
+      if (!pushedRef.current) {
+        try {
+          if (typeof window !== 'undefined') {
+            ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+            pushedRef.current = true;
+          }
+        } catch (err) {
+          console.warn('AdSense push error: ', err);
         }
-      } catch (err) {
-        console.warn('AdSense push error: ', err);
       }
-    } else {
-      setIsLoaded(true);
     }
-  }, [adClient]);
+    setIsLoaded(true);
+  }, [adClient, adSlot]);
 
   if (!isActive) {
     return null;
@@ -51,8 +58,6 @@ export default function AdSkeleton({
 
   let widthClass = 'w-full';
   let labelText = 'Sponsorlu Reklam';
-  // Use user's official Adaptive A-Ads ID
-  const fallbackIframeSrc = 'https://acceptable.a-ads.com/2447062/?size=Adaptive';
   let iframeHeight = '250';
 
   if (slotCode === 'header_banner') {
@@ -73,7 +78,7 @@ export default function AdSkeleton({
     <div className={`relative ${widthClass} my-6 transition-all duration-300`}>
       <div 
         style={{ minHeight: `${minHeight}px` }}
-        className={`${widthClass} bg-gray-50 border border-gray-100 rounded-lg flex flex-col items-center justify-center relative overflow-hidden p-2`}
+        className={`${widthClass} bg-gray-50/50 border border-gray-100 rounded-lg flex flex-col items-center justify-center relative overflow-hidden p-2`}
       >
         {!isLoaded && (
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-100 to-transparent -translate-x-full animate-shimmer" />
@@ -86,7 +91,7 @@ export default function AdSkeleton({
         {isAdsenseApproved ? (
           <ins
             className="adsbygoogle"
-            style={{ display: 'block', width: '100%', height: `${minHeight}px` }}
+            style={{ display: 'block', width: '100%', minHeight: `${minHeight}px` }}
             data-ad-client={adClient}
             data-ad-slot={adSlot}
             data-ad-format="auto"
@@ -96,7 +101,7 @@ export default function AdSkeleton({
           <div id="frame" style={{ width: '100%', margin: 'auto', position: 'relative', zIndex: 99998 }}>
             <iframe
               data-aa="2447062"
-              src={fallbackIframeSrc}
+              src="https://acceptable.a-ads.com/2447062/?size=Adaptive"
               style={{
                 border: '0px',
                 padding: '0',
@@ -110,13 +115,8 @@ export default function AdSkeleton({
             />
           </div>
         )}
-
-        {isAdsenseApproved && (
-          <div className="absolute bottom-1 right-2 bg-emerald-50 text-[8px] text-emerald-700 font-bold px-1.5 py-0.5 rounded border border-emerald-100 z-10 select-none">
-            AdSense Active
-          </div>
-        )}
       </div>
     </div>
   );
 }
+
