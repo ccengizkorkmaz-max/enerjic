@@ -156,11 +156,17 @@ export default async function ArticleDetailPage({ params }: PageProps) {
 
           {/* Image */}
           {article.imageUrl && (
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-gray-50 border border-gray-100">
+            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-slate-950 border border-gray-100 flex items-center justify-center group shadow-sm">
+              <img
+                src={article.imageUrl}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover filter blur-xl opacity-45 scale-110 select-none pointer-events-none"
+              />
               <img
                 src={article.imageUrl}
                 alt={article.title}
-                className="object-cover w-full h-full"
+                className="relative z-10 max-h-full max-w-full object-contain rounded-2xl transition-transform duration-500 group-hover:scale-[1.01]"
               />
             </div>
           )}

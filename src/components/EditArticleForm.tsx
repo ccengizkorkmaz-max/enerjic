@@ -42,14 +42,107 @@ export default function EditArticleForm({ article, categories }: EditArticleForm
   const [uploadingImage, setUploadingImage] = useState(false);
   const [uploadError, setUploadError] = useState('');
 
+  const processImageForUpload = (file: File): Promise<File> => {
+    return new Promise((resolve) => {
+      if (!file.type.startsWith('image/')) {
+        resolve(file);
+        return;
+      }
+
+      const img = new Image();
+      const objectUrl = URL.createObjectURL(file);
+
+      img.onload = () => {
+        URL.revokeObjectURL(objectUrl);
+
+        const targetWidth = 1200;
+        const targetHeight = 675; // 16:9 standard HD ratio
+
+        if (img.width >= 1000 && img.height >= 550) {
+          resolve(file);
+          return;
+        }
+
+        const canvas = document.createElement('canvas');
+        canvas.width = targetWidth;
+        canvas.height = targetHeight;
+        const ctx = canvas.getContext('2d');
+
+        if (!ctx) {
+          resolve(file);
+          return;
+        }
+
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+
+        ctx.save();
+        ctx.filter = 'blur(20px)';
+        ctx.drawImage(img, -20, -20, targetWidth + 40, targetHeight + 40);
+        ctx.restore();
+
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.35)';
+        ctx.fillRect(0, 0, targetWidth, targetHeight);
+
+        const imgAspect = img.width / img.height;
+        const targetAspect = targetWidth / targetHeight;
+
+        let drawWidth = targetWidth;
+        let drawHeight = targetHeight;
+        let drawX = 0;
+        let drawY = 0;
+
+        if (imgAspect > targetAspect) {
+          drawWidth = targetWidth;
+          drawHeight = targetWidth / imgAspect;
+          drawY = (targetHeight - drawHeight) / 2;
+        } else {
+          drawHeight = targetHeight;
+          drawWidth = targetHeight * imgAspect;
+          drawX = (targetWidth - drawWidth) / 2;
+        }
+
+        ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
+
+        canvas.toBlob(
+          (blob) => {
+            if (blob) {
+              const optimizedFile = new File(
+                [blob],
+                file.name.replace(/\.[^/.]+$/, '') + '_hd.jpg',
+                {
+                  type: 'image/jpeg',
+                  lastModified: Date.now(),
+                }
+              );
+              resolve(optimizedFile);
+            } else {
+              resolve(file);
+            }
+          },
+          'image/jpeg',
+          0.92
+        );
+      };
+
+      img.onerror = () => {
+        URL.revokeObjectURL(objectUrl);
+        resolve(file);
+      };
+
+      img.src = objectUrl;
+    });
+  };
+
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+    const rawFile = e.target.files?.[0];
+    if (!rawFile) return;
 
     setUploadingImage(true);
     setUploadError('');
 
     try {
+      const file = await processImageForUpload(rawFile);
       let uploadedUrl = '';
 
       // 1. Try ImgBB with multiple keys
