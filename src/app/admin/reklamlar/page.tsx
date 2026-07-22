@@ -1,6 +1,6 @@
 import { db } from '@/lib/db';
-import { updateAdPlacementAction } from '@/app/actions/admin';
-import { Settings, CheckCircle2, XCircle } from 'lucide-react';
+import { updateAdPlacementAction, toggleAllAdPlacementsAction } from '@/app/actions/admin';
+import { Settings, CheckCircle2, XCircle, Zap, ShieldCheck } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -30,6 +30,8 @@ export default async function AdPlacementsPage() {
     console.error('Error fetching ad placements: ', e);
   }
 
+  const allInactive = placements.length > 0 && placements.every((p) => !p.isActive);
+
   const getPlacementLabel = (code: string) => {
     switch (code) {
       case 'header_banner':
@@ -52,6 +54,62 @@ export default async function AdPlacementsPage() {
         <p className="text-sm text-gray-500 mt-1">
           Sayfalardaki Google AdSense reklam slot kodlarını, CLS iskelet yüksekliklerini ve aktiflik durumlarını buradan güncelleyebilirsiniz.
         </p>
+      </div>
+
+      {/* Auto Ads Master Mode Switch */}
+      <div className="bg-emerald-950 text-white rounded-2xl p-6 shadow-md border border-emerald-800 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="flex items-center space-x-2">
+              <Zap className="h-5 w-5 text-emerald-400 fill-emerald-400" />
+              <h2 className="text-base font-extrabold text-white">Google Auto Ads (Otomatik Reklam) Modu</h2>
+              {allInactive ? (
+                <span className="bg-emerald-500/20 text-emerald-300 text-[10px] font-mono px-2.5 py-0.5 rounded-full border border-emerald-500/40">
+                  AKTİF (Özel Slotlar Kapalı)
+                </span>
+              ) : (
+                <span className="bg-amber-500/20 text-amber-300 text-[10px] font-mono px-2.5 py-0.5 rounded-full border border-amber-500/40">
+                  KARMA (Manuel Slotlar Açık)
+                </span>
+              )}
+            </div>
+            <p className="text-xs text-emerald-200/80 leading-relaxed max-w-2xl">
+              Google AdSense panelinde Otomatik Reklamları açtıysanız manuel slot ID girmenize gerek yoktur. Manuel alanları kapatarak tamamen Google AI yerleşimini kullanabilirsiniz.
+            </p>
+          </div>
+
+          <div className="flex items-center space-x-3 shrink-0">
+            {allInactive ? (
+              <form
+                action={async () => {
+                  "use server";
+                  await toggleAllAdPlacementsAction(true);
+                }}
+              >
+                <button
+                  type="submit"
+                  className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition cursor-pointer shadow"
+                >
+                  Manuel Slotları Aç
+                </button>
+              </form>
+            ) : (
+              <form
+                action={async () => {
+                  "use server";
+                  await toggleAllAdPlacementsAction(false);
+                }}
+              >
+                <button
+                  type="submit"
+                  className="bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-bold text-xs px-4 py-2.5 rounded-xl transition cursor-pointer"
+                >
+                  ⚡ Sadece Auto Ads Kullan (Manuel Slotları Kapat)
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
       </div>
 
       <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-amber-900 text-xs leading-relaxed space-y-2">

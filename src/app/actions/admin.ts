@@ -206,11 +206,35 @@ export async function updateAdPlacementAction(id: string, formData: FormData) {
     revalidatePath('/');
     revalidatePath('/haber/[slug]', 'page');
     revalidatePath('/kategori/[slug]', 'page');
+    revalidatePath('/admin/reklamlar');
 
     return { success: true };
   } catch (e: any) {
     console.error('Error updating ad placement: ', e);
     return { success: false, error: 'Reklam yerleşimi güncellenirken hata oluştu: ' + e.message };
+  }
+}
+
+export async function toggleAllAdPlacementsAction(isActive: boolean) {
+  const isAuthenticated = await checkAuth();
+  if (!isAuthenticated) {
+    return { success: false, error: 'Yetkisiz işlem.' };
+  }
+
+  try {
+    await db.adPlacement.updateMany({
+      data: { isActive },
+    });
+
+    revalidatePath('/');
+    revalidatePath('/haber/[slug]', 'page');
+    revalidatePath('/kategori/[slug]', 'page');
+    revalidatePath('/admin/reklamlar');
+
+    return { success: true };
+  } catch (e: any) {
+    console.error('Error toggling all ad placements: ', e);
+    return { success: false, error: 'Reklam durumları güncellenirken hata oluştu: ' + e.message };
   }
 }
 
