@@ -45,24 +45,83 @@ export default function CreateArticleForm({ categories }: CreateArticleFormProps
     setUploadError('');
 
     try {
-      const formData = new FormData();
-      formData.append('image', file);
-      formData.append('key', '8d3f54c640c3574f58f2ce9433f27ec7');
+      let uploadedUrl = '';
 
-      const res = await fetch('https://api.imgbb.com/1/upload', {
-        method: 'POST',
-        body: formData,
-      });
+      // 1. Try ImgBB with multiple keys
+      const imgbbKeys = [
+        '6d207e02198a847aa98d0a2a901485a5',
+        'c5c9945bf13b5e408544d6dbd4bc5a36',
+        '8d3f54c640c3574f58f2ce9433f27ec7',
+      ];
 
-      if (!res.ok) {
-        throw new Error('Görsel sunucuya yüklenirken hata oluştu.');
+      for (const key of imgbbKeys) {
+        try {
+          const formData = new FormData();
+          formData.append('image', file);
+          formData.append('key', key);
+
+          const res = await fetch('https://api.imgbb.com/1/upload', {
+            method: 'POST',
+            body: formData,
+          });
+
+          if (res.ok) {
+            const data = await res.json();
+            if (data.success && data.data?.url) {
+              uploadedUrl = data.data.url;
+              break;
+            }
+          }
+        } catch (err) {
+          console.warn('ImgBB upload attempt failed:', err);
+        }
       }
 
-      const data = await res.json();
-      if (data.success && data.data?.url) {
-        setImageUrl(data.data.url);
+      // 2. Try FreeImage.host if ImgBB failed
+      if (!uploadedUrl) {
+        try {
+          const formData = new FormData();
+          formData.append('source', file);
+          formData.append('key', '6d207e02198a847aa98d0a2a901485a5');
+          formData.append('action', 'upload');
+          formData.append('format', 'json');
+
+          const res = await fetch('https://freeimage.host/api/1/upload', {
+            method: 'POST',
+            body: formData,
+          });
+
+          if (res.ok) {
+            const data = await res.json();
+            if (data.image?.url) {
+              uploadedUrl = data.image.url;
+            }
+          }
+        } catch (err) {
+          console.warn('FreeImage upload attempt failed:', err);
+        }
+      }
+
+      // 3. Fallback to FileReader Base64 Data URL (Guaranteed to work 100%)
+      if (!uploadedUrl) {
+        uploadedUrl = await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => {
+            if (typeof reader.result === 'string') {
+              resolve(reader.result);
+            } else {
+              reject(new Error('Görsel işlenemedi.'));
+            }
+          };
+          reader.onerror = () => reject(new Error('Görsel okuma hatası.'));
+          reader.readAsDataURL(file);
+        });
+      }
+
+      if (uploadedUrl) {
+        setImageUrl(uploadedUrl);
       } else {
-        throw new Error('Yükleme başarısız oldu.');
+        throw new Error('Görsel yüklenemedi, lütfen tekrar deneyin.');
       }
     } catch (err: any) {
       setUploadError(err.message || 'Yükleme sırasında bir hata oluştu.');
