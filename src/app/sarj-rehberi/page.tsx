@@ -1,7 +1,7 @@
 import { db } from '@/lib/db';
 import { getSEOMetadata } from '@/lib/seo';
 import { Metadata } from 'next';
-import { MapPin, Zap, Search, Filter, Battery } from 'lucide-react';
+import { MapPin, Zap, Search, Filter, Battery, Navigation } from 'lucide-react';
 
 export const metadata: Metadata = getSEOMetadata({
   title: 'Türkiye Şarj İstasyonları Rehberi',
@@ -140,10 +140,20 @@ export default async function ChargingStationsPage({ searchParams }: PageProps) 
                   <p className="text-xs font-extrabold text-gray-800 mt-1">{station.powerKw} kW</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-2 text-xs text-gray-500">
+              <div className="flex items-start space-x-2 text-xs text-gray-500 mb-3">
                 <MapPin className="h-3.5 w-3.5 text-emerald-600 shrink-0 mt-0.5" />
                 <span>{station.address}, {station.district}, {station.city}</span>
               </div>
+
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${station.name} ${station.address} ${station.district} ${station.city}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center space-x-1.5 w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 px-3 rounded-xl transition-all duration-200 shadow-sm"
+              >
+                <Navigation className="h-3.5 w-3.5 text-white" />
+                <span>Haritada Yol Tarifi Al</span>
+              </a>
             </div>
           ))}
         </div>

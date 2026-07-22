@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Search, MapPin, Zap, Info, ShieldAlert, Award } from 'lucide-react';
+import { Search, MapPin, Zap, Info, ShieldAlert, Award, Navigation } from 'lucide-react';
 
 interface Station {
   id: string;
@@ -100,17 +100,22 @@ export default function DistrictStationsClient({ stations, cityName, districtNam
                   </p>
                 </div>
 
-                {/* Footer Location Pin Info */}
-                <div className="pt-4 mt-4 border-t border-gray-50 flex items-center justify-between text-[11px] font-bold text-gray-400">
-                  <span className="flex items-center">
-                    <MapPin className="h-3.5 w-3.5 mr-1 text-gray-400" />
-                    {station.district}, {station.city}
+                {/* Footer Location Pin Info & Yol Tarifi Button */}
+                <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between gap-2 text-[11px] font-bold text-gray-500">
+                  <span className="flex items-center truncate">
+                    <MapPin className="h-3.5 w-3.5 mr-1 text-emerald-600 shrink-0" />
+                    <span className="truncate">{station.district}, {station.city}</span>
                   </span>
-                  
-                  {/* Directions placeholder or provider tag */}
-                  <span className="text-emerald-700 font-extrabold flex items-center">
-                    {station.chargerType} Soket
-                  </span>
+
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${station.name} ${station.address} ${station.district} ${station.city}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-3.5 rounded-xl transition-all duration-200 shadow-sm shrink-0"
+                  >
+                    <Navigation className="h-3.5 w-3.5 text-white" />
+                    <span>Yol Tarifi Al</span>
+                  </a>
                 </div>
               </div>
             );
