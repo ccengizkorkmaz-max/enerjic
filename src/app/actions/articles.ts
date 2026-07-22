@@ -45,3 +45,43 @@ export async function getArticlesAction(
     return { success: false, error: e.message, articles: [] };
   }
 }
+
+export async function getNextArticleAction(
+  currentArticleId: string,
+  categoryId: string,
+  excludeIds: string[] = []
+) {
+  try {
+    const allExclude = Array.from(new Set([currentArticleId, ...excludeIds]));
+
+    // Try same category first
+    let nextArticle = await db.article.findFirst({
+      where: {
+        categoryId,
+        id: { notIn: allExclude },
+      },
+      include: { category: true },
+      orderBy: { publishedAt: 'desc' },
+    });
+
+    // Fallback to any recent article if no more in category
+    if (!nextArticle) {
+      nextArticle = await db.article.findFirst({
+        where: {
+          id: { notIn: allExclude },
+        },
+        include: { category: true },
+        orderBy: { publishedAt: 'desc' },
+      });
+    }
+
+    if (nextArticle) {
+      return { success: true, article: nextArticle };
+    }
+
+    return { success: false, article: null };
+  } catch (e: any) {
+    console.error('Error fetching next article: ', e);
+    return { success: false, error: e.message, article: null };
+  }
+}

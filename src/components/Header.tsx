@@ -72,6 +72,13 @@ export default function Header({ categories = [] }: HeaderProps) {
                 <span className="text-[8px] font-black uppercase bg-amber-600 text-white px-1 py-0.5 rounded-full scale-90 tracking-normal leading-none">6K+</span>
               </Link>
               <Link
+                href="/sarj-hesaplayici"
+                className="text-[11px] font-black text-purple-700 bg-purple-50 hover:bg-purple-100 hover:text-purple-800 px-2.5 py-2 rounded-xl transition-all duration-200 flex items-center space-x-1 border border-purple-100/50 shadow-sm shrink-0"
+              >
+                <Zap className="h-3.5 w-3.5 text-purple-600 animate-pulse" />
+                <span>Şarj Hesaplama</span>
+              </Link>
+              <Link
                 href="/yazilim-guncellemeleri"
                 className="text-[11px] font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 hover:text-blue-800 px-2.5 py-2 rounded-xl transition-all duration-200 flex items-center space-x-1 border border-blue-100/50 shadow-sm shrink-0"
               >

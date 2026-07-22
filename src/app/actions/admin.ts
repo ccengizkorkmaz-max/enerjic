@@ -80,6 +80,14 @@ export async function createArticleAction(formData: FormData) {
     revalidatePath(`/kategori/${article.category.slug}`);
     revalidatePath('/sitemap.xml');
 
+    // Trigger instant search engine indexing ping
+    try {
+      const { pingGoogleIndexingAction } = await import('@/app/actions/indexing');
+      await pingGoogleIndexingAction(`https://enerjic.com/haber/${slug}`);
+    } catch (pingErr) {
+      console.warn('Indexing ping warning:', pingErr);
+    }
+
     return { success: true };
   } catch (e: any) {
     console.error('Error creating article: ', e);

@@ -121,6 +121,11 @@ export default async function ComparePage({ searchParams }: PageProps) {
 
   const colWidth = vehicles.length === 2 ? 'w-1/2' : 'w-1/3';
 
+  const rangeWinnerIdx = getBestIdx('rangeKm', 'max');
+  const powerWinnerIdx = getBestIdx('powerHp', 'max');
+  const chargingWinnerIdx = getBestIdx('maxDcChargingKw', 'max');
+  const priceWinnerIdx = getBestIdx('priceStartTl', 'min');
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
       {/* Header */}
@@ -136,6 +141,64 @@ export default async function ComparePage({ searchParams }: PageProps) {
             </h1>
             <p className="text-sm text-gray-500 mt-0.5">{vehicles.length} araç karşılaştırılıyor</p>
           </div>
+        </div>
+      </div>
+
+      {/* AI Decision Support Assistant Card */}
+      <div className="bg-gradient-to-br from-emerald-950 via-emerald-900 to-gray-900 text-white rounded-3xl p-6 sm:p-8 mb-8 border border-emerald-800 shadow-xl space-y-4">
+        <div className="flex items-center space-x-2 border-b border-emerald-800/80 pb-4">
+          <Sparkles className="h-5 w-5 text-emerald-400 fill-emerald-400 animate-pulse" />
+          <h2 className="text-lg font-extrabold text-white">Yapay Zeka Karar Destek Özeti</h2>
+          <span className="bg-emerald-500/20 text-emerald-300 text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full border border-emerald-500/40">
+            Otomatik Analiz
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+          {rangeWinnerIdx !== -1 && (
+            <div className="bg-emerald-900/50 border border-emerald-700/60 rounded-2xl p-4 space-y-1">
+              <div className="flex items-center text-xs font-bold text-emerald-300 uppercase tracking-wider">
+                <Battery className="w-4 h-4 text-emerald-400 mr-1.5" />
+                Menzil Şampiyonu
+              </div>
+              <p className="font-extrabold text-base text-white">
+                {vehicles[rangeWinnerIdx].brand} {vehicles[rangeWinnerIdx].model}
+              </p>
+              <p className="text-xs text-emerald-200/80 leading-snug">
+                <strong>{vehicles[rangeWinnerIdx].rangeKm} km</strong> WLTP menzili ile uzun yolculuklarda en az duraklama ihtiyacı sunuyor.
+              </p>
+            </div>
+          )}
+
+          {powerWinnerIdx !== -1 && (
+            <div className="bg-emerald-900/50 border border-emerald-700/60 rounded-2xl p-4 space-y-1">
+              <div className="flex items-center text-xs font-bold text-emerald-300 uppercase tracking-wider">
+                <Zap className="w-4 h-4 text-amber-400 mr-1.5" />
+                Performans Şampiyonu
+              </div>
+              <p className="font-extrabold text-base text-white">
+                {vehicles[powerWinnerIdx].brand} {vehicles[powerWinnerIdx].model}
+              </p>
+              <p className="text-xs text-emerald-200/80 leading-snug">
+                <strong>{vehicles[powerWinnerIdx].powerHp} HP</strong> gücü ve {vehicles[powerWinnerIdx].acceleration0100 ? `${vehicles[powerWinnerIdx].acceleration0100} sn` : 'yüksek'} 0-100 hızlanması ile en dinamik sürüşü sağlıyor.
+              </p>
+            </div>
+          )}
+
+          {chargingWinnerIdx !== -1 && (
+            <div className="bg-emerald-900/50 border border-emerald-700/60 rounded-2xl p-4 space-y-1">
+              <div className="flex items-center text-xs font-bold text-emerald-300 uppercase tracking-wider">
+                <BatteryCharging className="w-4 h-4 text-emerald-400 mr-1.5" />
+                Şarj Hızı Lideri
+              </div>
+              <p className="font-extrabold text-base text-white">
+                {vehicles[chargingWinnerIdx].brand} {vehicles[chargingWinnerIdx].model}
+              </p>
+              <p className="text-xs text-emerald-200/80 leading-snug">
+                <strong>{vehicles[chargingWinnerIdx].maxDcChargingKw} kW</strong> maksimum DC şarj desteği ile istasyonda en az bekleme süresi vadediyor.
+              </p>
+            </div>
+          )}
         </div>
       </div>
 

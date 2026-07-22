@@ -10,6 +10,7 @@ import InArticleAd from '@/components/InArticleAd';
 import AdSkeleton from '@/components/AdSkeleton';
 import CommentSection from '@/components/CommentSection';
 import ShareButtons from '@/components/ShareButtons';
+import InfiniteArticleStream from '@/components/InfiniteArticleStream';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -212,6 +213,13 @@ export default async function ArticleDetailPage({ params }: PageProps) {
 
           {/* Comments Section */}
           <CommentSection articleId={article.id} comments={approvedComments} />
+
+          {/* Infinite Scroll Next Recommended Article */}
+          <InfiniteArticleStream
+            initialArticleId={article.id}
+            categoryId={article.categoryId}
+            inArticleAdPlacement={inArticleAd}
+          />
         </div>
 
         {/* Sidebar */}

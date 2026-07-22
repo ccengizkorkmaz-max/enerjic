@@ -165,10 +165,19 @@ export default function NearbyStations({ stats }: { stats: StationStats }) {
                   <span className="text-[10px] text-gray-400 font-medium">{station.chargerType}</span>
                 </div>
               </div>
-              <div className="flex items-start space-x-1.5 text-xs text-gray-500">
+              <div className="flex items-start space-x-1.5 text-xs text-gray-500 mb-3">
                 <MapPin className="h-3 w-3 text-emerald-600 shrink-0 mt-0.5" />
                 <span className="line-clamp-2">{station.district}, {station.city}</span>
               </div>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${station.name} ${station.address} ${station.district} ${station.city}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center space-x-1.5 w-full bg-emerald-50/80 hover:bg-emerald-700 text-emerald-800 hover:text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-200 border border-emerald-100"
+              >
+                <Navigation className="h-3.5 w-3.5" />
+                <span>Yol Tarifi Al</span>
+              </a>
             </div>
           ))}
         </div>
