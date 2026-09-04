@@ -7,7 +7,7 @@ export async function ensureRolandBergerArticle() {
       where: { slug },
     });
 
-    const imageUrl = '/images/roland-berger-2026/cover.jpg';
+    const imageUrl = 'https://i.ibb.co/V04gWKrG/roland-berger-2026-cover.jpg';
 
     let category = await db.category.findFirst({
       where: { slug: 'elektrikli-araclar' },
@@ -92,9 +92,10 @@ export async function ensureRolandBergerArticle() {
 
 <div class="my-8 rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-white p-2">
   <img 
-    src="/images/roland-berger-2026/roland_berger_fig_p6.png" 
+    src="https://i.ibb.co/pjjKqYWr/roland-berger-2026-fig-p6.png" 
     alt="Bölgelere Göre Elektrikli Araç Satış Penetrasyonu - Roland Berger EV Charging Index 2026" 
     class="w-full rounded-xl object-contain"
+    loading="lazy"
   />
   <p class="text-center text-xs text-gray-500 mt-2 italic">
     Grafik 1: Bölgeler bazında EV satış penetrasyonu gelişimi (Kaynak: Roland Berger / EV-Volumes / EAFO)
@@ -135,9 +136,10 @@ export async function ensureRolandBergerArticle() {
 
 <div class="my-8 rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-white p-2">
   <img 
-    src="/images/roland-berger-2026/roland_berger_fig_p9.png" 
+    src="https://i.ibb.co/p66BsDtn/roland-berger-2026-fig-p9.png" 
     alt="Ülkelere Göre 2025-2026 EV Satış Penetrasyon Oranları - Roland Berger EV Charging Index" 
     class="w-full rounded-xl object-contain"
+    loading="lazy"
   />
   <p class="text-center text-xs text-gray-500 mt-2 italic">
     Grafik 2: 34 odak ülkede BEV ve PHEV satış penetrasyon oranları (Kaynak: Roland Berger EV Charging Index 2026)
@@ -198,9 +200,10 @@ export async function ensureRolandBergerArticle() {
 
 <div class="my-8 rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-white p-2">
   <img 
-    src="/images/roland-berger-2026/roland_berger_fig_p17.png" 
+    src="https://i.ibb.co/qFsrdGKV/roland-berger-2026-fig-p17.png" 
     alt="Halka Açık Şarj Soketi Başına Düşen Araç Sayıları - Roland Berger 2026" 
     class="w-full rounded-xl object-contain"
+    loading="lazy"
   />
   <p class="text-center text-xs text-gray-500 mt-2 italic">
     Grafik 3: Kamuya açık şarj istasyonu başına düşen elektrikli araç sayıları (Kaynak: Roland Berger EV Charging Index 2026)
@@ -253,9 +256,10 @@ export async function ensureRolandBergerArticle() {
 
 <div class="my-8 rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-white p-2">
   <img 
-    src="/images/roland-berger-2026/roland_berger_fig_p14.png" 
+    src="https://i.ibb.co/RG3sLVsw/roland-berger-2026-fig-p14.png" 
     alt="Sürücülerin Şarj Deneyiminde En Çok Şikayet Ettiği Konular - Roland Berger Anketi" 
     class="w-full rounded-xl object-contain"
+    loading="lazy"
   />
   <p class="text-center text-xs text-gray-500 mt-2 italic">
     Grafik 4: Küresel elektrikli araç sürücülerinin şarj altyapısı memnuniyet ve talep analizi (Kaynak: Roland Berger / Potloc Survey 2025)
@@ -295,7 +299,7 @@ export async function ensureRolandBergerArticle() {
           isFeatured: true,
         },
       });
-      console.log('Roland Berger 2026 article updated successfully with images!');
+      console.log('Roland Berger 2026 article updated successfully with ImgBB CDN images!');
     } else {
       await db.article.create({
         data: {
@@ -309,7 +313,7 @@ export async function ensureRolandBergerArticle() {
           isFeatured: true,
         },
       });
-      console.log('Roland Berger 2026 article created successfully with images!');
+      console.log('Roland Berger 2026 article created successfully with ImgBB CDN images!');
     }
   } catch (err) {
     console.error('Error ensuring Roland Berger article:', err);
