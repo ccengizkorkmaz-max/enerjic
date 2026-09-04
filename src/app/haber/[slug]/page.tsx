@@ -12,12 +12,21 @@ import CommentSection from '@/components/CommentSection';
 import ShareButtons from '@/components/ShareButtons';
 import InfiniteArticleStream from '@/components/InfiniteArticleStream';
 
+import { ensureIEAArticle } from '@/lib/ensure-iea-article';
+import { ensureRolandBergerArticle } from '@/lib/ensure-roland-berger-article';
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+  if (slug === 'iea-2026-kuresel-batarya-uretimi-ve-ticaret-raporu') {
+    await ensureIEAArticle();
+  } else if (slug === 'roland-berger-ev-charging-index-2026-kuresel-sarj-ve-elektrikli-arac-raporu') {
+    await ensureRolandBergerArticle();
+  }
+
   try {
     const article = await db.article.findUnique({
       where: { slug },
@@ -41,6 +50,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ArticleDetailPage({ params }: PageProps) {
   const { slug } = await params;
+
+  if (slug === 'iea-2026-kuresel-batarya-uretimi-ve-ticaret-raporu') {
+    await ensureIEAArticle();
+  } else if (slug === 'roland-berger-ev-charging-index-2026-kuresel-sarj-ve-elektrikli-arac-raporu') {
+    await ensureRolandBergerArticle();
+  }
 
   let article = null;
   try {
