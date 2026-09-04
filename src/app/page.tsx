@@ -6,12 +6,14 @@ import AdSkeleton from '@/components/AdSkeleton';
 import NearbyStations from '@/components/NearbyStations';
 import { getStationStats } from '@/app/actions/stations';
 import { ensureIEAArticle } from '@/lib/ensure-iea-article';
+import { ensureRolandBergerArticle } from '@/lib/ensure-roland-berger-article';
 import NewsCategoryBar from '@/components/NewsCategoryBar';
 
 export const revalidate = 60; // ISR cache regeneration time
 
 export default async function HomePage() {
   await ensureIEAArticle();
+  await ensureRolandBergerArticle();
 
   // Fetch the 10 most recent articles for the hero carousel
   let heroArticles: any[] = [];

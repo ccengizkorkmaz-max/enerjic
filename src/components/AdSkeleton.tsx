@@ -20,7 +20,6 @@ export default function AdSkeleton({
   placement,
 }: AdSkeletonProps) {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isAdsenseApproved, setIsAdsenseApproved] = useState(false);
   const pushedRef = useRef(false);
 
   const isActive = placement ? placement.isActive : true;
@@ -28,29 +27,32 @@ export default function AdSkeleton({
   const adSlot = placement?.adSlot || '1234567890';
   const minHeight = placement?.minHeight || (slotCode === 'header_banner' ? 90 : 250);
 
-  useEffect(() => {
-    // Check if a valid AdSense publisher ID is present
-    const isValidPublisherId = Boolean(
-      adClient && 
-      adClient.startsWith('ca-pub-') && 
-      !adClient.includes('xxxxxxxxxxxxxxxx')
-    );
+  // Check if publisher ID is valid
+  const isValidPublisherId = Boolean(
+    adClient && 
+    adClient.startsWith('ca-pub-') && 
+    !adClient.includes('xxxxxxxxxxxxxxxx')
+  );
 
-    if (isValidPublisherId) {
-      setIsAdsenseApproved(true);
-      if (!pushedRef.current) {
-        try {
-          if (typeof window !== 'undefined') {
-            ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-            pushedRef.current = true;
-          }
-        } catch (err) {
-          console.warn('AdSense push error: ', err);
+  // Check if slot ID is a dummy placeholder
+  const isDummySlot = !adSlot || ['1234567890', '1111111111', '2222222222', '3333333333'].includes(adSlot);
+
+  // AdSense is ready only if publisher ID is valid AND adSlot is a real non-dummy ID
+  const isAdsenseReady = isValidPublisherId && !isDummySlot;
+
+  useEffect(() => {
+    setIsLoaded(true);
+    if (isAdsenseReady && !pushedRef.current) {
+      try {
+        if (typeof window !== 'undefined') {
+          ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+          pushedRef.current = true;
         }
+      } catch (err) {
+        console.warn('AdSense push error: ', err);
       }
     }
-    setIsLoaded(true);
-  }, [adClient, adSlot]);
+  }, [isAdsenseReady, adClient, adSlot]);
 
   if (!isActive) {
     return null;
@@ -88,7 +90,7 @@ export default function AdSkeleton({
           {labelText}
         </span>
 
-        {isAdsenseApproved ? (
+        {isAdsenseReady ? (
           <ins
             className="adsbygoogle"
             style={{ display: 'block', width: '100%', minHeight: `${minHeight}px` }}
@@ -105,7 +107,7 @@ export default function AdSkeleton({
               style={{
                 border: '0px',
                 padding: '0',
-                width: '70%',
+                width: '100%',
                 height: `${iframeHeight}px`,
                 overflow: 'hidden',
                 display: 'block',

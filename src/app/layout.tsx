@@ -32,26 +32,6 @@ export default async function RootLayout({
   return (
     <html lang="tr" className={`${inter.variable} h-full`}>
       <head>
-        {/* Google Analytics 4 */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-1C0HCBCVRZ"
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-1C0HCBCVRZ');
-          `}
-        </Script>
-        {/* Google AdSense script loaded asynchronously */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3275598773792351"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         {/* Schema Markup (JSON-LD) */}
         <script
           type="application/ld+json"
@@ -75,6 +55,26 @@ export default async function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-white text-gray-800 font-sans">
+        {/* Google Analytics 4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-1C0HCBCVRZ"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-1C0HCBCVRZ');
+          `}
+        </Script>
+        {/* Google AdSense script loaded asynchronously */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3275598773792351"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Header categories={categories} />
         <main className="flex-grow">{children}</main>
         <Footer />
